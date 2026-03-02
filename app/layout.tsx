@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "gyan.design",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://gyan.design/og-image.png",
         width: 1200,
         height: 630,
         alt: "I am Gyan — Senior Product Designer",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Gyan // Senior Product Designer",
     description: "Senior product designer crafting research-led, system-heavy products.",
-    images: ["/og-image.png"],
+    images: ["https://gyan.design/og-image.png"],
   },
 };
 
