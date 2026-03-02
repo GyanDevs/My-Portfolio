@@ -15,16 +15,6 @@ export default function ResumePage() {
             {/* STICKY HEADER / NAV */}
             <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-[var(--grid-line)] px-4 md:px-8 h-16 flex justify-between items-center">
                 <BackButton />
-
-                {/* Top-right download CTA — desktop & tablet only to avoid overlapping the theme switcher on mobile */}
-                <div className="hidden md:block">
-                    <CtaButton
-                        as="anchor"
-                        href="/resume.pdf"
-                        download
-                        label="Download Resume"
-                    />
-                </div>
             </header>
 
             {/* PROFILE HEADER */}
@@ -181,8 +171,8 @@ export default function ResumePage() {
                 </div>
             </div>
 
-            {/* Mobile-only bottom CTA so it never sits under the theme toggle */}
-            <div className="border-t border-[var(--grid-line)] px-4 py-6 md:px-8 md:py-8 flex items-center justify-between md:hidden">
+            {/* Bottom CTA so it never sits under the theme toggle */}
+            <div className="border-t border-[var(--grid-line)] px-4 py-6 md:px-8 md:py-8 flex items-center justify-between">
                 <span className="font-mono text-[12px] text-neutral-500 uppercase tracking-widest">
                     Need a copy?
                 </span>
