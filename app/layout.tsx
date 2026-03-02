@@ -52,19 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        {/* Explicit Open Graph / Twitter image tags to help scrapers like LinkedIn */}
-        <meta
-          property="og:image"
-          content="https://gyan.design/og-image.png"
-        />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta
-          name="twitter:image"
-          content="https://gyan.design/og-image.png"
-        />
-      </head>
+      <head />
       <body
         className={`${mono.variable} ${serif.variable} font-sans antialiased bg-background text-foreground`}
       >
