@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "rating": "5/5",
+        "text": "I have worked with Gyan for a year almost and it has been refreshing to work with him. His understanding of user behaviour and the company's product-driven business objectives makes him an incredibly effective product designer who always focuses on the \"what\" and \"how\" aspect of influencing customer behaviour through design. He is also very mindful of his confirmation bias while making data-driven design decisions and is open to difficult debates that challenge the status quo of user understanding in the organization. In addition to his skills, he is super fun to work with which has always helped him to have a cohesive work relation across stakeholders.",
+        "author": "Abhinav Rawat",
+        "role": "Venture Founder",
+        "company": "",
+        "image": "/assets/abhinav.webp"
+    },
+    {
+        "id": 2,
+        "rating": "5/5",
+        "text": "I had the chance to hire and directly work with Gyan during my time at Fasal. Gyan is one of those designers who genuinely cares about the \"why\" behind every decision. He takes the time to deeply understand users, business goals and constraints, and then turns all of that into clean, intuitive product experiences. He worked extremely well with product, engineering, and leadership teams, and always approached feedback with openness and maturity.\n\nGyan is fun and simply great to work with. Positive, reliable, collaborative and someone who takes real ownership. He's the kind of person you want on your team especially when things get fast-paced.",
+        "author": "Umang Luhadia",
+        "role": "Senior Product Manager",
+        "company": "Sagri",
+        "image": null
+    },
+    {
+        "id": 3,
+        "rating": "5/5",
+        "text": "Worked with Gyan for almost a year on multiple products. He is skilled with amazing Idea generation capabilities by understanding problems clearly. I would recommend him to any team that is looking for a great person and a Designer!",
+        "author": "Sujith Devanagari",
+        "role": "Senior UX Designer",
+        "company": "Novartis",
+        "image": null
+    },
+    {
+        "id": 4,
+        "rating": "5/5",
+        "text": "I've had the pleasure of working with Gyan for the past 1.5 years and I can confidently say that he is an exceptional asset to any team. His hard work and dedication are truly admirable and have been instrumental in our team's success.\n\nGyan consistently brings innovative ideas to the table, demonstrating his creativity and forward-thinking mindset. His designs are not only aesthetically pleasing but also user-friendly, reflecting his deep understanding of user experience principles.\n\nBeyond his professional skills, Gyan is a joy to work with. His positive attitude and sense of humor make the workplace a fun and enjoyable environment. He is a team player who is always ready to help others and contribute to the team's overall success.\n\nIn conclusion, he is a remarkable Product Designer and a great asset to any company.",
+        "author": "Preeti",
+        "role": "Product Manager",
+        "company": "Fasal",
+        "image": null
+    },
+    {
+        "id": 5,
+        "rating": "5/5",
+        "text": "Gyan is proficient in a wide array of tools including Figma, Webflow, and Adobe Illustrator, and brings a strong foundation in Design Thinking and Agile methodologies. What's really impressive is how he's using AI tools to boost efficiency and make work even better – he's truly cutting-edge.\n\nHis experience at Fasal.co in crafting interaction models and user interfaces showcases his forward-thinking approach. He's a collaborative professional who excels at working with diverse stakeholders to ensure seamless coordination. Any team would be lucky to have Gyan's blend of technical skill, strategic thinking, and passion for creating impactful products.",
+        "author": "Pranshu Pandey",
+        "role": "Senior Security Engineer",
+        "company": "Flipkart",
+        "image": null
+    },
+    {
+        "id": 6,
+        "rating": "5/5",
+        "text": "Okay, seriously, if you need a Product Designer, Gyan Prakash is your person! He's incredibly talented at making digital products intuitive. I had the awesome opportunity to work with him, and his insights on field-specific research – especially in agriculture – were just brilliant. He helped guide my end-to-end product design process, which was a game-changer for me.\n\nGyan's a pro with design tools like Figma and his experience with Agile methods are what really sets him apart. He's currently shaping amazing experiences at Fasal.co, always collaborating seamlessly with his team. If you want someone who's not just skilled but also innovative, collaborative, and genuinely makes things better, you've found him in Gyan!",
+        "author": "Abhinav Sharma",
+        "role": "Principal Full Stack Engineer",
+        "company": "",
+        "image": null
+    }
+]

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 30 920 195" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .box { fill: none; stroke: #1a1a1a; stroke-width: 1.5; opacity: 0.55; }
+    .label { fill: #1a1a1a; font-family: Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 600; }
+    .arr { stroke: #1a1a1a; stroke-width: 1.2; fill: none; opacity: 0.5; }
+    @media (prefers-color-scheme: dark) {
+      .box { stroke: #ffffff; }
+      .label { fill: #ffffff; }
+      .arr { stroke: #ffffff; }
+    }
+  </style>
+
+  <circle cx="-8" cy="60" r="8" fill="#7ed321"/>
+
+  <rect x="10" y="40" width="180" height="40" rx="2" class="box"/>
+  <text x="100" y="65" text-anchor="middle" class="label">Introduction</text>
+
+  <line x1="198" y1="60" x2="302" y2="60" class="arr"/>
+  <polyline points="292,53 304,60 292,67" class="arr"/>
+
+  <rect x="310" y="40" width="180" height="40" rx="2" class="box"/>
+  <text x="400" y="65" text-anchor="middle" class="label">Research goals</text>
+
+  <line x1="498" y1="60" x2="602" y2="60" class="arr"/>
+  <polyline points="592,53 604,60 592,67" class="arr"/>
+
+  <rect x="610" y="40" width="180" height="40" rx="2" class="box"/>
+  <text x="700" y="65" text-anchor="middle" class="label">Insights to gather</text>
+
+  <line x1="700" y1="88" x2="700" y2="132" class="arr"/>
+  <polyline points="693,122 700,134 707,122" class="arr"/>
+
+  <rect x="610" y="140" width="180" height="40" rx="2" class="box"/>
+  <text x="700" y="165" text-anchor="middle" class="label">User Interviews</text>
+
+  <line x1="602" y1="160" x2="498" y2="160" class="arr"/>
+  <polyline points="508,153 496,160 508,167" class="arr"/>
+
+  <rect x="310" y="140" width="180" height="40" rx="2" class="box"/>
+  <text x="400" y="165" text-anchor="middle" class="label">Sample set</text>
+
+  <line x1="302" y1="160" x2="198" y2="160" class="arr"/>
+  <polyline points="208,153 196,160 208,167" class="arr"/>
+
+  <rect x="10" y="140" width="180" height="40" rx="2" class="box"/>
+  <text x="100" y="165" text-anchor="middle" class="label">Script writing</text>
+
+  <line x1="100" y1="188" x2="100" y2="222" class="arr"/>
+  <polyline points="93,212 100,224 107,212" class="arr"/>
+
+  <rect x="10" y="230" width="180" height="40" rx="2" class="box"/>
+  <text x="100" y="255" text-anchor="middle" class="label">Card Sorting</text>
+
+  <line x1="198" y1="250" x2="302" y2="250" class="arr"/>
+  <polyline points="292,243 304,250 292,257" class="arr"/>
+
+  <rect x="310" y="230" width="180" height="40" rx="2" class="box"/>
+  <text x="400" y="255" text-anchor="middle" class="label">Theme Identification</text>
+
+  <line x1="498" y1="250" x2="602" y2="250" class="arr"/>
+  <polyline points="592,243 604,250 592,257" class="arr"/>
+
+  <rect x="610" y="230" width="180" height="40" rx="2" class="box"/>
+  <text x="700" y="255" text-anchor="middle" class="label">Task prioritization</text>
+
+  <circle cx="808" cy="250" r="8" fill="#ff2d20"/>
+
+</svg>

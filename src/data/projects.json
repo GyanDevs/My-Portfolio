@@ -1,0 +1,970 @@
+[
+    {
+        "id": "iot-b2b-saas",
+        "title": "Fasal User Research",
+        "headline": "IoT & B2B SaaS",
+        "metric": "Validation Confidence > 95%",
+        "system_diagram": "Five days of field research to replace assumptions with what farmers actually said.",
+        "problem": "Assumptions about 4G connectivity failed in the field. Lived on-site for 5 days to map physical constraints, directly influencing the decision to build an 'Offline-First' sync architecture.",
+        "hide_metric": true,
+        "card_description": "5-day field study with **10 farmers** in Anantapur. Their observations fed a **RICE-prioritized roadmap**, from assumptions to evidence.",
+        "about": {
+            "description": "I led a 5-day field study in Anantapur, interviewing **10 farmers** on-site. Their observations directly fed into a **RICE-prioritized roadmap**, shifting the team from building on assumptions to building on evidence."
+        },
+        "tags": [
+            "User Research",
+            "Ethnography",
+            "Offline-First"
+        ],
+        "engineering_artifact": "/assets/fasal-research-deep-dive-man-dark.webp",
+        "caption": "Case Study Flow",
+        "designation": "Senior Product Designer",
+        "focus_areas": [
+            "Ethnography",
+            "Mental Modeling",
+            "Field Studies"
+        ],
+        "tools": [
+            "Figma",
+            "Google Sheets",
+            "Google Docs",
+            "Figjam"
+        ],
+        "about_app": "Fasal leverages on-farm IoT sensors and AI to transform real-time data into actionable, vernacular insights. By guiding farmers on precise irrigation and pest management, the app empowers them to optimize crop conditions and maximize productivity through data-driven decisions.",
+        "sections": [
+            {
+                "type": "text",
+                "title": "My Role",
+                "content": "As Senior Product Designer, I led the end-to-end research scripting interviews, selecting and interviewing 10 farmers on-site, synthesizing observations into themes, and translating insights into RICE-prioritized solutions."
+            },
+            {
+                "type": "text",
+                "title": "Introduction",
+                "content": "We went to where farmers actually use the app: in the field, in the heat, under pressure. What we heard over five days revealed the gap between what we assumed and what farmers needed."
+            },
+            {
+                "type": "text",
+                "title": "Research Goals",
+                "content": [
+                    "We wanted to understand how farmers actually use the app, not how we assumed they did. What features do they rely on? What trips them up? What would make their day easier? These questions shaped everything we asked on the ground."
+                ]
+            },
+            {
+                "type": "text",
+                "title": "Insights to gather during the visit",
+                "content": "Beyond formal goals, we noted a few things to stay alert to during each conversation."
+            },
+            {
+                "type": "text",
+                "title": "Selection of Farmers & Script Writing",
+                "content": [
+                    "The Customer Success Team had already segmented our users. We picked a spread of segments to hear from farmers at every level of experience and literacy.",
+                    "Defining tech literacy with respect to farmers.",
+                    "From these selection criteria we selected 10 users.",
+                    "We wrote the interview script before heading out: open-ended questions designed to get farmers talking, not just answering yes or no."
+                ]
+            },
+            {
+                "type": "quote",
+                "content": "Hi [name], how are you? We are from Fasal. We would love to hear how you use the app and what you would like us to improve."
+            },
+            {
+                "type": "text",
+                "title": "Observations from farmer interviews",
+                "content": [
+                    "We met each farmer individually, had them use the app live, and talked through the everyday challenges they face.",
+                    "The goal was to see the app through their eyes, not ours."
+                ]
+            },
+            {
+                "type": "text",
+                "content": "P.S. It started raining. Some farmers sent us home with mangoes, guavas, and oranges."
+            },
+            {
+                "type": "text",
+                "title": "Card sorting : Common Observation",
+                "content": "We grouped recurring observations to find the patterns: the themes that kept surfacing across different farmers and different days."
+            },
+            {
+                "type": "list",
+                "title": "Identified Themes and Possible Solutions",
+                "content": "We ran brainstorming sessions using the 3 Whys method to pressure-test each issue. For every idea, we weighed potential impact against effort, which shaped our final prioritization.",
+                "items": [
+                    "Information Readability & Perceiving",
+                    "Influences & Biases",
+                    "Learning & Adoption",
+                    "Differences in expected behaviour",
+                    "Understanding product features"
+                ]
+            },
+            {
+                "type": "text",
+                "title": "Task prioritization : Rice framework",
+                "content": [
+                    "After aligning with PMs and Directors on the solutions, we used the RICE framework to rank them so the team could start with the highest-impact changes first."
+                ]
+            },
+            {
+                "type": "text",
+                "title": "Conclusion",
+                "content": [
+                    "Five days in Anantapur changed how the team builds. Every assumption we brought in about navigation, data readability, and trust in the app was tested by a real farmer trying to use it. That is the kind of evidence that moves roadmaps."
+                ]
+            }
+        ]
+    },
+    {
+        "id": "fasal-iot-ops",
+        "title": "Fasal support system",
+        "headline": "AgriTech & Accessibility",
+        "metric": "Support Tickets +108%",
+        "system_diagram": "Redesigned the Help Section with voice-first ticketing and a simplified 3-step flow, dropping literacy as a prerequisite for getting help.",
+        "problem": "Farmers couldn't report issues. A 5-step, text-only flow excluded anyone who didn't type fluently in Hindi or English. Problems went unresolved, and the support team worked blind.",
+        "card_description": "Voice-first Help redesign: **3-step flow** and **Audio Ticketing**. Support requests +107.6%, **34%** voice reporting. Literacy no longer a barrier.",
+        "tags": [
+            "Accessibility",
+            "Voice UX",
+            "AgriTech"
+        ],
+        "designation": "Senior Product Designer",
+        "focus_areas": [
+            "Operational Efficiency",
+            "Support Automation",
+            "Service Design",
+            "Cost Reduction"
+        ],
+        "tools": [
+            "Figma",
+            "Google Sheets",
+            "Google Docs",
+            "Useberry"
+        ],
+        "about_app": "Fasal leverages on-farm IoT sensors and AI to transform real-time data into actionable, vernacular insights. By guiding farmers on precise irrigation and pest management, the app empowers them to optimize crop conditions and maximize productivity through data-driven decisions.",
+        "problem_statement": "**Problem Statement:** Farmers using the Fasal App struggle to effectively report issues due to a complex, text-based help system that doesn't account for language barriers or limited literacy, leaving farmers without help and the support team with incomplete information.\n\n**How Might We Statement:** How might we make it as easy for a farmer to report a problem as it is to make a phone call, regardless of their language or literacy level?",
+        "about": {
+            "description": "To bridge literacy gaps, I redesigned the Help Section with a simplified **3-step flow** and **Audio Ticketing**. This accessibility pivot drove a **107.6%** surge in support requests, with **34%** of users switching to voice reporting, proving that removing language barriers is what unlocks participation."
+        },
+        "engineering_artifact": "/assets/fasal-support-thumb.webp",
+        "sections": [
+            {
+                "type": "text",
+                "title": "My Role",
+                "content": "I led the Help Section redesign end-to-end, from farm visits to shipped product. I ran stakeholder interviews, facilitated design explorations, prototyped two solutions, and tested them with 12 farmers in the field. The result: a 107.6% jump in support tickets raised and 34% of users adopting voice reporting."
+            },
+            {
+                "type": "text",
+                "title": "Introduction",
+                "content": "Three barriers were blocking farmers from getting help: a 5-step reporting process most didn't finish, a help button buried in settings, and a text-only system that excluded anyone who didn't type fluently. This is what we set out to fix."
+            },
+            {
+                "type": "image",
+                "title": "Current flow and issues",
+                "src": "/assets/fasal-legacy-flow.webp",
+                "caption": "Current 5-step help reporting flow"
+            },
+            {
+                "type": "list",
+                "items": [
+                    "**Too many steps:** The 5-step process loses most farmers before they finish. Problems go unresolved, trust erodes.",
+                    "**Hard to find help:** The report button is buried inside the help section, not visible until farmers already know where to look.",
+                    "**Mismatched problem categories:** The preset list doesn't reflect what farmers actually experience, forcing them to pick the closest wrong answer.",
+                    "**Writing is a barrier:** Farmers with low literacy or no keyboard proficiency can't explain their problems in text.",
+                    "**No multilingual support:** The system only works in languages farmers can type, which excludes most of them. Issues get misreported, or not reported at all.",
+                    "**Overloaded support team:** Unclear written tickets mean agents spend extra time diagnosing issues, slowing resolution and reducing satisfaction on both sides."
+                ]
+            },
+            {
+                "type": "text",
+                "title": "Design Process"
+            },
+            {
+                "type": "text",
+                "title": "Field Discovery",
+                "content": "We started inside, interviewing the sales and customer success teams to understand the support team's perspective. Then we went to the farms to see the problems firsthand."
+            },
+            {
+                "type": "list",
+                "title": "Ideation & Goals",
+                "content": "Farm visits confirmed what the support data suggested: farmers were abandoning the help flow before it could help them. These sessions shaped our design goals directly.",
+                "items": [
+                    "Work for farmers regardless of literacy, voice-first, not text-first.",
+                    "Surface help with one tap, not buried two levels deep.",
+                    "Improve ticket quality so the support team can resolve issues faster.",
+                    "It should look and feel consistent with the rest of the app."
+                ]
+            },
+            {
+                "type": "text",
+                "title": "Design exploration & finalization",
+                "content": [
+                    "We built on the discovery with a clear question: should Help live separately from Articles, or on the same page? We designed ^^one option for each^^ to put it to the test."
+                ]
+            },
+            {
+                "type": "design-options",
+                "title": "Design Options",
+                "options": [
+                    {
+                        "title": "Design Option 1",
+                        "src": "/assets/fasal-design-option-1.webp",
+                        "items": [
+                            "Separated the Help CTA from articles and made it impossible to miss.",
+                            "Reduced the number of steps from 5 to 3.",
+                            "Introduced a voice recording option alongside text input, removing the language barrier.",
+                            "Removed predefined categories so farmers describe issues in their own words.",
+                            "Separated Articles from Help to reduce confusion when looking for support."
+                        ]
+                    },
+                    {
+                        "title": "Design Option 2",
+                        "src": "/assets/fasal-design-option-2.webp",
+                        "items": [
+                            "Kept the Help CTA on the same page as articles but made it more prominent.",
+                            "Reduced the number of steps from 5 to 3.",
+                            "Introduced a voice recording option alongside text input, removing the language barrier.",
+                            "Removed predefined categories so farmers describe issues in their own words."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "title": "Prototyping & User Testing",
+                "content": "We built interactive prototypes for both options and ran structured usability tests in Useberry with 12 farmers."
+            },
+            {
+                "type": "list",
+                "title": "Goals of user testing",
+                "items": [
+                    "Evaluate the usability and intuitiveness of the new help section design",
+                    "Assess user preference between the two design options",
+                    "Measure the effectiveness of the audio recording feature for issue reporting",
+                    "Identify any confusion points or friction in the flow",
+                    "Determine if the new design effectively addresses the barriers identified in the current flow"
+                ]
+            },
+            {
+                "type": "design-options",
+                "title": "Heat maps",
+                "options": [
+                    {
+                        "title": "Design Option 1",
+                        "src": "/assets/fasal-heatmap-1.webp",
+                        "items": [
+                            "All 12 users completed the flow and raised an issue successfully.",
+                            "Users described the process as very simple and easy to use.",
+                            "Users felt that the call-to-action (CTA) was prominently displayed and easily visible.",
+                            "Four farmers with low tech literacy initially struggled to find resolved issues, but eventually located them.",
+                            "Three farmers found terminology like 'Issues resolved' challenging to understand."
+                        ]
+                    },
+                    {
+                        "title": "Design Option 2",
+                        "src": "/assets/fasal-heatmap-2.webp",
+                        "items": [
+                            "All 12 users successfully completed the flow and raised an issue.",
+                            "Users found the mix of articles and help options distracting.",
+                            "Eight farmers struggled to locate active issues because articles dominated the same page.",
+                            "Three farmers found terminology like 'Issues resolved' challenging to understand."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "list",
+                "title": "Conclusion",
+                "items": [
+                    "**Preference for Design Option 1:** 100% of users found the separate Help CTA in Option 1 more intuitive and easier to access.",
+                    "**Voice recording changed everything:** Users appreciated being able to record issues verbally, especially those with limited literacy or typing skills.\n\n^^\"Users liked the audio recording feature because they could speak in their own languages.\"^^",
+                    "**Fewer steps made a real difference:** Farmers described the new 3-step flow as fast and stress-free. No one needed to be shown how to use it.",
+                    "**Improved discoverability:** Users reported finding the help section easier to locate in both new designs compared to the current flow.",
+                    "**Freedom to describe in their own words:** Without preset categories, farmers reported issues more accurately.",
+                    "**Areas for improvement**\nSome terminology requires simplification and users initially struggled to locate resolved issues.",
+                    "Option 1 resolved every key barrier: fewer steps, one-tap discoverability, and voice input that works regardless of language or literacy level."
+                ]
+            },
+            {
+                "type": "text",
+                "title": "Feedback implementation"
+            },
+            {
+                "type": "image",
+                "src": "/assets/fasal-improved-flow.webp",
+                "caption": "Final refined interface incorporating user testing feedback"
+            },
+            {
+                "type": "list",
+                "items": [
+                    "Simplified terminology throughout the help section: Changed **Resolved issues** to **Closed issues** for clarity. Changed **Attach images** to **Add images**, shorter and more natural.",
+                    "Combined closed and active issues on a single page so farmers can find both without switching views.",
+                    "Made **Tap to record** the primary call-to-action on the page, more prominent than the secondary options **I want to talk** and **I want to write**."
+                ]
+            },
+            {
+                "type": "list",
+                "title": "Impact",
+                "items": [
+                    "24.9% increase in tickets submitted through mobile devices.",
+                    "107.6% more tickets raised. Farmers who previously gave up can now report issues by voice, in their own language.",
+                    "34.28% of users now report by voice, confirming that language barriers were keeping farmers silent."
+                ]
+            },
+            {
+                "type": "list",
+                "title": "Way Forward",
+                "items": [
+                    "**Keep listening:** Schedule quarterly field visits and in-app feedback reviews to catch new pain points early.",
+                    "**Refine the language:** Keep testing label clarity with farmers, especially for technical states like ticket pending or escalated.",
+                    "**Smart triage:** Explore AI voice recognition to auto-categorize tickets by issue type, reducing manual sorting for the support team.",
+                    "**Grow the self-help library:** Map common ticket types to new guides, with a target to resolve 20% of issues without agent contact."
+                ]
+            }
+        ]
+    },
+    {
+        "id": "ethnographic-study",
+        "title": "Sensor Dials Any Farmer Can Read at a Glance",
+        "headline": "IoT & Agritech",
+        "metric": "Support Tickets -80%",
+        "system_diagram": "Redesigned sensor dials to turn raw telemetry into clear, at-a-glance readings for 50k+ farmers.",
+        "problem": "Farmers couldn't tell what their sensor readings meant. Dials were too small and the colors too similar, so instead of acting on the data, they called support.",
+        "card_description": "Dials redesigned for **at-a-glance** readability. **90%** of farmers said data was easier to read; support tickets **dropped 80%**.",
+        "tags": [
+            "Data Visualization",
+            "IoT",
+            "Complex Systems"
+        ],
+        "designation": "Senior Product Designer",
+        "focus_areas": [
+            "Complex Systems",
+            "Data Visualization",
+            "IoT & AgriTech",
+            "Remote Monitoring"
+        ],
+        "tools": [
+            "Adobe After Effects",
+            "Figma",
+            "Google Docs",
+            "Google Sheets",
+            "Useberry"
+        ],
+        "about_app": "Fasal puts IoT sensors and AI to work on the farm, turning humidity, soil moisture, and temperature readings into plain-language guidance. It tells farmers exactly when to irrigate and how to protect their crops, in the language they speak.",
+        "problem_statement": "**The Challenge:** Farmers couldn't tell what their sensor readings meant. Dials were too small and the colors too similar, so instead of acting on the data, they called support. The problem was worse for older farmers and those less familiar with smartphones, but it affected everyone.\n\n**The Fix:** I simplified the sensor dials: three clear states instead of five, larger for outdoor legibility, and **\"Last Updated\"** timestamps so farmers knew the reading was current. Raw telemetry became something a farmer could glance at and trust.",
+        "about": {
+            "description": "The redesign delivered clear results: **90% of farmers** said sensor data was easier to read, support tickets **dropped 80%**, and **73%** engaged with Contextual Help. Making data readable is what unlocks action."
+        },
+        "engineering_artifact": "/assets/fasal-research-thumb.webp",
+        "caption": "Project Overview",
+        "sections": [
+            {
+                "type": "text",
+                "title": "My Role",
+                "content": "I orchestrated the end-to-end redesign of the sensor dials, grounding the solution in field realities. I led the research phase through stakeholder interviews and on-site visits, translating raw insights into wireframes and high-fidelity interactive prototypes. To ensure usability, I conducted rigorous remote testing via Useberry, analyzing farmer feedback to refine the final UI for maximum accessibility."
+            },
+            {
+                "type": "text",
+                "title": "Design Process"
+            },
+            {
+                "type": "text",
+                "title": "Field Discovery",
+                "content": "We started with internal stakeholder interviews, then visited farms across multiple regions. The same pattern kept appearing: farmers squinting at their phones, misreading sensor states because the colors were too similar and the dials too small. A small misread leads to a wrong crop decision and then a support call."
+            },
+            {
+                "type": "image",
+                "title": "Issues on Hand",
+                "src": "/assets/Sensor-dials-issues.webp",
+                "caption": "The original dial: five colors, tiny scale, nearly unreadable outdoors",
+                "content": "Our research identified eight friction points that directly impact how farmers interact with and trust sensor data, ranging from immediate visual readability to deeper contextual understanding."
+            },
+            {
+                "type": "list",
+                "items": [
+                    "**No data sync info:** Farmers couldn't tell if they were looking at this morning's data or yesterday's.",
+                    "**No contextual information:** Farmers didn't know why each sensor mattered for their crop. Without that context, numbers were just numbers.",
+                    "**Small dial size:** The dials were too small to read clearly, especially outdoors in sunlight, on a small screen.",
+                    "**Poor color scheme:** Five colors crammed into a small arc made it nearly impossible for farmers, especially older ones, to know at a glance what was normal and what was not.",
+                    "**Inconsistent placement:** Dial positions varied screen to screen, making it hard for farmers to quickly locate and compare readings.",
+                    "**No visual priority:** Everything looks the same weight, so nothing stands out. Farmers can't spot what needs attention without reading every line.",
+                    "**Inconsistent patterns:** Buttons, labels, and layouts vary across screens, making the app harder to learn.",
+                    "**Wasted space:** The layout uses far more screen area than it needs, especially on small phones in the field."
+                ]
+            },
+            {
+                "type": "text",
+                "title": "Goals & Constraints",
+                "content": "Field visits made the priorities clear: readable for every farmer, regardless of age or tech comfort. The constraints were just as real: screen space, brand guidelines, and backend compatibility. Both shaped every decision."
+            },
+            {
+                "type": "list",
+                "title": "Key Requirements:",
+                "items": [
+                    "**Increased dial size:** Larger dials, readable at arm's length outdoors, especially for farmers with visual impairments or lower tech literacy.",
+                    "**Improved color scheme:** Reduce colors from 5 to 3, making it easier for farmers to know at a glance which reading needs attention.",
+                    "**Visual consistency:** The redesigned dials should look and feel like they belong to the same app, not a late addition.",
+                    "**Reduced support load:** Improving readability should directly reduce support tickets raised for sensor misinterpretation.",
+                    "**Prominent placement:** Consistent positioning across all screens so farmers can find and compare readings at a glance.",
+                    "**Easy to learn without training:** A first-time farmer should understand what they're looking at with no explanation needed."
+                ]
+            },
+            {
+                "type": "list",
+                "title": "Constraints",
+                "items": [
+                    "While increasing the size of the dials was necessary, we had to balance this with maintaining an efficient use of screen space.",
+                    "The color palette had to be carefully chosen to ensure accessibility while staying within brand guidelines.",
+                    "Any changes to the sensor dials needed to be compatible with existing backend systems to avoid extensive redevelopment."
+                ]
+            },
+            {
+                "type": "text",
+                "title": "Ideation & Design",
+                "content": "We explored a range of dial designs, testing size, color systems, and outdoor readability, then narrowed to the strongest options for review with the Head of Product and Product Lead."
+            },
+            {
+                "type": "image",
+                "src": "/assets/Explorations.webp",
+                "caption": "Exploring color differentiation and scale accessibility",
+                "grayscale": true
+            },
+            {
+                "type": "text",
+                "title": "Final Design",
+                "content": "We built two options: horizontal sensor bars (unfamiliar but potentially clearer) and improved dials (familiar, but redesigned). Testing both gave us a real answer, not an assumption, about what farmers actually preferred."
+            },
+            {
+                "type": "design-options",
+                "title": "Design Options",
+                "options": [
+                    {
+                        "title": "Sensor Bars",
+                        "src": "/assets/Sensor bars.webp",
+                        "items": [
+                            "We redesigned the sensor display using horizontal bars instead of traditional dials.",
+                            "Designed to use screen space more efficiently and make readings clearer at a glance.",
+                            "We introduced a \"Learn More\" option for each sensor, providing detailed information on its importance for crop health and growth.",
+                            "Used clear color coding and visual cues to make readings instantly distinguishable.",
+                            "Large enough to read clearly outdoors, for farmers of all ages and tech comfort levels."
+                        ]
+                    },
+                    {
+                        "title": "Sensor Dials",
+                        "src": "/assets/Sensor dials.webp",
+                        "items": [
+                            "Same familiar dial, rebuilt to fix every issue the research surfaced.",
+                            "We significantly increased the size of the sensor dials, making them more easily readable for all users.",
+                            "We improved color differentiation by using a more distinct color palette (5 segments to 3).",
+                            "We implemented a design where only the current reading is highlighted, rather than filling the entire dial with colors. This change reduces visual clutter.",
+                            "We added a timestamp feature to show when the sensor reading was last updated.",
+                            "We standardized the placement of sensor dials across the app for improved consistency."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "title": "Prototyping and User Testing",
+                "content": "With both designs ready, we built interactive prototypes and ran a structured usability test in Useberry, watching farmers use the app live and tracking exactly where they hesitated."
+            },
+            {
+                "type": "list",
+                "title": "Goals of user testing",
+                "items": [
+                    "Find out if the new designs were genuinely easy to use",
+                    "Settle the bars-vs-dials question with real farmer input",
+                    "Test whether bigger, clearer dials actually helped farmers read faster",
+                    "Surface any confusion or friction before the design shipped",
+                    "Confirm we had actually solved the problems we set out to fix"
+                ]
+            },
+            {
+                "type": "list",
+                "title": "Key findings",
+                "items": [
+                    "**Familiarity builds confidence:** Farmers recognized the dial immediately, comparing it to tractor gauges. The familiarity made the redesign feel trustworthy from the start.",
+                    "**Bar design advantage:** Farmers who preferred bars liked that the color indicator sat right next to the value, fewer steps to read.",
+                    "**Overall ease of understanding:** Farmers found both options easy to comprehend, with preference mainly based on visual appeal.",
+                    "**The static problem:** Farmers are used to watching dials move, like tractor gauges and speedometers. A still dial felt dead. We added a sweep animation on load so farmers could see the dial settle on its current reading, confirming the data was live."
+                ]
+            },
+            {
+                "type": "image",
+                "title": "Feedback implementation",
+                "src": "/assets/Sensor dials img.mp4",
+                "caption": "Sensor dial sweep animation demonstrating active monitoring",
+                "content": "User testing pointed to clear improvements. First: a sweep animation on dial load, a visual cue that the reading is live, not static."
+            },
+            {
+                "type": "text",
+                "content": "The result: sensor dials any farmer can read at a glance, outdoors, on a small screen, at any literacy level. Not just better-looking, but genuinely clearer."
+            },
+            {
+                "type": "list",
+                "title": "Impact",
+                "items": [
+                    "**Improved readability:** 90% of farmers said sensor data was easier to read, especially outdoors in full sunlight.",
+                    "**Fewer support tickets:** From around 50 per week to 10, as farmers could now read their own data.",
+                    "**Contextual Help used:** 73% of farmers engaged with it at least once, showing they wanted to understand the data, not just see it."
+                ]
+            },
+            {
+                "type": "list",
+                "title": "Way Forward",
+                "items": [
+                    "**Richer contextual help:** Add short videos alongside text guides, formats that work across all literacy levels.",
+                    "**Stay close to farmers:** Schedule quarterly farm visits and in-app feedback cycles to catch new friction early.",
+                    "**Track what matters:** Monitor dial interaction time and support ticket themes to catch the next friction point before it grows.",
+                    "**Iterate on evidence:** Use field data, not assumptions, to drive the next round of improvements."
+                ]
+            }
+        ]
+    },
+    {
+        "id": "fasal-billing-subscription",
+        "title": "Fasal Billing & Subscription System",
+        "headline": "Fintech & SaaS",
+        "metric": "Support Tickets −80%",
+        "engineering_artifact": "/assets/fasal-billing-thumb.png",
+        "caption": "Billing & Subscription Redesign",
+        "system_diagram": "Turning billing opacity into farmer trust",
+        "problem": "Farmers were calling support asking 'Where did my money go?' Money was vanishing from a shared wallet with no history, no control, and no way to pause devices during the off-season.",
+        "card_description": "Transparent billing and **device-level subscriptions**. Support tickets **−80%**, **100%** revenue accuracy, lower involuntary churn.",
+        "tags": [
+            "Microsoft",
+            "Boomi",
+            "Design Systems"
+        ],
+        "designation": "Senior Product Designer",
+        "focus_areas": [
+            "SaaS Billing",
+            "Fintech",
+            "Subscription Models",
+            "Admin Panels"
+        ],
+        "tools": [
+            "Figma",
+            "Google Sheets",
+            "Google Docs",
+            "Figjam",
+            "Adobe After Effects",
+            "Useberry"
+        ],
+        "about_app": "Fasal leverages on-farm IoT sensors and AI to transform real-time data into actionable, vernacular insights. By guiding farmers on precise irrigation and pest management, the app empowers them to optimize crop conditions and maximize productivity through data-driven decisions.",
+        "problem_statement": "**The Problem:** The \"Shared Wallet\" created a black-box experience. Farmers frequently complained that money was deducted automatically for devices they weren't using (e.g., fallow land). They lacked visibility into expiration dates or transaction history (\"Where did my money go?\"). This ambiguity led to high support ticket volumes and mistrust.\n\n**The Solution:** We re-architected the system to a **Device-Specific Subscription Model.** I designed a transparent \"Recharge\" experience mirroring the mental model of a prepaid SIM card that allows farmers to manage subscriptions at the device level. This included complex logic for handling **Paused Subscriptions**, **Grace Periods**, and a transparent **Transaction Ledger**.",
+        "about": {
+            "description": "The redesign cut billing support tickets by **80%**, giving farmers visibility into exactly where every rupee went. Revenue recognition hit **100% accuracy**, and switching to a Grace Period instead of a hard block directly **reduced involuntary churn**."
+        },
+        "sections": [
+            {
+                "type": "text",
+                "title": "My Role",
+                "content": "This wasn't a billing UI fix. It was a crisis of confidence driving our highest-value farmers to churn. I redesigned the entire financial experience from the ground up, leading the transition from a 'black box' shared wallet to a transparent, device-specific subscription model that rebuilt user trust and eliminated the primary source of support tickets."
+            },
+            {
+                "type": "text",
+                "title": "Designing Financial Trust for the Indian Farmer."
+            },
+            {
+                "type": "text",
+                "title": "Discover & Define",
+                "content": "The project didn't start with a design brief; it started with a data anomaly. Our Customer Success (CS) and Sales teams were reporting a sharp rise in friction during renewals."
+            },
+            {
+                "type": "text",
+                "title": "Data Findings (The Quantitative Signal)"
+            },
+            {
+                "type": "text",
+                "title": "Research Methodology",
+                "content": "To understand the root cause, I moved from data to empathy, conducting a mix of internal and external research."
+            },
+            {
+                "type": "text",
+                "title": "Key Insights & Mental Models",
+                "content": "The research revealed a fundamental mismatch between our System Architecture and the User's Mental Model."
+            },
+            {
+                "type": "text",
+                "title": "The Strategy"
+            },
+            {
+                "type": "list",
+                "title": "Design Goals",
+                "items": [
+                    "**Granularity:** Enable Per-Device subscription management (Pause/Resume individual assets).",
+                    "**Transparency:** 100% visibility into every rupee deducted (The Passbook feature).",
+                    "**Revenue Protection:** Reduce Involuntary Churn by designing better Low Balance and Grace Period states."
+                ]
+            },
+            {
+                "type": "list",
+                "title": "Technical & Business Constraints",
+                "items": [
+                    "**Backend Migration:** Moving from Wallet to Subscription required a massive DB migration. The UI had to handle Legacy vs. New user states.",
+                    "**Hardware Dependency:** (Crucial Constraint) If a Main Unit expires, connected Sensor Nodes stop sending data. The billing logic had to respect this hardware hierarchy.",
+                    "**Offline-First:** Payments often happen in low-network areas. The UI needed robust Pending/Processing states (no infinite spinners)."
+                ]
+            },
+            {
+                "type": "text",
+                "title": "Design Process"
+            },
+            {
+                "type": "text",
+                "title": "The Architecture: Designing for the Unhappy Path",
+                "content": "Before opening Figma, I needed to solve the architectural constraints. The shift from Wallet to Device-Level Billing wasn't just a UI change; it was a logic overhaul. I used pen and paper sketches to map out the State Machines for critical scenarios."
+            },
+            {
+                "type": "list",
+                "title": "The Logic Layer: Designing for Edge Cases",
+                "content": "Fasal's IoT ecosystem is hierarchical. A Farm has a Main Unit (Gateway) and connected Sensor Nodes.",
+                "items": [
+                    "**Solving the Dependency Chain:** Our hardware is hierarchical. Parent Units connect to Child Nodes. If a parent expires, the children go silent. A lazy design would just block everything. Instead, we designed **Graceful Degradation**. We created a logic flow that pauses dependent nodes but keeps the account active, turning a confusing Hardware Failure into a clear Billing Notification.",
+                    "**The Mathematics of Trust:** Mid-cycle upgrades (swapping a Standard device for Premium) used to create Hidden Fee anxiety. We visualized this simply as a Bridge View showing the user exactly how their ₹2,000 credit converted into 36 days of the new plan. No hidden math, no surprises.",
+                    "**The Seasonality Switch (Voluntary Pause):** Farming isn't continuous; land often goes fallow for months. The old 'Shared Wallet' forced farmers to pay for sensors on empty fields. I designed a 'Voluntary Pause' workflow that respects the crop cycle. When a user toggles 'Pause' on a specific device, the system immediately stops the daily billing deduction. The device enters a 'Grey State' (Hibernation). This visually confirms to the farmer that Cost = 0, building trust that Fasal isn't 'eating' their money during off-seasons."
+                ]
+            },
+            {
+                "type": "text",
+                "title": "The Reality Check: Testing with 12 Farmers",
+                "content": "We tested in two ways: on-site visits to farms where we sat with farmers and watched them use the prototype in person, and remote sessions over Useberry for farmers we couldn't reach in the field. Both groups got the same critical task: find the expired device and recharge it."
+            },
+            {
+                "type": "list",
+                "title": "Hypothesis vs. Reality",
+                "items": [
+                    "**The Win (Visual Urgency Works):** Heatmaps confirmed our Traffic Light theory. Users ignored the dates and immediately navigated to the Red Progress Bar (< 30 Days). The color coding worked instantly across all literacy levels.",
+                    "**The Fail (The Season Trap):** We hit a friction point. We had labeled plans as 'Season Packs' (thinking of crop cycles). Farmers paused. They looked for specific numbers. 'Season' was too vague.",
+                    "**The Pivot:** We renamed every pack to explicit durations (90 Days / 180 Days / 365 Days).",
+                    "**The Result:** The cognitive load dropped, and recharge selection speed improved immediately."
+                ]
+            },
+            {
+                "type": "text",
+                "title": "The Control Center: Giving Power Back to the Farmer",
+                "content": [
+                    "We replaced the generic list view with Asset Cards: one card per device, each showing a Days Remaining progress bar. A farmer with 50 devices can scan the entire screen in seconds and know exactly what needs attention.",
+                    "Farmers can voluntarily pause any device during the off-season. The grey state visually confirms that Fasal isn't deducting anything from their account, which was the core trust problem we set out to fix. When the season starts again, one tap brings the device back online."
+                ]
+            },
+            {
+                "type": "list",
+                "items": [
+                    "**Green**: Safe. More than 30 days remaining.",
+                    "**Red**: Act now. Under 30 days left.",
+                    "**Grey**: Paused. Billing stopped, device in hibernation."
+                ]
+            },
+            {
+                "type": "image",
+                "src": "/assets/fasal-billing-states.webp",
+                "caption": "Asset card states: expired, paused, and active"
+            },
+            {
+                "type": "text",
+                "title": "The Passbook Moment: Building Trust Through Data",
+                "content": "We replaced the ambiguous 'Wallet Balance' with a full Transaction Ledger. Every credit, debit, adjustment, and bonus is tagged and timestamped. A farmer who asks 'Where did my money go?' now has the answer in their hand."
+            },
+            {
+                "type": "image",
+                "src": "/assets/fasal-billing-passbook.webp",
+                "caption": "Transaction history: every deduction tagged, timestamped, and auditable"
+            },
+            {
+                "type": "list",
+                "title": "Resilience: When the Network Breaks",
+                "items": [
+                    "**The Panic of Payment Failures:** In rural India, network connectivity is spotty. A payment often leaves the bank but doesn't reach us immediately. A generic 'Failed' screen causes panic.",
+                    "**The 'Processing' Buffer (Status 100):** If a payment is authorized but not captured, we don't say 'Failed'. We show a Processing state, reassuring the farmer their money is safe while the system retries in the background.",
+                    "**The Grace Period:** We moved away from Hard Blocks. Even if a subscription expires, we keep the data visible for a short window. This prevents involuntary churn and treats the user with dignity rather than locking them out immediately."
+                ]
+            },
+            {
+                "type": "figma-link",
+                "title": "View Design File",
+                "href": "https://www.figma.com/design/tvJVwxEMS3n0ten5qButBk/Fasal-Billing-Revamp?node-id=0-1&t=b1Ej2t1vqvGb88CS-1"
+            },
+            {
+                "type": "list",
+                "title": "The Business Impact",
+                "items": [
+                    "**80% Reduction in Billing Support Tickets:** By implementing the Passbook/Ledger view and Device-Specific Status, we eliminated the primary source of confusion ('Where did my money go?'). Users could now self-diagnose deductions.",
+                    "**Revenue Assurance:** The new system achieved 100% accuracy in Revenue Recognition. We moved from estimating revenue based on wallet balances to tracking exact Deferred Revenue vs. Recognized Revenue based on active subscription days.",
+                    "**Reduced Involuntary Churn:** The introduction of the Grace Period logic and Renewal Nudges (sent at 15, 7, and 3 days remaining) significantly reduced churn caused by accidental expiry."
+                ]
+            },
+            {
+                "type": "list",
+                "title": "Future Scope",
+                "items": [
+                    "**Coupons & Upselling:** Introducing Vouchers and Referral Credits directly into the checkout flow to boost Average Revenue Per User (ARPU).",
+                    "**Automated Wallet Refunds:** Streamline Water Credit refunds end-to-end so farmers get their money back without a support call."
+                ]
+            },
+            {
+                "type": "list",
+                "title": "What This Project Taught Me",
+                "items": [
+                    "**Trust is the UX:** For a farmer, a billing dashboard isn't a utility; it's a financial statement. Radical transparency is the only way to build trust in B2B.",
+                    "**Design is Business Logic:** The Happy Path is easy. The real value of a Senior Designer lies in the edge cases: payment failures mid-harvest, hardware dependency chains, and financial math that farmers shouldn't have to see."
+                ]
+            }
+        ]
+    },
+    {
+        "id": "bazaarnxt-b2b",
+        "title": "BazaarNXT: B2B Procurement Platform",
+        "headline": "B2B Marketplace",
+        "metric": "Offline to Online, End-to-End",
+        "system_diagram": "Moved B2B packaging procurement from offline chaos to a structured digital marketplace, eliminating supplier discovery friction and order tracking blind spots.",
+        "problem": "B2B customers in the packaging materials industry relied on traditional offline methods, leading to inefficiencies, quality inconsistencies, and time-consuming procurement processes.",
+        "card_description": "End-to-end design of B2B ecommerce for packaging: **stakeholder interviews**, field visits, high-fidelity UI and testing with buyers at every tech level.",
+        "tags": [
+            "B2B Procurement",
+            "Logistics",
+            "Order Management",
+            "Supply Chain"
+        ],
+        "designation": "Product Designer",
+        "focus_areas": [
+            "B2B Procurement",
+            "Logistics",
+            "Order Management",
+            "Supply Chain Mgmt"
+        ],
+        "tools": [
+            "Adobe After Effects",
+            "Figma",
+            "Google Docs"
+        ],
+        "about_app": "BazaarNXT is a B2B digital marketplace for packaging materials, built to replace the slow, fragmented offline procurement process that most businesses in the industry still rely on. The platform connects buyers directly with verified suppliers, offers real-time inventory visibility, and streamlines ordering and delivery tracking, all through a mobile app designed to work for buyers at any level of tech literacy.",
+        "problem_statement": "**Problem Statement:** Currently, B2B customers in the packaging materials industry rely on traditional offline methods for procurement, leading to inefficiencies, quality inconsistencies, and time-consuming processes. The BazaarNXT App aims to address these challenges by providing a digital solution.\n\n**How Might We Statement:** How might we design the BazaarNXT App's interface to be intuitive, user-friendly, and efficient for B2B customers with varying tech literacy levels and industry-specific needs, while streamlining the online product discovery and purchasing process for packaging materials?",
+        "about": {
+            "description": "As Product Designer, I led the end-to-end design of BazaarNXT's B2B ecommerce app for packaging materials, from stakeholder interviews and field visits to high-fidelity UI and prototype testing with buyers of varying tech literacy levels."
+        },
+        "engineering_artifact": "/assets/bazaarnxt-banner.svg",
+        "caption": "Wireframe Architecture",
+        "sections": [
+            {
+                "type": "text",
+                "title": "About BazaarNXT",
+                "content": "BazaarNXT set out to move B2B packaging procurement online, fixing the friction points that made offline sourcing slow and unreliable. Businesses were losing time chasing suppliers, second-guessing product quality, and working blind on delivery timelines. The platform was built to solve all three."
+            },
+            {
+                "type": "list",
+                "title": "Problems in the current landscape",
+                "items": [
+                    "Difficulty finding reliable suppliers",
+                    "Inconsistent product quality",
+                    "Delayed deliveries",
+                    "Time-consuming procurement processes"
+                ]
+            },
+            {
+                "type": "text",
+                "title": "Design Process",
+                "content": "We ran a five-stage design process grounded in field research and B2B-specific constraints, making sure every decision traced back to something a real buyer actually needed."
+            },
+            {
+                "type": "text",
+                "title": "Stakeholder Interviews",
+                "content": "I conducted stakeholder interviews with the CEO, COO, field sales team, and customer success team at BazaarNXT. Alongside internal interviews, the sales team facilitated direct access to B2B buyers in the field. These sessions gave us a ground-level view of how procurement actually worked, and where it consistently broke down. Every finding fed directly into the design goals."
+            },
+            {
+                "type": "list",
+                "title": "Key findings from stakeholder interviews",
+                "items": [
+                    "**CEO** emphasized the need for a digital platform to streamline the currently offline ordering process.",
+                    "**COO** highlighted the importance of incorporating real-time inventory updates and order tracking features in the app.",
+                    "**Field sales team** reported that businesses struggle to efficiently browse and find specific packaging materials in the current offline system.",
+                    "**Customer success team** noted frequent inquiries about order status and delivery timelines, suggesting a need for in-app notifications.",
+                    "Both management and sales team observed that smaller businesses need an intuitive, user-friendly interface to easily transition from offline to online ordering.",
+                    "Sales representatives stressed the importance of designing a simple, accessible app interface to attract and retain less tech-savvy business owners."
+                ]
+            },
+            {
+                "type": "list",
+                "title": "Ideation & Goals",
+                "content": "Field visits and stakeholder interviews confirmed the problem was real, widespread, and worth solving. With that clarity, we defined what a good solution had to do.",
+                "items": [
+                    "The solution should be intuitive and user-friendly, catering to B2B customers with varying levels of tech literacy.",
+                    "The app's features should be easily discoverable for busy business owners and procurement managers.",
+                    "The design should be consistent with BazaarNXT's brand identity and existing digital platforms."
+                ]
+            },
+            {
+                "type": "text",
+                "title": "Wireframes",
+                "content": "After finalizing the information architecture, I created wireframes keeping our target persona front and center: the less tech-savvy but time-pressed B2B buyer. The wireframes mapped out five core flows: supplier browsing and discovery, product search and filtering, product detail and comparison, cart and order placement, and order tracking. Intuitive navigation and fast product discovery were the two non-negotiables at every stage. Once the structure was approved, I moved on to the visual design."
+            },
+            {
+                "type": "image",
+                "src": "/assets/bazaarnxt-wireframes.png",
+                "caption": "Information architecture and wireframe layout for core procurement flows",
+                "lightBg": true,
+                "showGrid": true
+            },
+            {
+                "type": "text",
+                "title": "Colours",
+                "content": "The palette was chosen to balance professionalism with approachability. Bold and muted tones sit together so the interface feels credible without being cold. Blue and orange carry the weight of trust, reliability, and energy, which are the right associations for a platform where buyers are committing real procurement budgets."
+            },
+            {
+                "type": "colour-palette",
+                "colours": {
+                    "brand": [
+                        { "id": "01", "hex": "#E64430" },
+                        { "id": "02", "hex": "#1F8300" },
+                        { "id": "03", "hex": "#6553E6" }
+                    ],
+                    "neutral": [
+                        { "id": "04", "hex": "#000000" },
+                        { "hex": "#595959" },
+                        { "hex": "#979797" },
+                        { "hex": "#C4C4C4" },
+                        { "hex": "#F9F9F9" }
+                    ]
+                }
+            },
+            {
+                "type": "text",
+                "title": "Visual Design",
+                "content": "With wireframes signed off, I moved into high-fidelity design. Each mockup translated the structural decisions into real UI: components, color, and typography working together to feel credible to a B2B buyer without adding friction for less tech-savvy users."
+            },
+            {
+                "type": "typography",
+                "font": "Gilroy",
+                "designer": "Radomir Tinkov",
+                "description": "Designed with powerful OpenType features in mind, each weight includes extended language support (+ Cyrillic), fractions, tabular figures, arrows, ligatures and more. Perfectly suited for graphic design and any display use, Gilroy could easily work for web, signage, corporate as well as for editorial design.",
+                "weights": ["Regular", "Medium", "Bold", "Black"],
+                "specimen": "Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz 1234567890!@#$%^&*()_+-="
+            },
+            {
+                "type": "text",
+                "title": "UI Design",
+                "content": "The UI was built around three decisions that came directly from research. First, a persistent search bar at the top of every screen, because buyers often know what material they need but not how it is categorized. Second, products organized by material type rather than supplier, so buyers could orient themselves without needing insider knowledge of the catalog. Third, a status-driven order management view with clear labels for open, pending, and delivered orders, so procurement managers could scan their pipeline at a glance. Large tap targets and a minimal step-count on the checkout flow made the experience accessible to business owners who are not regular app users."
+            },
+            {
+                "type": "image",
+                "src": "/assets/bazaarnxt-ui-design.svg",
+                "caption": "Final UI screens across key procurement flows",
+                "lightBg": true
+            },
+            {
+                "type": "figma-link",
+                "title": "View Design File",
+                "content": "Wireframes, visual design, and UI screens across core procurement flows.",
+                "href": "https://www.figma.com/design/NSNlfV9Ya8QpCEnBy4FKbc/BazaarNXT-App?node-id=0-1&t=wTeaFVOwK80A7itV-1"
+            },
+            {
+                "type": "text",
+                "title": "Conclusion",
+                "content": "The BazaarNXT App replaced a fragmented offline process with a structured digital marketplace built around how B2B buyers actually work. From the five-stage design process to the research-backed UI decisions, every detail was grounded in something a real buyer told us. The result was a platform businesses could adopt without training, regardless of tech literacy. For BazaarNXT, it marked the shift from a traditional sales operation to a scalable digital product."
+            }
+        ]
+    },
+    {
+        "id": "flow360-internal-tools",
+        "title": "Flow 360 - Internal Operations Platform",
+        "headline": "Internal Tools & Operations",
+        "metric": "6 Teams Harmonised",
+        "system_diagram": "Digitised end-to-end device deployment, activation, and customer success workflows — from shipment to CSAT.",
+        "problem": "Device installations touched six teams with no single view. Spreadsheets, WhatsApp, and manual handoffs meant CSEs lost paper forms, Accounts chased payment screenshots, and Sales learned about blocked deployments only when customers escalated.",
+        "card_description": "Internal platform that **unified 6 teams**: 12+ interviews, 4 shadowing sessions, **26 deployment** and **16 IM screens**. One visible flow.",
+        "tags": [
+            "Internal Tools",
+            "Process Design",
+            "Operations",
+            "AgriTech",
+            "UX Writing"
+        ],
+        "designation": "Senior Product Designer",
+        "focus_areas": [
+            "Information Architecture",
+            "Role-Based UX",
+            "Form Design",
+            "UX Writing"
+        ],
+        "tools": [
+            "Figma",
+            "Miro",
+            "Jira",
+            "Confluence"
+        ],
+        "about": {
+            "description": "I led product design for Flow 360 — an internal operations platform that digitises device deployment at Fasal. From **12+ stakeholder interviews** and **4 on-ground shadowing** sessions to **26 deployment screens** and **16 Information Management screens**, we unified six siloed teams into one visible flow with role-based actions, enforced gates, and automated notifications."
+        },
+        "engineering_artifact": "/assets/fasal-logic-flowchart.svg",
+        "caption": "Deployment Process Flow",
+        "about_app": "Flow 360 is an internal operations platform for Fasal (agritech IoT). It digitises device deployment from the moment Logistics ships an order to the moment the Engagement Manager captures the customer's knowledge score — harmonising Logistics, Senior CSE, CSE, EM, Accounts, and Sales.",
+        "sections": [
+            {
+                "type": "text",
+                "title": "The Problem",
+                "content": "Internal dashboards are common. But dashboards alone do not solve coordination. The real challenge was handoffs across silos. A device from warehouse to fully activated touched six teams — each with a different tool, timeline, and language. No single view existed. 'Is it delivered? Paid? Assigned?' — each question sent someone scrambling across tools."
+            },
+            {
+                "type": "list",
+                "title": "Pain Points by Team",
+                "content": "We documented real-world impact through interviews, shadowing, and process mapping.",
+                "items": [
+                    "Logistics: Shipment status in Shiprocket, emails, spreadsheets — no push to CSE. CSE could not plan visits.",
+                    "Senior CSE: Manual assignment by location; no visibility of workload. Over/under-assignment; last-minute scrambles.",
+                    "CSE: Paper forms; photos in WhatsApp; manual spreadsheet entry. Forms lost; illegible data; rework when proof needed.",
+                    "Accounts: Payment screenshots by email; no link to deployment ID. Reconciliation 3–5 days; activation blocked until matched.",
+                    "EM: Ad-hoc CSAT calls; no scoring. No baseline to improve training.",
+                    "Sales: No alert when deployment blocked. Missed follow-ups; escalation calls they could not explain."
+                ]
+            },
+            {
+                "type": "text",
+                "title": "Strategic Goal",
+                "content": "From reactive to orchestrated: one place to see, manage, and track every deployment from shipment to CSAT — with role-appropriate actions, automated notifications, and enforced gates so no step could be skipped or bypassed."
+            },
+            {
+                "type": "text",
+                "title": "Solution — The 360 Flow",
+                "content": ""
+            },
+            {
+                "type": "list",
+                "title": "Design Decisions",
+                "content": "Key choices that shaped the wireframes and flow.",
+                "items": [
+                    "Role-first IA: Same deployment list, different primary actions per role (Assign CSE, Manage, Confirm Payment, Capture CSAT).",
+                    "Card layout over tables: 15+ attributes per deployment; cards allow grouping and scannability. LIFO order; bottomless scroll.",
+                    "6-step wizard with gating: Step 5 (Activate) unlocks only when Accounts confirms payment. Prevents shortcuts and data gaps.",
+                    "Same URL, different actions on detail page: Senior CSE sees Assign; CSE sees full flow; Accounts sees Confirm Payment; EM sees Capture CSAT."
+                ]
+            },
+            {
+                "type": "list",
+                "title": "Copy & terminology",
+                "content": "Microcopy followed Human → Clear → Motivating principles. For internal tools we prioritised clarity and action; tone shifted for errors and success.",
+                "items": [
+                    "**CTAs (verb + object):** \"Assign CSE\", \"Manage\", \"Confirm Payment\", \"Capture CSAT\" — one primary action per card, so each role knows what to do next.",
+                    "**Human over jargon:** \"Did farmer agree to pay the remaining amount?\" instead of \"Payment commitment status\"; \"Balance Due: Rs 50,000\" and \"Dues cleared\" instead of \"Outstanding\".",
+                    "**Status taxonomy:** Open, In Progress, On Hold, Completed — same terms in UI, emails, and help so teams could predict behaviour.",
+                    "**Empty states:** \"No deployments yet. When orders are shipped, they'll appear here.\" and \"No deployments match your search. Try a different customer name or location.\" — inviting or helpful, never blaming.",
+                    "**Error + recovery:** \"We couldn't confirm the payment. Check the transaction details and try again.\" — what happened, what to do, no codes."
+                ]
+            },
+            {
+                "type": "list",
+                "title": "Outcomes (Targeted)",
+                "items": [
+                    "Time to assign CSE: 1–2 days (manual) → Same-day.",
+                    "Deployment data completeness: ~60% (paper loss) → 95%+.",
+                    "Payment reconciliation delay: 3–5 days → 1 day.",
+                    "CSAT capture rate: Ad-hoc → 100% of completed deployments.",
+                    "Cross-team visibility: Low → Single deployment view."
+                ]
+            },
+            {
+                "type": "text",
+                "title": "Full Case Study",
+                "content": "The complete case study with detailed discovery, wireframe annotations, UX writing considerations, and portfolio takeaways is available in Flow360-Case-Study-6-Internal-Tools.md"
+            }
+        ]
+    }
+]

@@ -1,0 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --background: #ffffff;
+    --foreground: #000000;
+    --grid-line: #e5e5e5;
+    --hover-glow: #f5f5f5;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ffffff;
+        --grid-line: #262626;
+        --hover-glow: #141414;
+    }
+}
+
+.dark {
+    --background: #0a0a0a;
+    --foreground: #ffffff;
+    --grid-line: #262626;
+    --hover-glow: #141414;
+}
+
+body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+/* Global Reset */
+* {
+    border-radius: 0 !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--grid-line);
+    transition: background 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--foreground);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Hover Scrollbar Utility */
+.hover-scrollbar::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+.hover-scrollbar:hover::-webkit-scrollbar-thumb {
+    background: var(--grid-line);
+}
+
+.hover-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+
+.hover-scrollbar:hover {
+    scrollbar-color: var(--grid-line) transparent;
+}
+
+@keyframes marquee {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(-50%, 0, 0); }
+}
+
+@layer utilities {
+    .animate-marquee {
+        display: flex;
+        width: max-content;
+        animation: marquee 20s linear infinite;
+        will-change: transform;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+}
+
+/* Marquee container: edge masks + pause-on-hover */
+.marquee-container {
+    /* Fade items into background at both edges — mask, not gradient */
+    -webkit-mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 7%,
+            black 93%,
+            transparent 100%);
+    mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 7%,
+            black 93%,
+            transparent 100%);
+}
+
+/* Pause on hover — items freeze mid-scroll so they can be read,
+   resume smoothly from the exact same position on mouse-out */
+.marquee-container:hover .animate-marquee {
+    animation-play-state: paused;
+    cursor: default;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-marquee {
+        animation: none !important;
+    }
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   Scroll Reveal System
+   CSS-first: transitions run entirely on the GPU compositor.
+   JS role: IntersectionObserver adds .is-revealed (no React state, no re-render).
+   Only opacity + transform — zero layout triggers.
+   ============================================================ */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    /* expo-out easing: starts fast, decelerates — reads as decisive, not floaty */
+    transition:
+        opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Reduced motion: skip all animation, show final state immediately */
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal.is-revealed {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* Optimize nested scroll areas */
+.overflow-y-auto {
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Static Card Hover Utility */
+.card-hover {
+    transition: background-color 0.2s ease;
+}
+
+.card-hover:hover {
+    background-color: var(--hover-glow);
+}
+
+/* ============================================================
+   Print / Save as PDF — resume page
+   Forces light mode, hides nav chrome, removes decorative
+   borders and max-width constraints for clean A4 output.
+   ============================================================ */
+@media print {
+    :root {
+        --background: #ffffff;
+        --foreground: #000000;
+        --grid-line: #e5e5e5;
+    }
+
+    /* Hide nav chrome */
+    header {
+        display: none !important;
+    }
+
+    /* Remove screen-only constraints */
+    body {
+        background: #ffffff !important;
+        color: #000000 !important;
+    }
+
+    main {
+        max-width: 100% !important;
+        border: none !important;
+    }
+
+    /* Keep grid layout — let the browser reflow it */
+    .border-x {
+        border-left: none !important;
+        border-right: none !important;
+    }
+
+    /* Avoid breaking an experience block across pages */
+    .border-b {
+        page-break-inside: avoid;
+    }
+
+    /* Remove hover backgrounds */
+    .hover\:bg-\[var\(--grid-line\)\]\/10:hover {
+        background: transparent !important;
+    }
+
+    /* Ensure text is black for print regardless of dark mode */
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}

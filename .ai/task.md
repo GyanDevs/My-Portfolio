@@ -1,0 +1,55 @@
+# Antigravity Portfolio — Task List
+
+- [x] Implement Loading Animation
+    - [x] Create `LoadingScreen` component
+    - [x] Integrate into `app/layout.tsx`
+    - [x] Refine: 30ms ticks, blur exit, slow-start fast-finish logic
+- [x] Fix Grid Borders
+    - [x] Remove conflicting borders in `ProjectCard.tsx`
+    - [x] Add `border-b` to case study grid container in `app/page.tsx`
+    - [x] Remove redundant footer `border-t` in `app/page.tsx`
+- [x] Implement Contact Section
+    - [x] Create `ContactSection.tsx`
+    - [x] Animated grid fill (IntersectionObserver, random 30-50% cells, staggered reveal)
+    - [x] "Wanna work together?" heading (30px, bold, uppercase)
+    - [x] "Email Me" CTA — white fill, black border, slide-fill hover
+    - [x] Gmail compose link (mgyan1996@gmail.com)
+    - [x] Fixed section height to 480px (6×80px) for uniform grid cells
+- [x] Refine Resume Page
+    - [x] Helvetica Bold header, `//` separators
+    - [x] "Download PDF" CTA — same slide-fill hover as Email Me
+- [x] Fix Build Errors
+    - [x] Recreate missing `ContactSection.tsx`
+    - [x] Fix TypeScript type error in `app/projects/[slug]/page.tsx` (cast with `as any`)
+- [x] Document Design System & Architecture
+    - [x] Write `.ai/design-system.md` (colours, typography, layout, components, animations, data, rules)
+    - [x] Update `.ai/agents/architect.md` with full project state and design language
+- [x] Fasal Case Study Refinements
+    - [x] Create inline SVG Flowchart (ProjectDetailClient) — snake layout, proper Start/End dots
+    - [x] Create FasalIntroInfographic component (3-panel, brutalist grid + SVG icons)
+    - [x] Reorganize Sidebar (About Case Study -> top, My Role -> bottom)
+    - [x] Update Content (Remove generic "Focus" section, condense "My Role")
+    - [x] Fix Typewriter Animation (play on fresh load, instant on back-nav)
+    - [x] Make Left Column Scrollable (removed sticky positioning)
+    - [x] Implement Split-Screen Scrolling (lg:h-screen, independent col scrolling)
+    - [x] Hide Scrollbars (added .no-scrollbar utility)
+    - [x] Generalize Layout (dynamic artifact headings, guarded infographics)
+    - [x] Create Product Research Goals Infographic (Brutalist Grid, Transcribed Content)
+    - [x] Refine Infographic (Standardized fonts, indented sub-points, fixed grid borders)
+    - [x] Polish Visuals (Standardized font sizes across infographics, added subtle icon colors)
+    - [x] Create Insights to Gather Infographic (7 points, Lightbulb icon)
+    - [x] Create Farmer Categories Infographic (Horizontal "Carousel" Layout for visual break)
+    - [x] Refine Carousel (Unified container, removed bold text, hidden scrollbar)
+    - [x] Add Navigation Arrows (Manual scroll control, disabled states, consistent styling)
+    - [x] Create Script Infographic (Vertical Scroll, Chat UI, Emerald Icon)
+    - [x] Refine Script Infographic (No scrollbar, neutral styling, reduced heading size)
+    - [x] Global Polish (Reduced heading sizes in all 5 infographics to text-lg)
+    - [x] Consistency Fix (Updated Anantapur & Fasal.co headings to text-lg)
+    - [x] Script Refinement (Hidden duplicate text block, removed background color)
+    - [x] Research Goals Fix (Hidden duplicate text, simplified SVG/Layout to prevent 'broken' appearance)
+    - [x] Add Header Icon (Added Target icon to Research Goals header for consistency)
+    - [x] Layout Overhaul (Rebuilt Research Goals as 5-col horizontal grid with specific sub-points)
+    - [x] Content Visibility (Unhid 'Research Goals' introductory text per user request)
+    - [x] Content Update (Replaced Research Goals text and infographic points with user-provided copy)
+    - [x] Design System Update (Added Primary CTA & Nav Arrow patterns to .ai/design-system.md)
+- [ ] Manual UI verification (user)
