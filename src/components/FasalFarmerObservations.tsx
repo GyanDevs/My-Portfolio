@@ -426,7 +426,7 @@ export default function FasalFarmerObservations() {
       </div>
 
       {/* RIGHT COLUMN: Observations Grid */}
-      <div className="flex-1 bg-[var(--background)] text-[var(--foreground)] flex flex-col h-[600px] md:h-full min-h-0 overflow-hidden">
+      <div className="flex-1 bg-[var(--background)] text-[var(--foreground)] flex flex-col h-auto md:h-full min-h-0 overflow-hidden">
 
         {/* Header (Desktop only) */}
         <div className="hidden md:flex p-8 pb-4 border-b border-[var(--grid-line)] justify-between items-end z-10 shrink-0">
@@ -437,7 +437,7 @@ export default function FasalFarmerObservations() {
         </div>
 
         {/* Scrollable Grid Area */}
-        <div className="p-4 md:p-8 py-6 overflow-y-auto hover-scrollbar flex-1">
+        <div className="p-4 md:p-8 py-6 overflow-y-auto hover-scrollbar flex-none md:flex-1">
           <div className="relative grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mx-auto justify-center max-w-fit">
             <AnimatePresence mode="popLayout">
               {currentFarmer.observations.map((obs, i) => (
