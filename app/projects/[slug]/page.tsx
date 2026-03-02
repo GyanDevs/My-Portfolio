@@ -5,25 +5,28 @@ import ProjectDetailClient from "@/src/components/ProjectDetailClient";
 
 // 1. Static Params Generation (Server-Side)
 export async function generateStaticParams() {
-    return projects.map((project) => ({
-        slug: project.id,
+  return projects
+    .filter((project) => !project.isPlaceholder)
+    .map((project) => ({
+      slug: project.id,
     }));
 }
 
 interface PageProps {
-    params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string }>;
 }
 
 export default async function ProjectDetailPage({ params }: PageProps) {
-    const { slug } = await params;
-    const project = projects.find((p) => p.id === slug);
+  const { slug } = await params;
+  const project = projects.find((p) => p.id === slug);
 
-    if (!project) {
-        return notFound();
-    }
+  // Hide placeholder projects from the live route
+  if (!project || project.isPlaceholder) {
+    return notFound();
+  }
 
-    // 2. Pass data to Client Component
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return <ProjectDetailClient project={project as any} />;
+  // 2. Pass data to Client Component
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return <ProjectDetailClient project={project as any} />;
 }
 

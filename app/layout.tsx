@@ -18,8 +18,30 @@ const serif = Libre_Bodoni({
 });
 
 export const metadata: Metadata = {
-  title: "Gyan // Design Engineer",
-  description: "Antigravity Portfolio",
+  title: "Gyan // Senior Product Designer",
+  description: "Portfolio of Gyan, a senior product designer working on complex, research-led systems.",
+  metadataBase: new URL("https://gyan.design"),
+  openGraph: {
+    title: "Gyan // Senior Product Designer",
+    description: "Senior product designer crafting research-led, system-heavy products.",
+    url: "https://gyan.design",
+    siteName: "gyan.design",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "I am Gyan — Senior Product Designer",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gyan // Senior Product Designer",
+    description: "Senior product designer crafting research-led, system-heavy products.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({

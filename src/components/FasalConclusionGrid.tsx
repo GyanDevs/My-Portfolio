@@ -53,7 +53,7 @@ export default function FasalConclusionGrid({ items }: FasalConclusionGridProps)
                         return <strong key={index} className="font-sans font-bold text-[var(--foreground)]">{part.slice(2, -2)}</strong>;
                       }
                       if (part.startsWith('^^') && part.endsWith('^^')) {
-                        return <span key={index} className="font-serif italic text-[13px]">{part.slice(2, -2)}</span>;
+                        return <span key={index} className="font-serif italic text-[18px]">{part.slice(2, -2)}</span>;
                       }
                       return part;
                     });

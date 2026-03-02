@@ -82,7 +82,7 @@ export default function FasalBillingGoalsGrid() {
                 <h5 className="text-[18px] font-bold tracking-tight mb-3 leading-tight text-emerald-900 dark:text-emerald-100">
                   {item.title}
                 </h5>
-                <p className="text-[16px] text-neutral-500 dark:text-neutral-400">
+                <p className="text-[16px] text-emerald-900 dark:text-emerald-100">
                   {item.desc}
                 </p>
               </div>
@@ -121,7 +121,7 @@ export default function FasalBillingGoalsGrid() {
                 <h5 className="text-[18px] font-bold tracking-tight mb-3 leading-tight text-amber-900 dark:text-amber-100">
                   {item.title}
                 </h5>
-                <p className="text-[16px] text-neutral-500 dark:text-neutral-400">
+                <p className="text-[16px] text-amber-900 dark:text-amber-100">
                   {item.desc}
                 </p>
               </div>

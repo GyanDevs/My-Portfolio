@@ -56,6 +56,7 @@ import FasalFieldDiscoveryGallery from "@/src/components/FasalFieldDiscoveryGall
 import BazaarNxtProcessInfographic from "@/src/components/BazaarNxtProcessInfographic";
 import BazaarNxtProblemsGrid from "@/src/components/BazaarNxtProblemsGrid";
 import Flow360DeploymentInfographic from "@/src/components/Flow360DeploymentInfographic";
+import UnderConstructionWall from "@/src/components/UnderConstructionWall";
 
 type KeyAction = { label: string; value: string };
 
@@ -105,6 +106,7 @@ type Project = {
   problem_statement?: string;
   hide_metric?: boolean;
   sections?: ProjectSection[];
+  isPlaceholder?: boolean;
 };
 
 type ProjectDetailClientProps = {
@@ -143,6 +145,8 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
   const sections = useMemo(() => {
     return (project.sections ?? []).filter((s) => s.title !== "My Role");
   }, [project.sections]);
+
+  const isPlaceholder = project.isPlaceholder;
 
   const shouldShowTopArtifact =
     (project.id === "iot-b2b-saas" ||
@@ -392,22 +396,28 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
           className="lg:col-span-8 bg-[var(--grid-line)]/5 xl:bg-transparent lg:h-full lg:overflow-y-auto no-scrollbar"
         >
           <div className="px-6 pb-6 pt-6 md:px-12 md:pb-12 md:pt-12 lg:pt-32">
-            <RevealOnScroll>
-              {shouldShowTopArtifact && (
-                <>
-                  <h4 className="text-xl font-bold uppercase tracking-tight flex items-center gap-3 mb-6">
-                    <span className="text-neutral-500 dark:text-neutral-400/50 font-mono text-sm">
-                      01
-                    </span>
-                    {project.caption || "App Architecture"}
-                  </h4>
+            {isPlaceholder ? (
+              <RevealOnScroll>
+                <UnderConstructionWall />
+              </RevealOnScroll>
+            ) : (
+              <>
+                <RevealOnScroll>
+                  {shouldShowTopArtifact && (
+                    <>
+                      <h4 className="text-xl font-bold uppercase tracking-tight flex items-center gap-3 mb-6">
+                        <span className="text-neutral-500 dark:text-neutral-400/50 font-mono text-sm">
+                          01
+                        </span>
+                        {project.caption || "App Architecture"}
+                      </h4>
 
-                  <div className="relative overflow-hidden group mb-12">
-                    {project.id === "iot-b2b-saas" ? (
-                      <svg
-                        viewBox="0 0 1000 320"
-                        className="w-full h-auto text-[var(--foreground)]"
-                      >
+                      <div className="relative overflow-hidden group mb-12">
+                        {project.id === "iot-b2b-saas" ? (
+                          <svg
+                            viewBox="0 0 1000 320"
+                            className="w-full h-auto text-[var(--foreground)]"
+                          >
                         {/* ROW 1: L -> R */}
                         <circle cx="20" cy="62" r="4" fill="#7ed321" />
                         <rect x="40" y="40" width="240" height="44" fill="none" stroke="currentColor" strokeWidth="1" />
@@ -458,48 +468,48 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
 
                         <rect x="600" y="240" width="240" height="44" fill="none" stroke="currentColor" strokeWidth="1" />
                         <text x="720" y="267" textAnchor="middle" fontSize="13" fontWeight="400" fill="currentColor" className="font-mono uppercase tracking-wider">Task prioritization</text>
-                        <circle cx="860" cy="262" r="4" fill="#ff2d20" />
-                      </svg>
-                    ) : (
-                      <div
-                        className="w-full overflow-hidden cursor-zoom-in group/artifact relative"
-                        onClick={() =>
-                          setViewerImage({
-                            src: project.engineering_artifact!,
-                            alt: project.caption || "Project artifact",
-                          })
-                        }
-                      >
-                        <img
-                          src={project.engineering_artifact}
-                          alt={project.caption || "Project artifact"}
-                          className="w-full h-auto object-cover transition-all duration-500 group-hover/artifact:scale-[1.02]"
-                        />
-                        <div className="absolute inset-0 bg-black/0 group-hover/artifact:bg-black/5 transition-colors flex items-center justify-center opacity-0 group-hover/artifact:opacity-100">
-                          <div className="bg-white/80 dark:bg-black/80 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2 text-xs font-mono border border-[var(--grid-line)]">
-                            <Maximize2 className="w-3 h-3" /> CLICK TO VIEW
+                            <circle cx="860" cy="262" r="4" fill="#ff2d20" />
+                          </svg>
+                        ) : (
+                          <div
+                            className="w-full overflow-hidden cursor-zoom-in group/artifact relative"
+                            onClick={() =>
+                              setViewerImage({
+                                src: project.engineering_artifact!,
+                                alt: project.caption || "Project artifact",
+                              })
+                            }
+                          >
+                            <img
+                              src={project.engineering_artifact}
+                              alt={project.caption || "Project artifact"}
+                              className="w-full h-auto object-cover transition-all duration-500 group-hover/artifact:scale-[1.02]"
+                            />
+                            <div className="absolute inset-0 bg-black/0 group-hover/artifact:bg-black/5 transition-colors flex items-center justify-center opacity-0 group-hover/artifact:opacity-100">
+                              <div className="bg-white/80 dark:bg-black/80 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2 text-xs font-mono border border-[var(--grid-line)]">
+                                <Maximize2 className="w-3 h-3" /> CLICK TO VIEW
+                              </div>
+                            </div>
                           </div>
-                        </div>
+                        )}
                       </div>
-                    )}
-                  </div>
-                </>
-              )}
-            </RevealOnScroll>
+                    </>
+                  )}
+                </RevealOnScroll>
 
-            <div className={shouldShowTopArtifact ? "mt-20 lg:mt-32" : ""}>
-              {(() => {
-                let visibleSectionCount = shouldShowTopArtifact ? 2 : 1;
+                <div className={shouldShowTopArtifact ? "mt-20 lg:mt-32" : ""}>
+                  {(() => {
+                    let visibleSectionCount = shouldShowTopArtifact ? 2 : 1;
 
-                return sections
-                  .filter(
-                    (section) =>
-                      !(
-                        project.id === "fasal-billing-subscription" &&
-                        section.title?.startsWith("Insight ")
-                      ),
-                  )
-                  .map((section, index) => {
+                    const filteredSections = sections.filter(
+                      (section) =>
+                        !(
+                          project.id === "fasal-billing-subscription" &&
+                          section.title?.startsWith("Insight ")
+                        ),
+                    );
+
+                    return filteredSections.map((section, index) => {
                     const isSubSection =
                       !section.title ||
                       section.title === "Goals of user testing" ||
@@ -1089,6 +1099,8 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                   });
               })()}
             </div>
+              </>
+            )}
           </div>
         </div>
       </div>

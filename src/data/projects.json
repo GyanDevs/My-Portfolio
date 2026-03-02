@@ -896,6 +896,7 @@
         },
         "engineering_artifact": "/assets/fasal-logic-flowchart.svg",
         "caption": "Deployment Process Flow",
+        "isPlaceholder": true,
         "about_app": "Flow 360 is an internal operations platform for Fasal (agritech IoT). It digitises device deployment from the moment Logistics ships an order to the moment the Engagement Manager captures the customer's knowledge score — harmonising Logistics, Senior CSE, CSE, EM, Accounts, and Sales.",
         "sections": [
             {
