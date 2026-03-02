@@ -426,7 +426,7 @@ export default function FasalFarmerObservations() {
       </div>
 
       {/* RIGHT COLUMN: Observations Grid */}
-      <div className="flex-1 bg-[var(--background)] text-[var(--foreground)] flex flex-col h-[600px] md:h-full overflow-hidden">
+      <div className="flex-1 bg-[var(--background)] text-[var(--foreground)] flex flex-col h-[600px] md:h-full min-h-0 overflow-hidden">
 
         {/* Header (Desktop only) */}
         <div className="hidden md:flex p-8 pb-4 border-b border-[var(--grid-line)] justify-between items-end z-10 shrink-0">

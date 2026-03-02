@@ -51,37 +51,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        {/*
-          Blocking theme script — runs synchronously before first paint.
-          Reads localStorage and applies class="dark" to <html> immediately.
-          This is the industry-standard fix for dark-mode FOUC.
-          suppressHydrationWarning on <html> prevents React from complaining
-          about the class attribute mismatch during hydration.
-        */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var theme = localStorage.getItem('theme');
-                  if (theme === 'dark') {
-                    document.documentElement.classList.add('dark');
-                  } else if (theme === 'light') {
-                    document.documentElement.classList.remove('dark');
-                  } else {
-                    document.documentElement.classList.add('dark');
-                  }
-                } catch (e) {}
-              })()
-            `,
-          }}
-        />
-      </head>
+      <head />
       <body
         className={`${mono.variable} ${serif.variable} font-sans antialiased bg-background text-foreground`}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+        >
           <ThemeSwitch />
           <IntroProvider>
             <LoadingScreen />
