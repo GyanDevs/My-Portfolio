@@ -163,13 +163,14 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
           <div className="col-span-2 lg:col-span-4 flex items-center h-full px-6 md:px-12">
             <BackButton />
           </div>
-          <div className="col-span-2 lg:col-span-8 flex items-center justify-end h-full px-6 md:px-12">
+          {/* Desktop only — hidden on mobile to avoid overlapping the fixed ThemeSwitch */}
+          <div className="hidden lg:flex col-span-8 items-center justify-end h-full px-12">
             <span className="font-mono text-[13px] uppercase tracking-[0.2em] text-neutral-400">
               {readingTime} MIN READ
             </span>
           </div>
         </div>
-        <ProgressBar scrollContainerRef={scrollContainerRef} />
+        <ProgressBar scrollContainerRef={scrollContainerRef} readingTime={readingTime} />
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen lg:h-screen lg:overflow-hidden">
@@ -418,56 +419,56 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                             viewBox="0 0 1000 320"
                             className="w-full h-auto text-[var(--foreground)]"
                           >
-                        {/* ROW 1: L -> R */}
-                        <circle cx="20" cy="62" r="4" fill="#7ed321" />
-                        <rect x="40" y="40" width="240" height="44" fill="none" stroke="currentColor" strokeWidth="1" />
-                        <text x="160" y="67" textAnchor="middle" fontSize="13" fontWeight="400" fill="currentColor" className="font-mono uppercase tracking-wider">Introduction</text>
-                        <line x1="280" y1="62" x2="310" y2="62" stroke="currentColor" strokeWidth="1" />
-                        <polyline points="306,60.5 310,62 306,63.5" fill="none" stroke="currentColor" strokeWidth="1" />
+                            {/* ROW 1: L -> R */}
+                            <circle cx="20" cy="62" r="4" fill="#7ed321" />
+                            <rect x="40" y="40" width="240" height="44" fill="none" stroke="currentColor" strokeWidth="1" />
+                            <text x="160" y="67" textAnchor="middle" fontSize="13" fontWeight="400" fill="currentColor" className="font-mono uppercase tracking-wider">Introduction</text>
+                            <line x1="280" y1="62" x2="310" y2="62" stroke="currentColor" strokeWidth="1" />
+                            <polyline points="306,60.5 310,62 306,63.5" fill="none" stroke="currentColor" strokeWidth="1" />
 
-                        <rect x="320" y="40" width="240" height="44" fill="none" stroke="currentColor" strokeWidth="1" />
-                        <text x="440" y="67" textAnchor="middle" fontSize="13" fontWeight="400" fill="currentColor" className="font-mono uppercase tracking-wider">Research goals</text>
-                        <line x1="560" y1="62" x2="590" y2="62" stroke="currentColor" strokeWidth="1" />
-                        <polyline points="586,60.5 590,62 586,63.5" fill="none" stroke="currentColor" strokeWidth="1" />
+                            <rect x="320" y="40" width="240" height="44" fill="none" stroke="currentColor" strokeWidth="1" />
+                            <text x="440" y="67" textAnchor="middle" fontSize="13" fontWeight="400" fill="currentColor" className="font-mono uppercase tracking-wider">Research goals</text>
+                            <line x1="560" y1="62" x2="590" y2="62" stroke="currentColor" strokeWidth="1" />
+                            <polyline points="586,60.5 590,62 586,63.5" fill="none" stroke="currentColor" strokeWidth="1" />
 
-                        <rect x="600" y="40" width="240" height="44" fill="none" stroke="currentColor" strokeWidth="1" />
-                        <text x="720" y="67" textAnchor="middle" fontSize="13" fontWeight="400" fill="currentColor" className="font-mono uppercase tracking-wider">Insights to gather</text>
+                            <rect x="600" y="40" width="240" height="44" fill="none" stroke="currentColor" strokeWidth="1" />
+                            <text x="720" y="67" textAnchor="middle" fontSize="13" fontWeight="400" fill="currentColor" className="font-mono uppercase tracking-wider">Insights to gather</text>
 
-                        {/* CONNECT ROW 1 TO ROW 2 */}
-                        <polyline points="840,62 880,62 880,162 840,162" fill="none" stroke="currentColor" strokeWidth="1" />
-                        <polyline points="844,160.5 840,162 844,163.5" fill="none" stroke="currentColor" strokeWidth="1" />
+                            {/* CONNECT ROW 1 TO ROW 2 */}
+                            <polyline points="840,62 880,62 880,162 840,162" fill="none" stroke="currentColor" strokeWidth="1" />
+                            <polyline points="844,160.5 840,162 844,163.5" fill="none" stroke="currentColor" strokeWidth="1" />
 
-                        {/* ROW 2: R <- L */}
-                        <rect x="600" y="140" width="240" height="44" fill="none" stroke="currentColor" strokeWidth="1" />
-                        <text x="720" y="167" textAnchor="middle" fontSize="13" fontWeight="400" fill="currentColor" className="font-mono uppercase tracking-wider">Script writing</text>
-                        <line x1="600" y1="162" x2="570" y2="162" stroke="currentColor" strokeWidth="1" />
-                        <polyline points="574,160.5 570,162 574,163.5" fill="none" stroke="currentColor" strokeWidth="1" />
+                            {/* ROW 2: R <- L */}
+                            <rect x="600" y="140" width="240" height="44" fill="none" stroke="currentColor" strokeWidth="1" />
+                            <text x="720" y="167" textAnchor="middle" fontSize="13" fontWeight="400" fill="currentColor" className="font-mono uppercase tracking-wider">Script writing</text>
+                            <line x1="600" y1="162" x2="570" y2="162" stroke="currentColor" strokeWidth="1" />
+                            <polyline points="574,160.5 570,162 574,163.5" fill="none" stroke="currentColor" strokeWidth="1" />
 
-                        <rect x="320" y="140" width="240" height="44" fill="none" stroke="currentColor" strokeWidth="1" />
-                        <text x="440" y="167" textAnchor="middle" fontSize="13" fontWeight="400" fill="currentColor" className="font-mono uppercase tracking-wider">Sample set</text>
-                        <line x1="320" y1="162" x2="290" y2="162" stroke="currentColor" strokeWidth="1" />
-                        <polyline points="294,160.5 290,162 294,163.5" fill="none" stroke="currentColor" strokeWidth="1" />
+                            <rect x="320" y="140" width="240" height="44" fill="none" stroke="currentColor" strokeWidth="1" />
+                            <text x="440" y="167" textAnchor="middle" fontSize="13" fontWeight="400" fill="currentColor" className="font-mono uppercase tracking-wider">Sample set</text>
+                            <line x1="320" y1="162" x2="290" y2="162" stroke="currentColor" strokeWidth="1" />
+                            <polyline points="294,160.5 290,162 294,163.5" fill="none" stroke="currentColor" strokeWidth="1" />
 
-                        <rect x="40" y="140" width="240" height="44" fill="none" stroke="currentColor" strokeWidth="1" />
-                        <text x="160" y="167" textAnchor="middle" fontSize="13" fontWeight="400" fill="currentColor" className="font-mono uppercase tracking-wider">User Interviews</text>
+                            <rect x="40" y="140" width="240" height="44" fill="none" stroke="currentColor" strokeWidth="1" />
+                            <text x="160" y="167" textAnchor="middle" fontSize="13" fontWeight="400" fill="currentColor" className="font-mono uppercase tracking-wider">User Interviews</text>
 
-                        {/* CONNECT ROW 2 TO ROW 3 */}
-                        <polyline points="40,162 10,162 10,262 40,262" fill="none" stroke="currentColor" strokeWidth="1" />
-                        <polyline points="36,260.5 40,262 36,263.5" fill="none" stroke="currentColor" strokeWidth="1" />
+                            {/* CONNECT ROW 2 TO ROW 3 */}
+                            <polyline points="40,162 10,162 10,262 40,262" fill="none" stroke="currentColor" strokeWidth="1" />
+                            <polyline points="36,260.5 40,262 36,263.5" fill="none" stroke="currentColor" strokeWidth="1" />
 
-                        {/* ROW 3: L -> R */}
-                        <rect x="40" y="240" width="240" height="44" fill="none" stroke="currentColor" strokeWidth="1" />
-                        <text x="160" y="267" textAnchor="middle" fontSize="13" fontWeight="400" fill="currentColor" className="font-mono uppercase tracking-wider">Card Sorting</text>
-                        <line x1="280" y1="262" x2="310" y2="262" stroke="currentColor" strokeWidth="1" />
-                        <polyline points="306,260.5 310,262 306,263.5" fill="none" stroke="currentColor" strokeWidth="1" />
+                            {/* ROW 3: L -> R */}
+                            <rect x="40" y="240" width="240" height="44" fill="none" stroke="currentColor" strokeWidth="1" />
+                            <text x="160" y="267" textAnchor="middle" fontSize="13" fontWeight="400" fill="currentColor" className="font-mono uppercase tracking-wider">Card Sorting</text>
+                            <line x1="280" y1="262" x2="310" y2="262" stroke="currentColor" strokeWidth="1" />
+                            <polyline points="306,260.5 310,262 306,263.5" fill="none" stroke="currentColor" strokeWidth="1" />
 
-                        <rect x="320" y="240" width="240" height="44" fill="none" stroke="currentColor" strokeWidth="1" />
-                        <text x="440" y="267" textAnchor="middle" fontSize="13" fontWeight="400" fill="currentColor" className="font-mono uppercase tracking-wider">Theme Identification</text>
-                        <line x1="560" y1="262" x2="590" y2="262" stroke="currentColor" strokeWidth="1" />
-                        <polyline points="586,260.5 590,262 586,263.5" fill="none" stroke="currentColor" strokeWidth="1" />
+                            <rect x="320" y="240" width="240" height="44" fill="none" stroke="currentColor" strokeWidth="1" />
+                            <text x="440" y="267" textAnchor="middle" fontSize="13" fontWeight="400" fill="currentColor" className="font-mono uppercase tracking-wider">Theme Identification</text>
+                            <line x1="560" y1="262" x2="590" y2="262" stroke="currentColor" strokeWidth="1" />
+                            <polyline points="586,260.5 590,262 586,263.5" fill="none" stroke="currentColor" strokeWidth="1" />
 
-                        <rect x="600" y="240" width="240" height="44" fill="none" stroke="currentColor" strokeWidth="1" />
-                        <text x="720" y="267" textAnchor="middle" fontSize="13" fontWeight="400" fill="currentColor" className="font-mono uppercase tracking-wider">Task prioritization</text>
+                            <rect x="600" y="240" width="240" height="44" fill="none" stroke="currentColor" strokeWidth="1" />
+                            <text x="720" y="267" textAnchor="middle" fontSize="13" fontWeight="400" fill="currentColor" className="font-mono uppercase tracking-wider">Task prioritization</text>
                             <circle cx="860" cy="262" r="4" fill="#ff2d20" />
                           </svg>
                         ) : (
@@ -510,595 +511,595 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                     );
 
                     return filteredSections.map((section, index) => {
-                    const isSubSection =
-                      !section.title ||
-                      section.title === "Goals of user testing" ||
-                      section.title === "Heat maps" ||
-                      section.title === "Design Options" ||
-                      section.title === "Key Requirements:" ||
-                      section.title === "Constraints" ||
-                      section.title === "Designing Financial Trust for the Indian Farmer." ||
-                      (project.id === "fasal-billing-subscription" &&
-                        (section.title === "Data Findings (The Quantitative Signal)" ||
-                          section.title === "Technical & Business Constraints" ||
-                          section.title?.startsWith("Insight ") ||
-                          section.title === "The Logic Layer: Designing for Edge Cases" ||
-                          section.title === "Hypothesis vs. Reality" ||
-                          section.title === "What This Project Taught Me"));
+                      const isSubSection =
+                        !section.title ||
+                        section.title === "Goals of user testing" ||
+                        section.title === "Heat maps" ||
+                        section.title === "Design Options" ||
+                        section.title === "Key Requirements:" ||
+                        section.title === "Constraints" ||
+                        section.title === "Designing Financial Trust for the Indian Farmer." ||
+                        (project.id === "fasal-billing-subscription" &&
+                          (section.title === "Data Findings (The Quantitative Signal)" ||
+                            section.title === "Technical & Business Constraints" ||
+                            section.title?.startsWith("Insight ") ||
+                            section.title === "The Logic Layer: Designing for Edge Cases" ||
+                            section.title === "Hypothesis vs. Reality" ||
+                            section.title === "What This Project Taught Me"));
 
-                    const showTitle = section.title && !isSubSection;
-                    const currentDisplayNumber = showTitle
-                      ? visibleSectionCount++
-                      : null;
+                      const showTitle = section.title && !isSubSection;
+                      const currentDisplayNumber = showTitle
+                        ? visibleSectionCount++
+                        : null;
 
-                    const sectionWrapperClass =
-                      section.title === "Designing Financial Trust for the Indian Farmer."
-                        ? "mb-16 lg:mb-20"
-                        : isSubSection
-                          ? "mt-8 lg:mt-10"
-                          : index === 0
-                            ? ""
-                            : "mt-20 lg:mt-32";
+                      const sectionWrapperClass =
+                        section.title === "Designing Financial Trust for the Indian Farmer."
+                          ? "mb-16 lg:mb-20"
+                          : isSubSection
+                            ? "mt-8 lg:mt-10"
+                            : index === 0
+                              ? ""
+                              : "mt-20 lg:mt-32";
 
-                    return (
-                      <RevealOnScroll
-                        key={`${section.title ?? "untitled"}-${index}`}
-                        className={`${sectionWrapperClass} space-y-6 lg:space-y-8`}
-                      >
-                        {showTitle && currentDisplayNumber !== null && (
-                          <h4 className="text-xl font-bold uppercase tracking-tight flex items-center gap-3">
-                            <span className="text-neutral-500 dark:text-neutral-400/50 font-mono text-sm">
-                              {currentDisplayNumber.toString().padStart(2, "0")}
-                            </span>
-                            {section.title}
-                          </h4>
-                        )}
+                      return (
+                        <RevealOnScroll
+                          key={`${section.title ?? "untitled"}-${index}`}
+                          className={`${sectionWrapperClass} space-y-6 lg:space-y-8`}
+                        >
+                          {showTitle && currentDisplayNumber !== null && (
+                            <h4 className="text-xl font-bold uppercase tracking-tight flex items-center gap-3">
+                              <span className="text-neutral-500 dark:text-neutral-400/50 font-mono text-sm">
+                                {currentDisplayNumber.toString().padStart(2, "0")}
+                              </span>
+                              {section.title}
+                            </h4>
+                          )}
 
-                        {project.id === "bazaarnxt-b2b" &&
-                          section.title === "About BazaarNXT" && (
-                            <div className="grid grid-cols-[2fr_3fr] gap-4 mb-8 items-start">
-                              <div className="overflow-hidden relative h-[400px]">
-                                <img
-                                  src="/assets/bazaarnxt-field-photo-1.png"
-                                  alt="BazaarNXT merchant showing the app"
-                                  className="w-full h-full object-cover object-top transition-all duration-500"
-                                />
+                          {project.id === "bazaarnxt-b2b" &&
+                            section.title === "About BazaarNXT" && (
+                              <div className="grid grid-cols-[2fr_3fr] gap-4 mb-8 items-start">
+                                <div className="overflow-hidden relative h-[400px]">
+                                  <img
+                                    src="/assets/bazaarnxt-field-photo-1.png"
+                                    alt="BazaarNXT merchant showing the app"
+                                    className="w-full h-full object-cover object-top transition-all duration-500"
+                                  />
+                                </div>
+                                <div className="overflow-hidden relative h-[400px]">
+                                  <img
+                                    src="/assets/bazaarnxt-field-photo-2.png"
+                                    alt="BazaarNXT buyer using the app in store"
+                                    className="w-full h-full object-cover object-top transition-all duration-500"
+                                  />
+                                </div>
                               </div>
-                              <div className="overflow-hidden relative h-[400px]">
-                                <img
-                                  src="/assets/bazaarnxt-field-photo-2.png"
-                                  alt="BazaarNXT buyer using the app in store"
-                                  className="w-full h-full object-cover object-top transition-all duration-500"
-                                />
-                              </div>
-                            </div>
-                          )}
+                            )}
 
-                        {section.type === "text" &&
-                          section.content &&
-                          !(
-                            project.id === "iot-b2b-saas" &&
-                            section.title === "Script Writing & Ice Breaking"
-                          ) && (
-                            <div className="max-w-none">
-                              {Array.isArray(section.content) ? (
-                                section.content.map((paragraph, i) => (
-                                  <p
-                                    key={i}
-                                    className="text-[16px] text-neutral-500 dark:text-neutral-400"
-                                  >
-                                    {renderInlineRichText(paragraph)}
-                                  </p>
-                                ))
-                              ) : (
-                                <p className="text-[16px] text-neutral-500 dark:text-neutral-400">
-                                  {renderInlineRichText(section.content)}
-                                </p>
-                              )}
-
-                              {project.id === "iot-b2b-saas" &&
-                                section.title === "Task prioritization : Rice framework" && (
-                                  <div className="mt-8">
-                                    <Link
-                                      href="/assets/Finalised%20Solutions%20-%20Task%20Priortisation%20_%20Rice%20Framework.pdf"
-                                      target="_blank"
-                                      className="font-mono text-sm uppercase tracking-widest text-[var(--foreground)] hover:underline decoration-2 underline-offset-4 transition-colors"
-                                    >
-                                      VIEW PDF →
-                                    </Link>
-                                  </div>
-                                )}
-                            </div>
-                          )}
-
-                        {project.id === "iot-b2b-saas" &&
-                          section.title === "Introduction" && (
-                            <>
-                              <FasalCaseStudyFlowInfographic />
-                              <FasalIntroInfographic />
-                            </>
-                          )}
-
-                        {project.id === "iot-b2b-saas" &&
-                          typeof section.content === "string" &&
-                          section.content.startsWith("P.S. It started raining") && (
-                            <FasalGridGallery />
-                          )}
-
-                        {project.id === "iot-b2b-saas" &&
-                          section.title === "Card sorting : Common Observation" && (
-                            <FasalCardSorting />
-                          )}
-
-                        {project.id === "iot-b2b-saas" &&
-                          section.title === "Product Research Goals : Fasal IOT" && (
-                            <FasalResearchGoalsInfographic />
-                          )}
-
-                        {project.id === "iot-b2b-saas" &&
-                          section.title === "Insights to gather during the visit" && (
-                            <FasalInsightsInfographic />
-                          )}
-
-                        {project.id === "iot-b2b-saas" &&
-                          section.title === "Selection criterion for farmers" && (
-                            <FasalFarmersInfographic />
-                          )}
-
-                        {project.id === "iot-b2b-saas" &&
-                          section.title === "Script Writing & Ice Breaking" && (
-                            <>
-                              <FasalScriptInfographic />
-                              <FasalScriptGallery />
-                            </>
-                          )}
-
-                        {project.id === "iot-b2b-saas" &&
-                          section.title === "Observations from farmer interviews" && (
-                            <FasalFarmerObservations />
-                          )}
-
-                        {project.id === "fasal-iot-ops" &&
-                          section.title === "Introduction" && (
-                            <FasalSupportHeroInfographic />
-                          )}
-
-                        {project.id === "fasal-iot-ops" &&
-                          section.title === "Field Discovery" && (
-                            <div className="flex flex-col">
-                              <FasalFeedbackInfographic />
-                              <FasalFieldMetrics />
-                            </div>
-                          )}
-
-                        {project.id === "ethnographic-study" &&
-                          section.title === "Field Discovery" && (
-                            <div className="flex flex-col">
-                              <FasalFieldDiscoveryGallery />
-                              <FasalIotFeedbackInfographic />
-                              <FasalIotFieldMetrics />
-                            </div>
-                          )}
-
-                        {project.id === "fasal-iot-ops" &&
-                          section.title === "Design Process" && (
-                            <FasalSupportProcessInfographic />
-                          )}
-
-                        {project.id === "ethnographic-study" &&
-                          section.title === "Design Process" && (
-                            <FasalIotProcessInfographic />
-                          )}
-
-                        {project.id === "fasal-iot-ops" &&
-                          section.title === "Impact" && <FasalSupportImpactInfographic />}
-
-                        {project.id === "ethnographic-study" &&
-                          section.title === "Key findings" && <FasalIotPreferenceChart />}
-
-                        {project.id === "ethnographic-study" &&
-                          section.title === "Impact" && <FasalIotImpactInfographic />}
-
-                        {project.id === "fasal-billing-subscription" &&
-                          section.title === "Designing Financial Trust for the Indian Farmer." && (
-                            <FasalBillingHero />
-                          )}
-                        {project.id === "fasal-billing-subscription" &&
-                          section.title === "Data Findings (The Quantitative Signal)" && (
-                            <FasalBillingDataFindings />
-                          )}
-                        {project.id === "fasal-billing-subscription" &&
-                          section.title === "Research Methodology" && (
-                            <FasalBillingResearchTable />
-                          )}
-                        {project.id === "fasal-billing-subscription" &&
-                          section.title === "Key Insights & Mental Models" && (
-                            <div className="mt-8">
-                              <FasalBillingInsights />
-                            </div>
-                          )}
-                        {project.id === "fasal-billing-subscription" &&
-                          section.title === "Design Process" && (
-                            <FasalBillingProcessInfographic />
-                          )}
-                        {project.id === "bazaarnxt-b2b" &&
-                          section.title === "Design Process" && (
-                            <BazaarNxtProcessInfographic />
-                          )}
-                        {project.id === "flow360-internal-tools" &&
-                          section.title === "Solution — The 360 Flow" && (
-                            <div className="mt-8">
-                              <Flow360DeploymentInfographic />
-                            </div>
-                          )}
-                        {project.id === "bazaarnxt-b2b" &&
-                          section.title === "Problems in the current landscape" && (
-                            <BazaarNxtProblemsGrid items={section.items || []} />
-                          )}
-                        {project.id === "fasal-billing-subscription" &&
-                          section.title === "The Strategy" && (
-                            <FasalBillingStrategyInfographic />
-                          )}
-                        {project.id === "fasal-billing-subscription" &&
-                          section.title === "Design Goals" && <FasalBillingGoalsGrid />}
-
-                        {project.id === "fasal-billing-subscription" &&
-                          section.title === "The Business Impact" && <FasalBillingImpactGrid />}
-
-                        {project.id === "fasal-billing-subscription" &&
-                          section.title === "What This Project Taught Me" && (
-                            <FasalBillingLessons />
-                          )}
-
-                        {project.id === "fasal-billing-subscription" &&
-                          section.title === "The Reality Check: Testing with 12 Farmers" && (
-                            <FasalBillingSessionGallery />
-                          )}
-
-                        {project.id === "fasal-billing-subscription" &&
-                          section.title === "Hypothesis vs. Reality" && (
-                            <FasalBillingHypothesisReality />
-                          )}
-
-                        {section.type === "list" &&
-                          section.title === "Conclusion" && (
-                            <div className="space-y-8">
-                              <FasalConclusionGrid items={section.items || []} />
-                              {section.items?.find((item) =>
-                                item.startsWith("These findings suggest"),
-                              ) && (
-                                  <p className="text-[16px] text-neutral-500 dark:text-neutral-400">
-                                    {section.items.find((item) =>
-                                      item.startsWith("These findings suggest"),
-                                    )}
-                                  </p>
-                                )}
-                            </div>
-                          )}
-
-                        {section.type === "list" &&
-                          section.title === "Goals of user testing" && (
-                            <FasalGoalsGrid goals={section.items || []} />
-                          )}
-
-                        {section.type === "list" &&
-                          (section.title === "Key Requirements:" ||
-                            section.title === "Constraints") && (
-                            <FasalRequirementsGrid
-                              items={section.items || []}
-                              label={
-                                section.title === "Constraints" ? "CONSTRAINT" : "GOAL"
-                              }
-                            />
-                          )}
-
-                        {section.type === "list" &&
-                          section.title === "Hypothesis vs. Reality" &&
-                          project.id !== "fasal-billing-subscription" && (
-                            <FasalBillingHypothesisReality />
-                          )}
-
-                        {section.type === "list" &&
-                          section.title !== "Goals of user testing" &&
-                          section.title !== "Key Requirements:" &&
-                          section.title !== "Constraints" &&
-                          section.title !== "Conclusion" &&
-                          section.title !== "Problems in the current landscape" &&
-                          section.title !== "Hypothesis vs. Reality" &&
-                          !(project.id === "fasal-iot-ops" && section.title === "Impact") &&
-                          !(project.id === "ethnographic-study" && section.title === "Impact") &&
-                          !(
-                            project.id === "fasal-billing-subscription" &&
-                            section.title === "Design Goals"
-                          ) &&
-                          !(
-                            project.id === "fasal-billing-subscription" &&
-                            section.title === "Technical & Business Constraints"
-                          ) &&
-                          !(
-                            project.id === "fasal-billing-subscription" &&
-                            section.title?.startsWith("Insight ")
-                          ) &&
-                          !(
-                            project.id === "fasal-billing-subscription" &&
-                            section.title === "The Business Impact"
-                          ) &&
-                          !(
-                            project.id === "fasal-billing-subscription" &&
-                            section.title === "What This Project Taught Me"
-                          ) && (
-                            <>
-                              {project.id === "fasal-billing-subscription" &&
-                                section.title ===
-                                "The Logic Layer: Designing for Edge Cases" ? (
-                                <div className="space-y-8">
-                                  <div className="inline-flex items-center px-3 py-1 bg-neutral-500/10 border border-neutral-500/20 text-neutral-600 dark:text-neutral-400 text-[13px] font-mono tracking-widest uppercase w-fit">
-                                    The Logic Layer: Designing for Edge Cases
-                                  </div>
-                                  {section.content && (
-                                    <p className="text-[16px] text-neutral-500 dark:text-neutral-400">
-                                      {section.content as string}
-                                    </p>
-                                  )}
-                                  <ul className="grid gap-4">
-                                    {section.items?.map((item, i) => (
-                                      <li
-                                        key={i}
-                                        className="flex gap-4 items-start text-[16px] text-neutral-500 dark:text-neutral-400"
-                                      >
-                                        <span className="font-mono text-[13px] text-neutral-400 mt-1 shrink-0">
-                                          {(i + 1).toString().padStart(2, "0")}
-                                        </span>
-                                        <div className="flex-1">
-                                          {renderInlineRichText(item)}
-                                        </div>
-                                      </li>
-                                    ))}
-                                  </ul>
-                                  <FasalBillingLogicFlowchart />
-                                </div>
-                              ) : project.id === "iot-b2b-saas" &&
-                                section.title ===
-                                "Identified Themes and Possible Solutions" ? (
-                                <div className="space-y-6">
-                                  {section.content && (
-                                    <p className="text-[16px] text-neutral-500 dark:text-neutral-400">
-                                      {section.content}
-                                    </p>
-                                  )}
-                                  <FasalThemesAccordion />
-                                </div>
-                              ) : (
-                                <div className="space-y-6">
-                                  {section.content && (
-                                    <p className="text-[16px] text-neutral-500 dark:text-neutral-400">
-                                      {section.content}
-                                    </p>
-                                  )}
-                                  <ul className="grid gap-4">
-                                    {section.items?.map((item, i) => (
-                                      <li
-                                        key={i}
-                                        className="flex gap-4 items-start text-[16px] text-neutral-500 dark:text-neutral-400"
-                                      >
-                                        <span className="font-mono text-[13px] text-neutral-400 mt-1">
-                                          {(i + 1).toString().padStart(2, "0")}
-                                        </span>
-                                        <div className="flex-1 whitespace-pre-line text-[16px] text-neutral-500 dark:text-neutral-400">
-                                          {renderInlineRichText(item)}
-                                        </div>
-                                      </li>
-                                    ))}
-                                  </ul>
-                                </div>
-                              )}
-                            </>
-                          )}
-
-                        {project.id === "fasal-billing-subscription" &&
-                          section.title === "Resilience: When the Network Breaks" && (
-                            <FasalBillingResilienceGallery
-                              onImageClick={(src, alt) => setViewerImage({ src, alt })}
-                            />
-                          )}
-
-                        {section.type === "design-options" && section.options && (
-                          <FasalDesignOptions
-                            options={section.options}
-                            onImageClick={(src, alt) => setViewerImage({ src, alt })}
-                            mainTitle={section.title}
-                            listLabel={section.title === "Design Options" ? "All about option" : "Key Findings"}
-                          />
-                        )}
-
-                        {section.type === "image" && section.src && (
-                          <div className="space-y-6">
-                            {section.content && (
-                              <div className="space-y-4">
+                          {section.type === "text" &&
+                            section.content &&
+                            !(
+                              project.id === "iot-b2b-saas" &&
+                              section.title === "Script Writing & Ice Breaking"
+                            ) && (
+                              <div className="max-w-none">
                                 {Array.isArray(section.content) ? (
                                   section.content.map((paragraph, i) => (
-                                    <p key={i} className="text-[16px] text-neutral-500 dark:text-neutral-400 whitespace-pre-line">
+                                    <p
+                                      key={i}
+                                      className="text-[16px] text-neutral-500 dark:text-neutral-400"
+                                    >
                                       {renderInlineRichText(paragraph)}
                                     </p>
                                   ))
                                 ) : (
-                                  <p className="text-[16px] text-neutral-500 dark:text-neutral-400 whitespace-pre-line">
+                                  <p className="text-[16px] text-neutral-500 dark:text-neutral-400">
                                     {renderInlineRichText(section.content)}
                                   </p>
                                 )}
+
+                                {project.id === "iot-b2b-saas" &&
+                                  section.title === "Task prioritization : Rice framework" && (
+                                    <div className="mt-8">
+                                      <Link
+                                        href="/assets/Finalised%20Solutions%20-%20Task%20Priortisation%20_%20Rice%20Framework.pdf"
+                                        target="_blank"
+                                        className="font-mono text-sm uppercase tracking-widest text-[var(--foreground)] hover:underline decoration-2 underline-offset-4 transition-colors"
+                                      >
+                                        VIEW PDF →
+                                      </Link>
+                                    </div>
+                                  )}
                               </div>
                             )}
 
-                            <div
-                              className={`w-full overflow-hidden relative ${section.lightBg ? "p-6 lg:p-10" : section.showGrid ? "p-8 lg:p-12 bg-neutral-50 dark:bg-neutral-900/50" : "bg-transparent"} ${section.src.endsWith(".mp4") ? "" : "cursor-zoom-in group/img"}`}
-                              style={section.lightBg ? { backgroundColor: "var(--background)" } : undefined}
-                              onClick={() => {
-                                if (!section.src?.endsWith(".mp4")) {
-                                  setViewerImage({
-                                    src: section.src!,
-                                    alt: section.caption || "Case study artifact",
-                                  });
+                          {project.id === "iot-b2b-saas" &&
+                            section.title === "Introduction" && (
+                              <>
+                                <FasalCaseStudyFlowInfographic />
+                                <FasalIntroInfographic />
+                              </>
+                            )}
+
+                          {project.id === "iot-b2b-saas" &&
+                            typeof section.content === "string" &&
+                            section.content.startsWith("P.S. It started raining") && (
+                              <FasalGridGallery />
+                            )}
+
+                          {project.id === "iot-b2b-saas" &&
+                            section.title === "Card sorting : Common Observation" && (
+                              <FasalCardSorting />
+                            )}
+
+                          {project.id === "iot-b2b-saas" &&
+                            section.title === "Product Research Goals : Fasal IOT" && (
+                              <FasalResearchGoalsInfographic />
+                            )}
+
+                          {project.id === "iot-b2b-saas" &&
+                            section.title === "Insights to gather during the visit" && (
+                              <FasalInsightsInfographic />
+                            )}
+
+                          {project.id === "iot-b2b-saas" &&
+                            section.title === "Selection criterion for farmers" && (
+                              <FasalFarmersInfographic />
+                            )}
+
+                          {project.id === "iot-b2b-saas" &&
+                            section.title === "Script Writing & Ice Breaking" && (
+                              <>
+                                <FasalScriptInfographic />
+                                <FasalScriptGallery />
+                              </>
+                            )}
+
+                          {project.id === "iot-b2b-saas" &&
+                            section.title === "Observations from farmer interviews" && (
+                              <FasalFarmerObservations />
+                            )}
+
+                          {project.id === "fasal-iot-ops" &&
+                            section.title === "Introduction" && (
+                              <FasalSupportHeroInfographic />
+                            )}
+
+                          {project.id === "fasal-iot-ops" &&
+                            section.title === "Field Discovery" && (
+                              <div className="flex flex-col">
+                                <FasalFeedbackInfographic />
+                                <FasalFieldMetrics />
+                              </div>
+                            )}
+
+                          {project.id === "ethnographic-study" &&
+                            section.title === "Field Discovery" && (
+                              <div className="flex flex-col">
+                                <FasalFieldDiscoveryGallery />
+                                <FasalIotFeedbackInfographic />
+                                <FasalIotFieldMetrics />
+                              </div>
+                            )}
+
+                          {project.id === "fasal-iot-ops" &&
+                            section.title === "Design Process" && (
+                              <FasalSupportProcessInfographic />
+                            )}
+
+                          {project.id === "ethnographic-study" &&
+                            section.title === "Design Process" && (
+                              <FasalIotProcessInfographic />
+                            )}
+
+                          {project.id === "fasal-iot-ops" &&
+                            section.title === "Impact" && <FasalSupportImpactInfographic />}
+
+                          {project.id === "ethnographic-study" &&
+                            section.title === "Key findings" && <FasalIotPreferenceChart />}
+
+                          {project.id === "ethnographic-study" &&
+                            section.title === "Impact" && <FasalIotImpactInfographic />}
+
+                          {project.id === "fasal-billing-subscription" &&
+                            section.title === "Designing Financial Trust for the Indian Farmer." && (
+                              <FasalBillingHero />
+                            )}
+                          {project.id === "fasal-billing-subscription" &&
+                            section.title === "Data Findings (The Quantitative Signal)" && (
+                              <FasalBillingDataFindings />
+                            )}
+                          {project.id === "fasal-billing-subscription" &&
+                            section.title === "Research Methodology" && (
+                              <FasalBillingResearchTable />
+                            )}
+                          {project.id === "fasal-billing-subscription" &&
+                            section.title === "Key Insights & Mental Models" && (
+                              <div className="mt-8">
+                                <FasalBillingInsights />
+                              </div>
+                            )}
+                          {project.id === "fasal-billing-subscription" &&
+                            section.title === "Design Process" && (
+                              <FasalBillingProcessInfographic />
+                            )}
+                          {project.id === "bazaarnxt-b2b" &&
+                            section.title === "Design Process" && (
+                              <BazaarNxtProcessInfographic />
+                            )}
+                          {project.id === "flow360-internal-tools" &&
+                            section.title === "Solution — The 360 Flow" && (
+                              <div className="mt-8">
+                                <Flow360DeploymentInfographic />
+                              </div>
+                            )}
+                          {project.id === "bazaarnxt-b2b" &&
+                            section.title === "Problems in the current landscape" && (
+                              <BazaarNxtProblemsGrid items={section.items || []} />
+                            )}
+                          {project.id === "fasal-billing-subscription" &&
+                            section.title === "The Strategy" && (
+                              <FasalBillingStrategyInfographic />
+                            )}
+                          {project.id === "fasal-billing-subscription" &&
+                            section.title === "Design Goals" && <FasalBillingGoalsGrid />}
+
+                          {project.id === "fasal-billing-subscription" &&
+                            section.title === "The Business Impact" && <FasalBillingImpactGrid />}
+
+                          {project.id === "fasal-billing-subscription" &&
+                            section.title === "What This Project Taught Me" && (
+                              <FasalBillingLessons />
+                            )}
+
+                          {project.id === "fasal-billing-subscription" &&
+                            section.title === "The Reality Check: Testing with 12 Farmers" && (
+                              <FasalBillingSessionGallery />
+                            )}
+
+                          {project.id === "fasal-billing-subscription" &&
+                            section.title === "Hypothesis vs. Reality" && (
+                              <FasalBillingHypothesisReality />
+                            )}
+
+                          {section.type === "list" &&
+                            section.title === "Conclusion" && (
+                              <div className="space-y-8">
+                                <FasalConclusionGrid items={section.items || []} />
+                                {section.items?.find((item) =>
+                                  item.startsWith("These findings suggest"),
+                                ) && (
+                                    <p className="text-[16px] text-neutral-500 dark:text-neutral-400">
+                                      {section.items.find((item) =>
+                                        item.startsWith("These findings suggest"),
+                                      )}
+                                    </p>
+                                  )}
+                              </div>
+                            )}
+
+                          {section.type === "list" &&
+                            section.title === "Goals of user testing" && (
+                              <FasalGoalsGrid goals={section.items || []} />
+                            )}
+
+                          {section.type === "list" &&
+                            (section.title === "Key Requirements:" ||
+                              section.title === "Constraints") && (
+                              <FasalRequirementsGrid
+                                items={section.items || []}
+                                label={
+                                  section.title === "Constraints" ? "CONSTRAINT" : "GOAL"
                                 }
-                              }}
-                            >
-                              {section.showGrid && (
-                                <div
-                                  className={`absolute inset-0 pointer-events-none ${section.lightBg ? "opacity-20 dark:opacity-30 text-neutral-500 dark:text-neutral-400" : "opacity-10 dark:opacity-20 text-black dark:text-white"}`}
-                                  style={{
-                                    backgroundImage:
-                                      "radial-gradient(currentColor 1.5px, transparent 1.5px)",
-                                    backgroundSize: "20px 20px",
-                                  }}
-                                />
-                              )}
+                              />
+                            )}
 
-                              {section.src.endsWith(".mp4") ? (
-                                <video
-                                  src={section.src}
-                                  autoPlay
-                                  muted
-                                  loop
-                                  playsInline
-                                  className="w-full h-auto object-cover relative z-10 shadow-sm"
-                                />
-                              ) : (
-                                <img
-                                  src={section.src}
-                                  alt={section.caption || "Case study artifact"}
-                                  className={`w-full h-auto object-cover relative z-10 will-change-transform transition-[transform,filter] duration-500 ${section.grayscale
-                                    ? "grayscale group-hover/img:grayscale-0 group-hover/img:scale-[1.01]"
-                                    : "group-hover/img:scale-[1.02]"
-                                    }`}
-                                  style={{
-                                    ...(section.maxHeight ? { maxHeight: section.maxHeight } : {}),
-                                  }}
-                                />
-                              )}
+                          {section.type === "list" &&
+                            section.title === "Hypothesis vs. Reality" &&
+                            project.id !== "fasal-billing-subscription" && (
+                              <FasalBillingHypothesisReality />
+                            )}
 
-                              {!section.src.endsWith(".mp4") && (
-                                <div className="absolute inset-0 bg-transparent group-hover/img:bg-black/10 transition-opacity duration-200 flex items-center justify-center opacity-0 group-hover/img:opacity-100 z-20">
-                                  <div className="bg-white/90 dark:bg-black/90 px-4 py-2 flex items-center gap-2 text-xs font-mono border border-[var(--grid-line)]">
-                                    <Maximize2 className="w-3 h-3" /> CLICK TO VIEW
+                          {section.type === "list" &&
+                            section.title !== "Goals of user testing" &&
+                            section.title !== "Key Requirements:" &&
+                            section.title !== "Constraints" &&
+                            section.title !== "Conclusion" &&
+                            section.title !== "Problems in the current landscape" &&
+                            section.title !== "Hypothesis vs. Reality" &&
+                            !(project.id === "fasal-iot-ops" && section.title === "Impact") &&
+                            !(project.id === "ethnographic-study" && section.title === "Impact") &&
+                            !(
+                              project.id === "fasal-billing-subscription" &&
+                              section.title === "Design Goals"
+                            ) &&
+                            !(
+                              project.id === "fasal-billing-subscription" &&
+                              section.title === "Technical & Business Constraints"
+                            ) &&
+                            !(
+                              project.id === "fasal-billing-subscription" &&
+                              section.title?.startsWith("Insight ")
+                            ) &&
+                            !(
+                              project.id === "fasal-billing-subscription" &&
+                              section.title === "The Business Impact"
+                            ) &&
+                            !(
+                              project.id === "fasal-billing-subscription" &&
+                              section.title === "What This Project Taught Me"
+                            ) && (
+                              <>
+                                {project.id === "fasal-billing-subscription" &&
+                                  section.title ===
+                                  "The Logic Layer: Designing for Edge Cases" ? (
+                                  <div className="space-y-8">
+                                    <div className="inline-flex items-center px-3 py-1 bg-neutral-500/10 border border-neutral-500/20 text-neutral-600 dark:text-neutral-400 text-[13px] font-mono tracking-widest uppercase w-fit">
+                                      The Logic Layer: Designing for Edge Cases
+                                    </div>
+                                    {section.content && (
+                                      <p className="text-[16px] text-neutral-500 dark:text-neutral-400">
+                                        {section.content as string}
+                                      </p>
+                                    )}
+                                    <ul className="grid gap-4">
+                                      {section.items?.map((item, i) => (
+                                        <li
+                                          key={i}
+                                          className="flex gap-4 items-start text-[16px] text-neutral-500 dark:text-neutral-400"
+                                        >
+                                          <span className="font-mono text-[13px] text-neutral-400 mt-1 shrink-0">
+                                            {(i + 1).toString().padStart(2, "0")}
+                                          </span>
+                                          <div className="flex-1">
+                                            {renderInlineRichText(item)}
+                                          </div>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                    <FasalBillingLogicFlowchart />
                                   </div>
+                                ) : project.id === "iot-b2b-saas" &&
+                                  section.title ===
+                                  "Identified Themes and Possible Solutions" ? (
+                                  <div className="space-y-6">
+                                    {section.content && (
+                                      <p className="text-[16px] text-neutral-500 dark:text-neutral-400">
+                                        {section.content}
+                                      </p>
+                                    )}
+                                    <FasalThemesAccordion />
+                                  </div>
+                                ) : (
+                                  <div className="space-y-6">
+                                    {section.content && (
+                                      <p className="text-[16px] text-neutral-500 dark:text-neutral-400">
+                                        {section.content}
+                                      </p>
+                                    )}
+                                    <ul className="grid gap-4">
+                                      {section.items?.map((item, i) => (
+                                        <li
+                                          key={i}
+                                          className="flex gap-4 items-start text-[16px] text-neutral-500 dark:text-neutral-400"
+                                        >
+                                          <span className="font-mono text-[13px] text-neutral-400 mt-1">
+                                            {(i + 1).toString().padStart(2, "0")}
+                                          </span>
+                                          <div className="flex-1 whitespace-pre-line text-[16px] text-neutral-500 dark:text-neutral-400">
+                                            {renderInlineRichText(item)}
+                                          </div>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </div>
+                                )}
+                              </>
+                            )}
+
+                          {project.id === "fasal-billing-subscription" &&
+                            section.title === "Resilience: When the Network Breaks" && (
+                              <FasalBillingResilienceGallery
+                                onImageClick={(src, alt) => setViewerImage({ src, alt })}
+                              />
+                            )}
+
+                          {section.type === "design-options" && section.options && (
+                            <FasalDesignOptions
+                              options={section.options}
+                              onImageClick={(src, alt) => setViewerImage({ src, alt })}
+                              mainTitle={section.title}
+                              listLabel={section.title === "Design Options" ? "All about option" : "Key Findings"}
+                            />
+                          )}
+
+                          {section.type === "image" && section.src && (
+                            <div className="space-y-6">
+                              {section.content && (
+                                <div className="space-y-4">
+                                  {Array.isArray(section.content) ? (
+                                    section.content.map((paragraph, i) => (
+                                      <p key={i} className="text-[16px] text-neutral-500 dark:text-neutral-400 whitespace-pre-line">
+                                        {renderInlineRichText(paragraph)}
+                                      </p>
+                                    ))
+                                  ) : (
+                                    <p className="text-[16px] text-neutral-500 dark:text-neutral-400 whitespace-pre-line">
+                                      {renderInlineRichText(section.content)}
+                                    </p>
+                                  )}
                                 </div>
                               )}
-                            </div>
 
-                            {section.caption && (
-                              <p className="text-[13px] font-mono text-neutral-500 dark:text-neutral-400 uppercase tracking-widest text-right">
-                                {section.caption}
-                              </p>
-                            )}
-                          </div>
-                        )}
-
-                        {section.type === "colour-palette" && section.colours && (
-                          <div className="w-full border border-[var(--grid-line)]">
-                            <div className="flex flex-row">
-                              {section.colours.brand.map((swatch, i) => {
-                                const isLight = parseInt(swatch.hex.replace("#", ""), 16) > 0xAAAAAA;
-                                const text = i === 0 ? "text-white" : (isLight ? "text-black" : "text-white");
-                                return (
+                              <div
+                                className={`w-full overflow-hidden relative ${section.lightBg ? "p-6 lg:p-10" : section.showGrid ? "p-8 lg:p-12 bg-neutral-50 dark:bg-neutral-900/50" : "bg-transparent"} ${section.src.endsWith(".mp4") ? "" : "cursor-zoom-in group/img"}`}
+                                style={section.lightBg ? { backgroundColor: "var(--background)" } : undefined}
+                                onClick={() => {
+                                  if (!section.src?.endsWith(".mp4")) {
+                                    setViewerImage({
+                                      src: section.src!,
+                                      alt: section.caption || "Case study artifact",
+                                    });
+                                  }
+                                }}
+                              >
+                                {section.showGrid && (
                                   <div
-                                    key={i}
-                                    className={`flex flex-col justify-between p-4 h-44 lg:h-52 ${i === 0 ? "flex-[2]" : "flex-1"}`}
-                                    style={{ backgroundColor: swatch.hex }}
-                                  >
-                                    <div className={`flex items-center justify-between mt-auto ${text}`}>
-                                      <span className="font-mono text-xs opacity-60">{swatch.id}</span>
-                                      <span className="font-mono text-sm">{swatch.hex.toUpperCase()}</span>
+                                    className={`absolute inset-0 pointer-events-none ${section.lightBg ? "opacity-20 dark:opacity-30 text-neutral-500 dark:text-neutral-400" : "opacity-10 dark:opacity-20 text-black dark:text-white"}`}
+                                    style={{
+                                      backgroundImage:
+                                        "radial-gradient(currentColor 1.5px, transparent 1.5px)",
+                                      backgroundSize: "20px 20px",
+                                    }}
+                                  />
+                                )}
+
+                                {section.src.endsWith(".mp4") ? (
+                                  <video
+                                    src={section.src}
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    className="w-full h-auto object-cover relative z-10 shadow-sm"
+                                  />
+                                ) : (
+                                  <img
+                                    src={section.src}
+                                    alt={section.caption || "Case study artifact"}
+                                    className={`w-full h-auto object-cover relative z-10 will-change-transform transition-[transform,filter] duration-500 ${section.grayscale
+                                      ? "grayscale group-hover/img:grayscale-0 group-hover/img:scale-[1.01]"
+                                      : "group-hover/img:scale-[1.02]"
+                                      }`}
+                                    style={{
+                                      ...(section.maxHeight ? { maxHeight: section.maxHeight } : {}),
+                                    }}
+                                  />
+                                )}
+
+                                {!section.src.endsWith(".mp4") && (
+                                  <div className="absolute inset-0 bg-transparent group-hover/img:bg-black/10 transition-opacity duration-200 flex items-center justify-center opacity-0 group-hover/img:opacity-100 z-20">
+                                    <div className="bg-white/90 dark:bg-black/90 px-4 py-2 flex items-center gap-2 text-xs font-mono border border-[var(--grid-line)]">
+                                      <Maximize2 className="w-3 h-3" /> CLICK TO VIEW
                                     </div>
                                   </div>
-                                );
-                              })}
-                            </div>
-                            <div className="grid grid-cols-5">
-                              {section.colours.neutral.map((swatch, i) => {
-                                const isLight = parseInt(swatch.hex.replace("#", ""), 16) > 0x888888;
-                                const text = isLight ? "text-black" : "text-white";
-                                return (
-                                  <div
-                                    key={i}
-                                    className={`flex flex-col justify-end p-3 h-24`}
-                                    style={{ backgroundColor: swatch.hex }}
-                                  >
-                                    {swatch.id && (
-                                      <span className={`font-mono text-[10px] opacity-60 mb-1 ${text}`}>{swatch.id}</span>
-                                    )}
-                                    <span className={`font-mono text-[11px] opacity-80 ${text}`}>{swatch.hex.toUpperCase()}</span>
-                                  </div>
-                                );
-                              })}
-                            </div>
-                          </div>
-                        )}
-
-                        {section.type === "typography" && (
-                          <div className="w-full border border-[var(--grid-line)]">
-                            <div className="p-6 lg:p-8 border-b border-[var(--grid-line)]">
-                              <h3 className="text-3xl lg:text-4xl font-bold">Typography</h3>
-                            </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 lg:divide-x divide-[var(--grid-line)]">
-                              <div className="p-6 lg:p-8 border-b lg:border-b-0 border-[var(--grid-line)]">
-                                <p className="text-xl font-bold italic mb-6 text-[var(--foreground)]">{section.font}</p>
-                                <p className="text-sm text-neutral-400 dark:text-neutral-500 leading-relaxed font-light tracking-wide">
-                                  {section.specimen}
-                                </p>
+                                )}
                               </div>
-                              <div className="p-6 lg:p-8 border-b lg:border-b-0 border-[var(--grid-line)]">
-                                <p className="font-mono text-xs text-neutral-500 uppercase tracking-widest mb-4">
-                                  Designed by {section.designer}
+
+                              {section.caption && (
+                                <p className="text-[13px] font-mono text-neutral-500 dark:text-neutral-400 uppercase tracking-widest text-right">
+                                  {section.caption}
                                 </p>
-                                <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">
-                                  {section.description}
-                                </p>
-                              </div>
-                              <div className="p-6 lg:p-8 flex flex-col items-end justify-between gap-6">
-                                <span className="text-[96px] lg:text-[120px] font-bold leading-none text-[var(--foreground)]">
-                                  Aa
-                                </span>
-                                <p className="font-mono text-xs text-neutral-500 text-right">
-                                  {section.weights?.join(", ")}
-                                </p>
-                              </div>
+                              )}
                             </div>
-                          </div>
-                        )}
-
-                        {section.type === "figma-link" && (
-                          <div className="border border-[var(--grid-line)] p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-                            <p className="text-base text-neutral-500 dark:text-neutral-400">
-                              {section.content || "Every state documented: from expired devices to mid-cycle upgrades."}
-                            </p>
-                            <CtaButton
-                              as="anchor"
-                              href={section.href || "#"}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              label="Open in Figma"
-                              icon="arrow-right"
-                              className="shrink-0"
-                            />
-                          </div>
-                        )}
-
-                        {section.type === "quote" &&
-                          !(
-                            project.id === "iot-b2b-saas" &&
-                            typeof section.content === "string" &&
-                            section.content.startsWith("Hi <farmer name>")
-                          ) && (
-                            <blockquote className="border-l-4 border-[var(--foreground)] pl-6 py-2 my-8">
-                              <p className="text-xl italic font-serif text-neutral-700 dark:text-neutral-400">
-                                "{section.content}"
-                              </p>
-                            </blockquote>
                           )}
-                      </RevealOnScroll>
-                    );
-                  });
-              })()}
-            </div>
+
+                          {section.type === "colour-palette" && section.colours && (
+                            <div className="w-full border border-[var(--grid-line)]">
+                              <div className="flex flex-row">
+                                {section.colours.brand.map((swatch, i) => {
+                                  const isLight = parseInt(swatch.hex.replace("#", ""), 16) > 0xAAAAAA;
+                                  const text = i === 0 ? "text-white" : (isLight ? "text-black" : "text-white");
+                                  return (
+                                    <div
+                                      key={i}
+                                      className={`flex flex-col justify-between p-4 h-44 lg:h-52 ${i === 0 ? "flex-[2]" : "flex-1"}`}
+                                      style={{ backgroundColor: swatch.hex }}
+                                    >
+                                      <div className={`flex items-center justify-between mt-auto ${text}`}>
+                                        <span className="font-mono text-xs opacity-60">{swatch.id}</span>
+                                        <span className="font-mono text-sm">{swatch.hex.toUpperCase()}</span>
+                                      </div>
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                              <div className="grid grid-cols-5">
+                                {section.colours.neutral.map((swatch, i) => {
+                                  const isLight = parseInt(swatch.hex.replace("#", ""), 16) > 0x888888;
+                                  const text = isLight ? "text-black" : "text-white";
+                                  return (
+                                    <div
+                                      key={i}
+                                      className={`flex flex-col justify-end p-3 h-24`}
+                                      style={{ backgroundColor: swatch.hex }}
+                                    >
+                                      {swatch.id && (
+                                        <span className={`font-mono text-[10px] opacity-60 mb-1 ${text}`}>{swatch.id}</span>
+                                      )}
+                                      <span className={`font-mono text-[11px] opacity-80 ${text}`}>{swatch.hex.toUpperCase()}</span>
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            </div>
+                          )}
+
+                          {section.type === "typography" && (
+                            <div className="w-full border border-[var(--grid-line)]">
+                              <div className="p-6 lg:p-8 border-b border-[var(--grid-line)]">
+                                <h3 className="text-3xl lg:text-4xl font-bold">Typography</h3>
+                              </div>
+                              <div className="grid grid-cols-1 lg:grid-cols-3 lg:divide-x divide-[var(--grid-line)]">
+                                <div className="p-6 lg:p-8 border-b lg:border-b-0 border-[var(--grid-line)]">
+                                  <p className="text-xl font-bold italic mb-6 text-[var(--foreground)]">{section.font}</p>
+                                  <p className="text-sm text-neutral-400 dark:text-neutral-500 leading-relaxed font-light tracking-wide">
+                                    {section.specimen}
+                                  </p>
+                                </div>
+                                <div className="p-6 lg:p-8 border-b lg:border-b-0 border-[var(--grid-line)]">
+                                  <p className="font-mono text-xs text-neutral-500 uppercase tracking-widest mb-4">
+                                    Designed by {section.designer}
+                                  </p>
+                                  <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">
+                                    {section.description}
+                                  </p>
+                                </div>
+                                <div className="p-6 lg:p-8 flex flex-col items-end justify-between gap-6">
+                                  <span className="text-[96px] lg:text-[120px] font-bold leading-none text-[var(--foreground)]">
+                                    Aa
+                                  </span>
+                                  <p className="font-mono text-xs text-neutral-500 text-right">
+                                    {section.weights?.join(", ")}
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+
+                          {section.type === "figma-link" && (
+                            <div className="border border-[var(--grid-line)] p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+                              <p className="text-base text-neutral-500 dark:text-neutral-400">
+                                {section.content || "Every state documented: from expired devices to mid-cycle upgrades."}
+                              </p>
+                              <CtaButton
+                                as="anchor"
+                                href={section.href || "#"}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                label="Open in Figma"
+                                icon="arrow-right"
+                                className="shrink-0"
+                              />
+                            </div>
+                          )}
+
+                          {section.type === "quote" &&
+                            !(
+                              project.id === "iot-b2b-saas" &&
+                              typeof section.content === "string" &&
+                              section.content.startsWith("Hi <farmer name>")
+                            ) && (
+                              <blockquote className="border-l-4 border-[var(--foreground)] pl-6 py-2 my-8">
+                                <p className="text-xl italic font-serif text-neutral-700 dark:text-neutral-400">
+                                  "{section.content}"
+                                </p>
+                              </blockquote>
+                            )}
+                        </RevealOnScroll>
+                      );
+                    });
+                  })()}
+                </div>
               </>
             )}
           </div>
@@ -1117,7 +1118,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
 
 // Direct DOM update — bypasses React render cycle entirely (Emil Kowalski rule).
 // CSS var --progress drives scaleX; zero re-renders on scroll.
-function ProgressBar({ scrollContainerRef }: { scrollContainerRef: React.RefObject<HTMLDivElement | null> }) {
+function ProgressBar({ scrollContainerRef, readingTime }: { scrollContainerRef: React.RefObject<HTMLDivElement | null>; readingTime?: number }) {
   const barRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -1175,10 +1176,21 @@ function ProgressBar({ scrollContainerRef }: { scrollContainerRef: React.RefObje
   }, [scrollContainerRef]);
 
   return (
-    <div
-      ref={barRef}
-      className="absolute bottom-0 left-0 w-full h-[1px] bg-[var(--foreground)] z-[60] origin-left pointer-events-none"
-      style={{ transform: "scaleX(var(--progress, 0))", willChange: "transform" }}
-    />
+    <div className="absolute bottom-0 left-0 w-full">
+      {/* Mobile-only: reading time centered in the progress bar row */}
+      {readingTime !== undefined && (
+        <div className="lg:hidden absolute inset-0 flex items-center justify-center pointer-events-none">
+          <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-neutral-400">
+            {readingTime} MIN READ
+          </span>
+        </div>
+      )}
+      {/* The scroll progress bar itself */}
+      <div
+        ref={barRef}
+        className="w-full h-[1px] bg-[var(--foreground)] z-[60] origin-left pointer-events-none"
+        style={{ transform: "scaleX(var(--progress, 0))", willChange: "transform" }}
+      />
+    </div>
   );
 }
