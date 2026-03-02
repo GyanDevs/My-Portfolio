@@ -77,7 +77,7 @@ function ThemeButton({ isActive, label, onClick, icon, ariaLabel, btnRef, rotati
 
     return (
         <motion.div className="relative" onHoverStart={() => setHovered(true)} onHoverEnd={() => setHovered(false)}>
-            {/* Tooltip — stamps in from below */}
+            {/* Tooltip — stamps in from below (desktop only to avoid overlapping content on mobile) */}
             <AnimatePresence>
                 {hovered && (
                     <motion.div
@@ -87,7 +87,7 @@ function ThemeButton({ isActive, label, onClick, icon, ariaLabel, btnRef, rotati
                         exit={{ opacity: 0, y: 3 }}
                         transition={{ duration: 0.12, ease: [0.2, 0, 0, 1] }}
                         // Right-anchor so it never overflows the viewport edge
-                        className="absolute -bottom-7 right-0 pointer-events-none z-50"
+                        className="absolute -bottom-7 right-0 pointer-events-none z-50 hidden md:block"
                     >
                         <span className="font-mono text-[9px] uppercase tracking-[0.2em] whitespace-nowrap bg-[var(--foreground)] text-[var(--background)] px-2 py-[3px] block">
                             {label}
@@ -137,7 +137,7 @@ function ThemeButton({ isActive, label, onClick, icon, ariaLabel, btnRef, rotati
 }
 
 const ThemeSwitch = () => {
-    const { theme, setTheme } = useTheme();
+    const { resolvedTheme, setTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
     const darkBtnRef = useRef<HTMLButtonElement>(null);
     const lightBtnRef = useRef<HTMLButtonElement>(null);
@@ -147,8 +147,6 @@ const ThemeSwitch = () => {
 
     const switchTheme = useCallback(
         (newTheme: string, btnRef: React.RefObject<HTMLButtonElement | null>) => {
-            if (newTheme === theme) return; // No-op if already active
-
             const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
             if (!btnRef.current || !document.startViewTransition || prefersReducedMotion) {
@@ -204,7 +202,7 @@ const ThemeSwitch = () => {
                 });
             });
         },
-        [theme, setTheme]
+        [setTheme]
     );
 
     if (!mounted) return null;
@@ -242,7 +240,7 @@ const ThemeSwitch = () => {
             >
                 <ThemeButton
                     btnRef={darkBtnRef}
-                    isActive={theme === "dark"}
+                    isActive={resolvedTheme === "dark"}
                     label="Dark"
                     ariaLabel="Switch to dark mode"
                     icon={<MoonIcon />}
@@ -255,7 +253,7 @@ const ThemeSwitch = () => {
 
                 <ThemeButton
                     btnRef={lightBtnRef}
-                    isActive={theme === "light"}
+                    isActive={resolvedTheme === "light"}
                     label="Light"
                     ariaLabel="Switch to light mode"
                     icon={<SunIcon />}
