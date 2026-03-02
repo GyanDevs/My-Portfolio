@@ -59,6 +59,7 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="system"
           enableSystem
+          storageKey="gyan-theme"
         >
           <ThemeSwitch />
           <IntroProvider>
