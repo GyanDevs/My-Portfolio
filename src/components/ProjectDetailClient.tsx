@@ -169,8 +169,14 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
               {readingTime} MIN READ
             </span>
           </div>
+          {/* Mobile only — dead-center in the header bar, clear of back button and theme toggle */}
+          <div className="lg:hidden absolute inset-0 flex items-center justify-center pointer-events-none">
+            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-neutral-400">
+              {readingTime} MIN READ
+            </span>
+          </div>
         </div>
-        <ProgressBar scrollContainerRef={scrollContainerRef} readingTime={readingTime} />
+        <ProgressBar scrollContainerRef={scrollContainerRef} />
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen lg:h-screen lg:overflow-hidden">
@@ -1118,7 +1124,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
 
 // Direct DOM update — bypasses React render cycle entirely (Emil Kowalski rule).
 // CSS var --progress drives scaleX; zero re-renders on scroll.
-function ProgressBar({ scrollContainerRef, readingTime }: { scrollContainerRef: React.RefObject<HTMLDivElement | null>; readingTime?: number }) {
+function ProgressBar({ scrollContainerRef }: { scrollContainerRef: React.RefObject<HTMLDivElement | null> }) {
   const barRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -1176,21 +1182,10 @@ function ProgressBar({ scrollContainerRef, readingTime }: { scrollContainerRef: 
   }, [scrollContainerRef]);
 
   return (
-    <div className="absolute bottom-0 left-0 w-full">
-      {/* Mobile-only: reading time centered in the progress bar row */}
-      {readingTime !== undefined && (
-        <div className="lg:hidden absolute inset-0 flex items-center justify-center pointer-events-none">
-          <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-neutral-400">
-            {readingTime} MIN READ
-          </span>
-        </div>
-      )}
-      {/* The scroll progress bar itself */}
-      <div
-        ref={barRef}
-        className="w-full h-[1px] bg-[var(--foreground)] z-[60] origin-left pointer-events-none"
-        style={{ transform: "scaleX(var(--progress, 0))", willChange: "transform" }}
-      />
-    </div>
+    <div
+      ref={barRef}
+      className="absolute bottom-0 left-0 w-full h-[1px] bg-[var(--foreground)] z-[60] origin-left pointer-events-none"
+      style={{ transform: "scaleX(var(--progress, 0))", willChange: "transform" }}
+    />
   );
 }
