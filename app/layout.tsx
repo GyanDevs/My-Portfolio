@@ -1,6 +1,7 @@
 import { ThemeProvider, IntroProvider } from "@/src/components/providers";
 import ThemeSwitch from "@/src/components/ThemeSwitch";
 import LoadingScreen from "@/src/components/LoadingScreen";
+import { Analytics } from "@vercel/analytics/next";
 
 import type { Metadata } from "next";
 import { JetBrains_Mono, Libre_Bodoni } from "next/font/google";
@@ -67,6 +68,7 @@ export default function RootLayout({
             {children}
           </IntroProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
