@@ -129,7 +129,7 @@ export default function Home() {
       <div className="marquee-container border-t border-b border-[var(--grid-line)] py-4 overflow-hidden bg-[var(--grid-line)]/5">
         <div className="animate-marquee flex whitespace-nowrap">
           {/* Strip 1 */}
-          <div className="font-mono text-[14px] uppercase tracking-[0.3em] text-neutral-500 flex gap-12 px-6 shrink-0">
+          <div className="font-mono text-[12px] md:text-[14px] uppercase tracking-[0.3em] text-neutral-500 flex gap-12 px-6 shrink-0">
             <span>Data Visualization</span>
             <span>+</span>
             <span>Design Systems</span>
@@ -156,7 +156,7 @@ export default function Home() {
             <span>+</span>
           </div>
           {/* Strip 2 — exact duplicate, screen readers skip */}
-          <div className="font-mono text-[14px] uppercase tracking-[0.3em] text-neutral-500 flex gap-12 px-6 shrink-0" aria-hidden="true">
+          <div className="font-mono text-[12px] md:text-[14px] uppercase tracking-[0.3em] text-neutral-500 flex gap-12 px-6 shrink-0" aria-hidden="true">
             <span>Data Visualization</span>
             <span>+</span>
             <span>Design Systems</span>
