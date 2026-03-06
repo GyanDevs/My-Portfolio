@@ -38,7 +38,7 @@ export default function ResumePage() {
                         <div>
                             <h3 className="font-mono text-[14px] uppercase tracking-[0.2em] text-neutral-500 mb-6">Professional Summary</h3>
                             <p className="text-[16px] text-neutral-500 dark:text-neutral-200">
-                                6 years designing enterprise software for AgriTech IoT and B2B Supply Chain, where a bad design decision has a real operational cost. Specialist in Data Visualization and Design Systems for complex, data-heavy products. My Automobile Engineering background means I read technical constraints the way most designers read Figma files. Most recently: reduced support tickets at Fasal by 80% through self-serve workflow redesign.
+                                Senior Product Designer with 6 years of experience building complex enterprise software, IoT platforms, and B2B Supply Chain products. I specialize in end to end UI/UX design for data heavy systems where clarity is critical. My background in Automobile Engineering allows me to translate heavy technical constraints into intuitive User Interfaces (UI) for field environments. Most recently: reduced support tickets by 80% through a strategic UX redesign of complex field sensor workflows.
                             </p>
                         </div>
                     </RevealOnScroll>
@@ -60,13 +60,13 @@ export default function ResumePage() {
                                 <div>
                                     <h4 className="font-mono font-bold text-[14px] mb-2 uppercase tracking-wide">Expertise</h4>
                                     <p className="text-[16px] text-neutral-500 dark:text-neutral-200">
-                                        B2B SaaS Architecture, Data Visualization, Complex System Design, IoT Experience, Information Architecture (IA), Service Design, Usability Testing.
+                                        Enterprise Product Design, User Interface Design (UI), Data Visualization, Complex System Design, IoT Experience (IoT), Information Architecture (IA), Service Design, Usability Testing, A/B Testing.
                                     </p>
                                 </div>
                                 <div>
                                     <h4 className="font-mono font-bold text-[14px] mb-2 uppercase tracking-wide">Design Leadership</h4>
                                     <p className="text-[16px] text-neutral-500 dark:text-neutral-200">
-                                        Design Systems (Scalability), Product Strategy, Agile/Scrum Methodology, Technical Feasibility Assessment, Cross-functional Collaboration, ROI-Driven Design.
+                                        Design Systems (Scalability), Product Strategy, Agile/Scrum Methodology, Technical Feasibility Assessment, Cross functional Collaboration, ROI Driven Design.
                                     </p>
                                 </div>
                             </div>
@@ -77,7 +77,7 @@ export default function ResumePage() {
                         <div>
                             <h3 className="font-mono text-[14px] uppercase tracking-[0.2em] text-neutral-500 mb-6">Tools</h3>
                             <div className="flex flex-wrap gap-2">
-                                {["Figma (Variables & Auto-layout)", "JIRA", "Miro", "Useberry", "Notion", "Zeplin"].map((tool) => (
+                                {["Figma (Variables & Auto layout)", "Cursor", "Claude", "JIRA", "Miro", "Useberry", "Notion", "Zeplin"].map((tool) => (
                                     <span key={tool} className="border border-[var(--grid-line)] px-2 py-1 text-[14px] font-mono uppercase text-neutral-500">
                                         {tool}
                                     </span>
@@ -102,10 +102,10 @@ export default function ResumePage() {
                                 Fasal.co // IoT, SaaS
                             </div>
                             <ul className="list-disc list-outside ml-4 space-y-4 text-[16px] text-neutral-500 dark:text-neutral-200 mt-6">
-                                <li><strong>Product Strategy & Business Growth:</strong> Led end-to-end UX strategy for precision agriculture tools, achieving 15% growth in DAU and 10% increase in premium feature adoption.</li>
-                                <li><strong>Data Visualization & IoT:</strong> Redesigned the core Sensor Dashboard to make telemetry data (humidity, soil moisture) readable for non-technical farmers. Reduced decision-making time by 40%.</li>
-                                <li><strong>Design Systems & Scalability:</strong> Architected and maintained a scalable design system supporting 3 product verticals. Standardized components across Web and Mobile, reducing design-to-development handoff time by 35% and cutting release time by 2 weeks per cycle.</li>
-                                <li><strong>Operational Efficiency:</strong> Optimized design operations by introducing AI-augmented prototyping workflows, cutting iteration cycles by 50%. Mentored 3 junior designers on data-driven design and AI literacy.</li>
+                                <li><strong>Product &amp; UX Strategy:</strong> Led end to end user experience strategy for enterprise IoT monitoring platforms, achieving 15% growth in Daily Active Users (DAU) and a 10% increase in premium feature adoption.</li>
+                                <li><strong>Data Visualization &amp; UI:</strong> Redesigned the core Sensor Dashboard to make telemetry data (humidity, soil moisture) readable for non technical farmers. Reduced decision making time by 40%.</li>
+                                <li><strong>Design Systems &amp; Scalability:</strong> Architected a scalable Atomic Design System supporting 3 software verticals. Standardized UI components (Atoms to Organisms) across Web and Mobile, reducing design to development handoff time by 35% and cutting release time by 2 weeks per cycle.</li>
+                                <li><strong>Operational Efficiency &amp; AI Workflows:</strong> Optimized design operations by introducing AI augmented prototyping workflows (Cursor/Claude) for rapid frontend code validation, cutting iteration cycles by 50%. Mentored 3 junior designers on data driven design and AI literacy.</li>
                             </ul>
                         </div>
                     </RevealOnScroll>
@@ -123,10 +123,10 @@ export default function ResumePage() {
                                 BazaarNXT // B2B Supply Chain & Logistics Platform
                             </div>
                             <ul className="list-disc list-outside ml-4 space-y-4 text-[16px] text-neutral-500 dark:text-neutral-200 mt-6">
-                                <li><strong>End-to-End Product Execution:</strong> Designed and launched the BazaarNXT mobile app (Android/iOS) and internal merchandising & pricing tools for BDEs. 10,000+ users onboarded within the first 3 months.</li>
-                                <li><strong>System Design & Efficiency:</strong> Revamped three core web platforms (ProcureNXT, SellerNXT, PackNXT) under a Unified Design Language, cutting frontend development time by 50%.</li>
+                                <li><strong>End to End Product Execution:</strong> Designed and launched the BazaarNXT mobile app (Android/iOS) and internal merchandising &amp; pricing tools for BDEs. 10,000+ users onboarded within the first 3 months.</li>
+                                <li><strong>System Design &amp; Efficiency:</strong> Revamped three core web platforms (ProcureNXT, SellerNXT, PackNXT) under a Unified UI/UX Design Language, cutting frontend development time by 50%.</li>
                                 <li><strong>User Retention Strategy:</strong> Redesigned key customer touchpoints based on behavioral analytics, achieving a 30% increase in retention rate and a 50% decrease in bounce rate across the e-commerce funnel.</li>
-                                <li><strong>Strategic Impact:</strong> Designed high-fidelity, investor-facing product visions that helped secure Series A/Bridge funding by demonstrating product-market fit.</li>
+                                <li><strong>Strategic Impact:</strong> Designed high fidelity, investor facing product visions that helped secure Series A/Bridge funding by demonstrating product market fit.</li>
                             </ul>
                         </div>
                     </RevealOnScroll>
@@ -161,7 +161,7 @@ export default function ResumePage() {
                                     <p className="font-mono text-[14px] text-neutral-500">2016–2020</p>
                                 </div>
                                 <div>
-                                    <h4 className="font-bold uppercase tracking-wide mb-1">IxDF Certification</h4>
+                                    <h4 className="font-bold uppercase tracking-wide mb-1">IxDF Certification (Top 10%)</h4>
                                     <p className="font-['Helvetica'] text-[16px] text-neutral-500 dark:text-neutral-200">Human-Computer Interaction</p>
                                     <p className="font-mono text-[14px] text-neutral-500">2020–2021</p>
                                 </div>
