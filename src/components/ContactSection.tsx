@@ -132,7 +132,7 @@ export default function ContactSection() {
       {/* Content */}
       <div className="w-full max-w-[1600px] mx-auto px-8 md:px-12 flex flex-col items-center justify-center relative z-10 text-center">
         <h2 className="text-[36px] md:text-[48px] font-bold tracking-tighter mb-12 text-foreground font-sans">
-          Let&apos;s un-complicate <span className="font-serif italic font-medium">the complex.</span>
+          Let&apos;s <span className="font-serif italic font-light">design</span> to <span className="font-serif italic font-light">delight</span>.
         </h2>
         <CtaButton
           as="anchor"
