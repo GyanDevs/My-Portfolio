@@ -1,12 +1,12 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import ProjectCard from "@/src/components/ProjectCard";
 import Typewriter from "@/src/components/Typewriter";
 import Testimonials from "@/src/components/Testimonials";
 import ContactSection from "@/src/components/ContactSection";
 import CtaButton from "@/src/components/CtaButton";
+import ConnectLink from "@/src/components/ConnectLink";
 import projects from "@/src/data/projects.json";
 import { useIntro } from "@/src/components/providers";
 import { motion, useReducedMotion } from "framer-motion";
@@ -212,33 +212,15 @@ export default function Home() {
         <div className="mb-8">
           <h3 className="font-mono text-[14px] uppercase tracking-[0.2em] text-neutral-500 mb-4">Social</h3>
           <ul className="space-y-3 font-mono font-bold uppercase tracking-wide text-[14px]">
-            <li>
-              <Link
-                href="https://www.linkedin.com/in/gyandesign/"
-                target="_blank"
-                className="hover:underline decoration-2 underline-offset-4 transition-colors"
-              >
-                LinkedIn ↗
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://dribbble.com/gyaan_design"
-                target="_blank"
-                className="hover:underline decoration-2 underline-offset-4 transition-colors"
-              >
-                Dribbble ↗
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://www.behance.net/gyandesign"
-                target="_blank"
-                className="hover:underline decoration-2 underline-offset-4 transition-colors"
-              >
-                Behance ↗
-              </Link>
-            </li>
+            {[
+              { label: "LinkedIn ↗", href: "https://www.linkedin.com/in/gyandesign/" },
+              { label: "Dribbble ↗", href: "https://dribbble.com/gyaan_design" },
+              { label: "Behance ↗", href: "https://www.behance.net/gyandesign" },
+            ].map(({ label, href }) => (
+              <li key={href}>
+                <ConnectLink href={href} label={label} />
+              </li>
+            ))}
           </ul>
         </div>
         <div className="w-full flex items-end justify-between">

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import CtaButton from "@/src/components/CtaButton";
 import BackButton from "@/src/components/BackButton";
 import RevealOnScroll from "@/src/components/RevealOnScroll";
+import ConnectLink from "@/src/components/ConnectLink";
+import { connect } from "@/src/data/resume";
 
 export const metadata: Metadata = {
     title: "Gyan // Resume — Senior Product Designer",
@@ -47,8 +49,11 @@ export default function ResumePage() {
                         <div>
                             <h3 className="font-mono text-[14px] uppercase tracking-[0.2em] text-neutral-500 mb-6">Connect</h3>
                             <ul className="space-y-4 font-mono font-bold uppercase tracking-wide text-[14px]">
-                                <li><a href="https://www.linkedin.com/in/gyandesign/" target="_blank" rel="noopener noreferrer" className="hover:underline decoration-2 underline-offset-4 transition-colors">LinkedIn ↗</a></li>
-                                <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=mgyan1996@gmail.com" target="_blank" rel="noopener noreferrer" className="hover:underline decoration-2 underline-offset-4 transition-colors">Email ↗</a></li>
+                                {connect.map(({ label, href }) => (
+                                    <li key={href}>
+                                        <ConnectLink href={href} label={label} />
+                                    </li>
+                                ))}
                             </ul>
                         </div>
                     </RevealOnScroll>
