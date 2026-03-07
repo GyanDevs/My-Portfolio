@@ -100,9 +100,9 @@ function FeedbackCard({ label, text }: { label: string; text: string }) {
 function FarmerQuote({ hindi, english }: { hindi: string; english: string }) {
   return (
     <div className="flex flex-col items-start gap-2 group/user w-full text-left">
-      <div className="w-full relative p-6 bg-rose-500/10 dark:bg-rose-500/10 border border-[var(--grid-line)] hover:bg-rose-500/15 transition-colors duration-200">
+      <div className="w-full relative p-6 bg-rose-500/10 dark:bg-rose-500/10 border border-rose-700/60 dark:border-rose-800/70 hover:bg-rose-500/15 transition-colors duration-200">
         <p className="text-[16px] text-[var(--foreground)] mb-3">{hindi}</p>
-        <p className="text-[16px] font-sans text-[var(--foreground)] opacity-90">{english}</p>
+        <p className="text-[16px] font-serif italic text-[var(--foreground)] opacity-90">{english}</p>
       </div>
     </div>
   );
