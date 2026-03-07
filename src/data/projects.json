@@ -58,15 +58,9 @@
                 "type": "text",
                 "title": "Selection of Farmers & Script Writing",
                 "content": [
-                    "The Customer Success Team had already segmented our users. We picked a spread of segments to hear from farmers at every level of experience and literacy.",
-                    "Defining tech literacy with respect to farmers.",
-                    "From these selection criteria we selected 10 users.",
+                    "The Customer Success Team had already segmented our users. We picked a spread of segments so we could hear from farmers at every level of experience and literacy, and from that pool we selected 10 farmers.",
                     "We wrote the interview script before heading out: open-ended questions designed to get farmers talking, not just answering yes or no."
                 ]
-            },
-            {
-                "type": "quote",
-                "content": "Hi [name], how are you? We are from Fasal. We would love to hear how you use the app and what you would like us to improve."
             },
             {
                 "type": "text",

@@ -7,7 +7,6 @@ import { Maximize2 } from "lucide-react";
 import { calculateReadingTime } from "@/src/lib/utils";
 
 import FasalIntroInfographic from "@/src/components/FasalIntroInfographic";
-import FasalCaseStudyFlowInfographic from "@/src/components/FasalCaseStudyFlowInfographic";
 import FasalResearchGoalsInfographic from "@/src/components/FasalResearchGoalsInfographic";
 import FasalInsightsInfographic from "@/src/components/FasalInsightsInfographic";
 import FasalFarmersInfographic from "@/src/components/FasalFarmersInfographic";
@@ -589,14 +588,16 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                             ) && (
                               <div className="max-w-none">
                                 {Array.isArray(section.content) ? (
-                                  section.content.map((paragraph, i) => (
-                                    <p
-                                      key={i}
-                                      className="text-[16px] text-neutral-500 dark:text-neutral-400"
-                                    >
-                                      {renderInlineRichText(paragraph)}
-                                    </p>
-                                  ))
+                                  <div className="space-y-6">
+                                    {section.content.map((paragraph, i) => (
+                                      <p
+                                        key={i}
+                                        className="text-[16px] text-neutral-500 dark:text-neutral-400"
+                                      >
+                                        {renderInlineRichText(paragraph)}
+                                      </p>
+                                    ))}
+                                  </div>
                                 ) : (
                                   <p className="text-[16px] text-neutral-500 dark:text-neutral-400">
                                     {renderInlineRichText(section.content)}
@@ -620,10 +621,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
 
                           {project.id === "iot-b2b-saas" &&
                             section.title === "Introduction" && (
-                              <>
-                                <FasalCaseStudyFlowInfographic />
-                                <FasalIntroInfographic />
-                              </>
+                              <FasalIntroInfographic />
                             )}
 
                           {project.id === "iot-b2b-saas" &&
@@ -653,7 +651,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                             )}
 
                           {project.id === "iot-b2b-saas" &&
-                            section.title === "Script Writing & Ice Breaking" && (
+                            section.title === "Selection of Farmers & Script Writing" && (
                               <>
                                 <FasalScriptInfographic />
                                 <FasalScriptGallery />

@@ -73,7 +73,7 @@ export default function FasalScriptInfographic() {
             <span className="text-neutral-400 font-mono text-[13px]">
               Q:
             </span>{" "}
-            Hi &lt;farmer name&gt; How are you?{" "}
+            Hi [farmer&apos;s name], how are you?
           </p>{" "}
           <div className="pl-8 space-y-3 border-l pointer-events-none border-[var(--grid-line)] ml-1">
             {" "}
@@ -86,9 +86,7 @@ export default function FasalScriptInfographic() {
               <span className="font-mono block mb-1 text-[13px] uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
                 Context
               </span>{" "}
-              We are from Fasal, we are here to understand how you use our
-              product so that we can understand your problems and what you want
-              more to improve in our product.{" "}
+              We&apos;re from Fasal. We&apos;re here to hear how you use the app (what works, what doesn&apos;t) so we can improve it for farmers like you.
             </p>{" "}
             <p className="text-[16px] text-neutral-500 dark:text-neutral-400 italic font-light">
               {" "}
@@ -104,7 +102,7 @@ export default function FasalScriptInfographic() {
             <span className="text-neutral-400 font-mono text-[13px]">
               Q:
             </span>{" "}
-            What apps do you use on an everyday basis on your mobile?{" "}
+            Which apps do you use most on your phone?
           </p>{" "}
           <div className="pl-8 border-l border-[var(--grid-line)] ml-1">
             {" "}
@@ -122,7 +120,7 @@ export default function FasalScriptInfographic() {
             <span className="text-neutral-400 font-mono text-[13px]">
               Q:
             </span>{" "}
-            From how much time have you been using our Fasal device?{" "}
+            How long have you been using the Fasal device?
           </p>{" "}
           <div className="pl-8 border-l border-[var(--grid-line)] ml-1">
             {" "}
@@ -140,8 +138,7 @@ export default function FasalScriptInfographic() {
             <span className="text-neutral-400 font-mono text-[13px]">
               Q:
             </span>{" "}
-            How much time did you spend to understand or learn to use our
-            application?{" "}
+            How long did it take you to get comfortable using the app?
           </p>{" "}
           <div className="pl-8 space-y-3 border-l border-[var(--grid-line)] ml-1">
             {" "}
@@ -152,7 +149,7 @@ export default function FasalScriptInfographic() {
             <div className="pl-4 border-l border-[var(--grid-line)] border-dashed">
               {" "}
               <p className="text-neutral-500 dark:text-neutral-400 text-[16px] mb-1">
-                Was it easy or hard?
+                What made it easy or difficult?
               </p>{" "}
               <p className="text-neutral-600 dark:text-neutral-400 italic text-[16px]  text-neutral-500">
                 {" "}
@@ -169,7 +166,7 @@ export default function FasalScriptInfographic() {
             <span className="text-neutral-400 font-mono text-[13px]">
               Q:
             </span>{" "}
-            What crops have you used our device and current crop?{" "}
+            Which crops have you used the device for, and what are you growing right now?
           </p>{" "}
           <div className="pl-8 border-l border-[var(--grid-line)] ml-1">
             {" "}
@@ -187,7 +184,7 @@ export default function FasalScriptInfographic() {
             <span className="text-neutral-400 font-mono text-[13px]">
               Q:
             </span>{" "}
-            You might be using our app everyday?{" "}
+            Do you use the Fasal app every day?
           </p>{" "}
           <div className="pl-8 space-y-4 border-l border-[var(--grid-line)] ml-1">
             {" "}
@@ -198,12 +195,11 @@ export default function FasalScriptInfographic() {
             <ul className="list-disc pl-5 text-[16px] text-neutral-500 dark:text-neutral-400 space-y-2 font-light">
               {" "}
               <li>
-                If yes - How many times approximate in a day do you use and why?
+                If yes, roughly how many times a day, and what do you usually check?
               </li>{" "}
               <li>
-                If no - Why don&apos;t you use it and what is not motivating you
-                from using our application?
-              </li>{" "}
+                If no, what&apos;s stopped you from using it more?
+              </li>
             </ul>{" "}
             <p className="text-[16px] text-neutral-500 dark:text-neutral-400 italic font-light">
               {" "}
@@ -219,7 +215,7 @@ export default function FasalScriptInfographic() {
             <span className="text-neutral-400 font-mono text-[13px]">
               Q:
             </span>{" "}
-            So, What features do you use on the app most &amp; why?{" "}
+            Which features do you use most on the app, and why?
           </p>{" "}
           <div className="pl-8 space-y-4 border-l border-[var(--grid-line)] ml-1">
             {" "}
@@ -229,10 +225,9 @@ export default function FasalScriptInfographic() {
             </p>{" "}
             <div className="bg-white dark:bg-neutral-800 p-6 border border-[var(--grid-line)]">
               {" "}
-              <p className="font-bold text-[18px] mb-2">Feature 1</p>{" "}
+              <p className="font-bold text-[18px] mb-2">For each feature they mention</p>{" "}
               <p className="text-[16px] text-neutral-500 dark:text-neutral-400  leading-snug">
-                What is it for? Why do you use it? How did you find it? How did
-                you get to know about it?
+                What do you use it for? How did you first find out about it?
               </p>{" "}
               <div className="mt-4 text-neutral-600 dark:text-neutral-400 italic text-[16px] border-t border-[var(--grid-line)] pt-4  text-neutral-500">
                 {" "}
@@ -249,16 +244,14 @@ export default function FasalScriptInfographic() {
             <span className="text-neutral-400 font-mono text-[13px]">
               Q:
             </span>{" "}
-            How easy is the information/data provided on our app to read?{" "}
+            How easy is it to read and understand the information in the app?
           </p>{" "}
           <div className="pl-8 border-l border-[var(--grid-line)] ml-1">
             {" "}
             <ul className="list-disc pl-5 text-[16px] text-neutral-500 dark:text-neutral-400 space-y-2 font-light">
               {" "}
-              <li>Is it useful [give us a scenario, how did it help?]</li>{" "}
-              <li>
-                If not useful [tell us the scenario, how it did not help?]
-              </li>{" "}
+              <li>Can you give an example of when it really helped?</li>{" "}
+              <li>And when it didn&apos;t help, what happened?</li>
             </ul>{" "}
           </div>{" "}
         </div>{" "}
@@ -270,7 +263,7 @@ export default function FasalScriptInfographic() {
             <span className="text-neutral-400 font-mono text-[13px]">
               Q:
             </span>{" "}
-            Tell us if you have faced or facing any issues with our app?{" "}
+            Have you run into any problems with the app? Things that didn&apos;t work or confused you?
           </p>{" "}
           <div className="pl-8 border-l border-[var(--grid-line)] ml-1">
             {" "}
@@ -288,7 +281,7 @@ export default function FasalScriptInfographic() {
             <span className="text-neutral-400 font-mono text-[13px]">
               Q:
             </span>{" "}
-            Do you know that these features are also available in our app?{" "}
+            Were you aware that [this feature] is in the app? How did you find out, or would you have liked to know earlier?
           </p>{" "}
           <div className="pl-8 border-l border-[var(--grid-line)] ml-1">
             {" "}
@@ -306,8 +299,7 @@ export default function FasalScriptInfographic() {
             <span className="text-neutral-400 font-mono text-[13px]">
               Q:
             </span>{" "}
-            How do you solve any issues you face with our device or app
-            currently?{" "}
+            When something goes wrong with the device or app, what do you do? Who do you turn to?
           </p>{" "}
           <div className="pl-8 border-l border-[var(--grid-line)] ml-1">
             {" "}
@@ -325,7 +317,7 @@ export default function FasalScriptInfographic() {
             <span className="text-neutral-400 font-mono text-[13px]">
               Q:
             </span>{" "}
-            Which weather app you use on daily basis and why?{" "}
+            Which weather app do you use every day, and why that one?
           </p>{" "}
           <div className="pl-8 border-l border-[var(--grid-line)] ml-1">
             {" "}
@@ -343,8 +335,7 @@ export default function FasalScriptInfographic() {
             <span className="text-neutral-400 font-mono text-[13px]">
               Q:
             </span>{" "}
-            How do you currently know about farming news and learn about farming
-            practices?{" "}
+            How do you usually find out about farming news and new practices?
           </p>{" "}
           <div className="pl-8 border-l border-[var(--grid-line)] ml-1">
             {" "}
@@ -362,7 +353,7 @@ export default function FasalScriptInfographic() {
             <span className="text-neutral-400 font-mono text-[13px]">
               Q:
             </span>{" "}
-            How has Fasal improved your farming practices?{" "}
+            How has Fasal changed the way you farm, if at all?
           </p>{" "}
           <div className="pl-8 border-l border-[var(--grid-line)] ml-1">
             {" "}
