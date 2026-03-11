@@ -44,13 +44,12 @@ export default function FasalCardSorting() {
               {obs}{" "}
             </p>{" "}
             <div
-              className={`mt-4 flex items-center gap-3 text-[10px] font-mono uppercase tracking-widest ${theme.metaText}`}
+              className={`mt-4 flex items-center gap-3 text-[13px] font-mono uppercase tracking-widest ${theme.metaText}`}
             >
               {" "}
               <span className="opacity-70">
                 #{String(i + 1).padStart(2, "0")}
               </span>{" "}
-              <span className="font-bold">Gyan Prakash</span>{" "}
             </div>{" "}
           </motion.div>
         ))}{" "}

@@ -461,7 +461,6 @@ export default function FasalFarmerObservations() {
                     className={`mt-4 flex flex-wrap gap-y-2 justify-between items-center text-[10px] font-mono uppercase tracking-widest ${currentTheme.text}`}
                   >
                     <span>#{(i + 1).toString().padStart(2, "0")}</span>
-                    <span className="whitespace-nowrap text-left">Gyan Prakash</span>
                   </div>
                 </motion.div>
               ))}

@@ -325,7 +325,6 @@ export default function FasalThemesAccordion() {
                                     className={`mt-4 flex items-center gap-2 text-[13px] font-mono uppercase tracking-widest ${cardTheme.text}`}
                                   >
                                     <span>#{String(rIdx + 1).padStart(2, "0")}</span>
-                                    <span>Gyan Prakash</span>
                                   </div>
                                 </div>
                               );
@@ -346,7 +345,6 @@ export default function FasalThemesAccordion() {
                             </p>
                             <div className="mt-4 flex items-center gap-2 text-[13px] font-mono uppercase tracking-widest text-neutral-500 dark:text-neutral-400">
                               <span>#{String(idx + 1).padStart(2, "0")}</span>
-                              <span>Gyan Prakash</span>
                             </div>
                           </div>
                         ))}
