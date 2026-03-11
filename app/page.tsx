@@ -119,7 +119,7 @@ export default function Home() {
                 A design is just a guess until it&apos;s <span className="text-foreground italic font-serif">tested</span>. I design the <span className="text-foreground italic font-serif">research</span>, the <span className="text-foreground italic font-serif">logic</span>, and the <span className="text-foreground italic font-serif">interface</span>, and I test all three.
               </p>
 
-              <CtaButton as="link" href="/resume" label="View Resume" icon="arrow-right" className="w-fit self-start" />
+              <CtaButton as="link" href="/cv" label="Open CV" icon="arrow-right" className="w-fit self-start" />
             </div>
           </HeroEntry>
         </div>

@@ -28,7 +28,7 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const readingTime = calculateReadingTime(project);
-  const readingLabel = project.isPlaceholder ? "TO BE CALCULATED" : `${readingTime} MIN READ`;
+  const readingLabel = project.isPlaceholder ? "-" : `${readingTime} MIN READ`;
 
   const headlineClassName = project.isPlaceholder
     ? "text-[14px] font-mono uppercase text-neutral-500 dark:text-neutral-400"
@@ -85,7 +85,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           </div>
           <div className="absolute inset-x-0 bottom-0 border-t border-[var(--grid-line)] bg-background/95 px-4 py-2">
             <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-neutral-600 dark:text-neutral-400">
-              Under Construction
+              Coming Soon
             </span>
           </div>
         </div>

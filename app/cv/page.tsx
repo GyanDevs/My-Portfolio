@@ -6,12 +6,12 @@ import ConnectLink from "@/src/components/ConnectLink";
 import { connect } from "@/src/data/resume";
 
 export const metadata: Metadata = {
-    title: "Gyan // Resume — Senior Product Designer",
+    title: "Gyan // CV — Senior Product Designer",
     description:
         "6 years designing enterprise software for AgriTech IoT and B2B Supply Chain. Specialist in Data Visualization and Design Systems for complex, data-heavy products.",
 };
 
-export default function ResumePage() {
+export default function CvPage() {
     return (
         <main className="min-h-screen bg-background text-foreground selection:bg-neutral-200 selection:text-black border-x border-[var(--grid-line)] max-w-[1600px] mx-auto">
             {/* STICKY HEADER / NAV */}

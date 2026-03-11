@@ -139,7 +139,7 @@ export default function ContactSection() {
           href="https://mail.google.com/mail/?view=cm&fs=1&to=mgyan1996@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
-          label="Email Me"
+          label="Let's talk"
           icon="arrow-right"
         />
       </div>

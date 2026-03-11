@@ -94,7 +94,7 @@ export default function Testimonials() {
         {/* Header with Navigation */}
         <div className="flex justify-between items-end mb-16">
           <h2 className="text-sm font-mono uppercase tracking-widest text-neutral-500 dark:text-neutral-400">
-            Recommendations
+            From the people I've worked with
           </h2>
 
           <div className="flex gap-4">
