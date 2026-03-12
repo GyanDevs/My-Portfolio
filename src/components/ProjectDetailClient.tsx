@@ -636,7 +636,8 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                             )}
 
                           {project.id === "iot-b2b-saas" &&
-                            section.title === "Product Research Goals : Fasal IOT" && (
+                            (section.title === "Product Research Goals : Fasal IOT" ||
+                              section.title === "Research Goals") && (
                               <FasalResearchGoalsInfographic />
                             )}
 
