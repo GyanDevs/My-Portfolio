@@ -40,34 +40,34 @@
             {
                 "type": "text",
                 "title": "Introduction",
-                "content": "We went to where farmers actually use the app: in the field, in the heat, under pressure. What we heard over five days revealed the gap between what we assumed and what farmers needed."
+                "content": "We went to where farmers actually use the app: in the field, in the heat, under pressure. Over five days, it became obvious that our neat flows didn\u2019t match their reality, and that every wrong assumption about navigation, readability, or trust showed up as a support call or a missed action on the farm."
             },
             {
                 "type": "text",
                 "title": "Research Goals",
                 "content": [
-                    "We wanted to understand how farmers actually use the app, not how we assumed they did. What features do they rely on? What trips them up? What would make their day easier? These questions shaped everything we asked on the ground."
+                    "We wanted to understand how farmers actually use the app, not how we assumed they did. Which screens do they live on? Where do they get stuck? What would turn the app from \"extra work\" into something that makes their day easier? These questions shaped everything we asked on the ground."
                 ]
             },
             {
                 "type": "text",
                 "title": "Insights to gather during the visit",
-                "content": "Beyond formal goals, we noted a few things to stay alert to during each conversation."
+                "content": "Beyond the formal goals, we stayed alert for the things farmers rarely say out loud: where they hesitate before tapping, who they call when they\u2019re unsure, and what they trust more, the app, a call from support, or advice from the shop."
             },
             {
                 "type": "text",
                 "title": "Selection of Farmers & Script Writing",
                 "content": [
-                    "The Customer Success Team had already segmented our users. We picked a spread of segments so we could hear from farmers at every level of experience and literacy, and from that pool we selected 10 farmers.",
-                    "We wrote the interview script before heading out: open-ended questions designed to get farmers talking, not just answering yes or no."
+                    "To avoid hearing from the \"usual suspects\" only, we worked with the Customer Success Team to pull a spread of segments so we could hear from farmers at every level of experience and literacy, and from that pool we selected 10 farmers.",
+                    "We wrote the interview script before heading out: open-ended prompts designed to get farmers talking, not just answering yes or no."
                 ]
             },
             {
                 "type": "text",
                 "title": "Observations from farmer interviews",
                 "content": [
-                    "We met each farmer individually, had them use the app live, and talked through the everyday challenges they face.",
-                    "The goal was to see the app through their eyes, not ours."
+                    "We met each farmer individually, had them use the app live, and talked through the everyday challenges they face. Some navigated straight to soil moisture; others never scrolled beyond the first card.",
+                    "The goal was to see the app through their eyes, not ours, including the moments where they ignored our back button and tried to use the phone\u2019s hardware back instead."
                 ]
             },
             {
@@ -82,7 +82,7 @@
             {
                 "type": "list",
                 "title": "Identified Themes and Possible Solutions",
-                "content": "We ran brainstorming sessions using the 3 Whys method to pressure-test each issue. For every idea, we weighed potential impact against effort, which shaped our final prioritization.",
+                "content": "We ran brainstorming sessions using the 3 Whys method to pressure-test each issue. For every idea, we weighed potential impact against effort, the raw material that later fed into the RICE scores.",
                 "items": [
                     "Information Readability & Perceiving",
                     "Influences & Biases",
@@ -95,14 +95,14 @@
                 "type": "text",
                 "title": "Task prioritization : Rice framework",
                 "content": [
-                    "After aligning with PMs and Directors on the solutions, we used the RICE framework to rank them so the team could start with the highest-impact changes first."
+                    "After aligning with PMs and Directors on the candidate solutions, we fed each theme into the RICE framework (reach, impact, confidence, effort) so the roadmap started with the highest-impact fixes for farmers, not the loudest opinions in the room."
                 ]
             },
             {
                 "type": "text",
                 "title": "Conclusion",
                 "content": [
-                    "Five days in Anantapur changed how the team builds. Every assumption we brought in about navigation, data readability, and trust in the app was tested by a real farmer trying to use it. Those five days directly reshaped the navigation, simplified key data views, and led to a RICE-driven roadmap grounded in real field evidence."
+                    "Five days in Anantapur changed how the team builds. Every assumption we brought in about navigation, data readability, and trust in the app was tested by a real farmer trying to use it. Those five days directly reshaped the navigation that farmers actually tap, simplified the data views they rely on, and led to a RICE-driven roadmap grounded in real field evidence."
                 ]
             }
         ]
@@ -279,7 +279,7 @@
             },
             {
                 "type": "text",
-                "title": "Feedback implementation"
+                "title": "What We Changed After Testing"
             },
             {
                 "type": "image",
@@ -353,7 +353,7 @@
             {
                 "type": "text",
                 "title": "My Role",
-                "content": "I orchestrated the end-to-end redesign of the sensor dials, grounding the solution in field realities. I led the research phase through stakeholder interviews and on-site visits, translating raw insights into wireframes and high-fidelity interactive prototypes. To ensure usability, I conducted rigorous remote testing via Useberry, analyzing farmer feedback to refine the final UI for maximum accessibility."
+                "content": "I led the end-to-end redesign of the sensor dials, grounding every decision in field realities. From stakeholder interviews and on-site visits to wireframes, high-fidelity prototypes, and usability testing, my role was to turn hard-to-read telemetry into dials any farmer could trust at a glance."
             },
             {
                 "type": "text",
@@ -424,7 +424,7 @@
             {
                 "type": "text",
                 "title": "Final Design",
-                "content": "We built two options: horizontal sensor bars (unfamiliar but potentially clearer) and improved dials (familiar, but redesigned). Testing both gave us a real answer, not an assumption, about what farmers actually preferred."
+                "content": "We built two options: horizontal sensor bars (unfamiliar but potentially clearer) and improved dials (familiar, but redesigned). Testing both gave us a real answer, not an assumption, about which format made live sensor data feel readable and trustworthy for farmers in the field."
             },
             {
                 "type": "design-options",
