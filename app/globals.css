@@ -25,6 +25,15 @@
     --hover-glow: #141414;
 }
 
+/* Explicit light theme: overrides prefers-color-scheme on html when user chose "Light".
+   Without this, on mobile with system dark, :root keeps dark vars and the toggle cannot switch to light. */
+.light {
+    --background: #ffffff;
+    --foreground: #000000;
+    --grid-line: #e5e5e5;
+    --hover-glow: #f5f5f5;
+}
+
 body {
     color: var(--foreground);
     background: var(--background);
