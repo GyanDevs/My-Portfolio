@@ -110,7 +110,7 @@
     {
         "id": "fasal-iot-ops",
         "title": "Fasal support system",
-        "headline": "AgriTech & Accessibility",
+        "headline": "Accessibility & operations",
         "metric": "Support Tickets +108%",
         "system_diagram": "Redesigned the Help Section with voice-first ticketing and a simplified 3-step flow, dropping literacy as a prerequisite for getting help.",
         "problem": "Farmers couldn't report issues. A 5-step, text-only flow excluded anyone who didn't type fluently in Hindi or English. Problems went unresolved, and the support team worked blind.",
@@ -317,12 +317,12 @@
     },
     {
         "id": "ethnographic-study",
-        "title": "Sensor Dials Any Farmer Can Read at a Glance",
-        "headline": "IoT & Agritech",
+        "title": "IoT Telemetry Dashboards: Reducing Cognitive Load",
+        "headline": "IOT and data visualization",
         "metric": "Support Tickets -80%",
         "system_diagram": "Redesigned sensor dials to turn raw telemetry into clear, at-a-glance readings for 50k+ farmers.",
         "problem": "Farmers couldn't tell what their sensor readings meant. Dials were too small and the colors too similar, so instead of acting on the data, they called support.",
-        "card_description": "Dials redesigned for **at-a-glance** readability. **90%** of farmers said data was easier to read; support tickets **dropped 80%**.",
+        "card_description": "Dials redesigned for **at-a-glance** readability. **90%** of users said data was easier to read; support tickets **dropped 80%**.",
         "tags": [
             "Data Visualization",
             "IoT",

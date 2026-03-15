@@ -69,6 +69,15 @@ export default function LoadingScreen() {
   const [progress, setProgress] = useState(0);
   const prefersReduced = useReducedMotion();
 
+  // Fallback: force completion after 6s so the site never stays stuck
+  useEffect(() => {
+    if (hasPlayed) return;
+    const fallback = setTimeout(() => {
+      setProgress(100);
+    }, 6000);
+    return () => clearTimeout(fallback);
+  }, [hasPlayed]);
+
   // Progress ticker — same algorithm as before, untouched
   useEffect(() => {
     if (hasPlayed) return;
@@ -112,12 +121,22 @@ export default function LoadingScreen() {
     ? { duration: 0.01 }
     : { duration: 0.72, ease: [0.9, 0, 0.1, 1] as const };
 
+  const skipIntro = () => {
+    setHasPlayed(true);
+    setIntroComplete(true);
+  };
+
   return (
     <AnimatePresence mode="wait" onExitComplete={() => setIntroComplete(true)}>
       {!hasPlayed && (
         <motion.div
           key="loading-screen"
-          className="fixed inset-0 z-[9999] bg-background flex flex-col"
+          className="fixed inset-0 z-[9999] bg-background flex flex-col cursor-pointer"
+          role="button"
+          tabIndex={0}
+          onClick={skipIntro}
+          onKeyDown={(e) => e.key === "Enter" && skipIntro()}
+          aria-label="Loading — click or wait to continue"
           // Start fully visible (clip reveals everything)
           initial={{ clipPath: "inset(0 0 0% 0)" }}
           exit={exitVariant}
@@ -136,6 +155,9 @@ export default function LoadingScreen() {
           <div className="flex-1 flex flex-col justify-end px-8 pb-6">
             <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-600">
               Portfolio · 2026
+            </span>
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-400/60 dark:text-neutral-600/80 mt-4">
+              Click anywhere to skip
             </span>
           </div>
 
