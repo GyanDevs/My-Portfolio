@@ -156,9 +156,6 @@ export default function LoadingScreen() {
             <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-600">
               Portfolio · 2026
             </span>
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-400/60 dark:text-neutral-600/80 mt-4">
-              Click anywhere to skip
-            </span>
           </div>
 
           {/* ── BOTTOM — full-viewport-width spring progress bar ──────────── */}
