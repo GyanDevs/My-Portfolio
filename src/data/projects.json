@@ -864,7 +864,7 @@
         "metric": "6 Teams Harmonised",
         "system_diagram": "Digitised end-to-end device deployment, activation, and customer success workflows — from shipment to CSAT.",
         "problem": "Device installations touched six teams with no single view. Spreadsheets, WhatsApp, and manual handoffs meant CSEs lost paper forms, Accounts chased payment screenshots, and Sales learned about blocked deployments only when customers escalated.",
-        "card_description": "Internal platform that **unified 6 teams**: 12+ interviews, 4 shadowing sessions, **26 deployment** and **16 IM screens**. One visible flow.",
+        "card_description": "Internal tool that tracks and aligns the full lifecycle: **sales estimates, account approvals, inventory, deployments, customer KYC, and CSAT scores**, so every team sees the same flow 360 view.",
         "tags": [
             "Internal Tools",
             "Process Design",
