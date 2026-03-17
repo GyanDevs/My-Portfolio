@@ -29,12 +29,12 @@ export default function FasalIotPreferenceChart() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="text-[20px] font-bold tracking-tight block leading-none text-indigo-600 dark:text-indigo-500"
+              className="text-[20px] font-bold tracking-tight block leading-none text-black dark:text-white"
             >
               {" "}
               79%{" "}
             </motion.span>{" "}
-            <span className="font-mono text-[13px] uppercase tracking-widest text-indigo-600/70 dark:text-indigo-500/70 block">
+            <span className="font-mono text-[13px] uppercase tracking-widest text-black/70 dark:text-white/70 block">
               {" "}
               PREFER DIALS (45){" "}
             </span>{" "}
@@ -66,7 +66,7 @@ export default function FasalIotPreferenceChart() {
             whileInView={{ width: "79%" }}
             transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true }}
-            className="absolute left-0 top-0 h-full bg-indigo-500 z-10"
+            className="absolute left-0 top-0 h-full bg-black z-10"
           />{" "}
           {/* Bars Segment (Implicitly the remaining space) */}{" "}
           <div className="absolute right-0 top-0 h-full w-[21%] bg-neutral-300 dark:bg-neutral-700" />{" "}
@@ -89,7 +89,7 @@ export default function FasalIotPreferenceChart() {
             className="space-y-3"
           >
             {" "}
-            <h6 className="font-mono text-[13px] font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-500">
+            <h6 className="font-mono text-[13px] font-bold uppercase tracking-widest text-black dark:text-white">
               Dials Rationale
             </h6>{" "}
             <p className="text-[16px] text-neutral-500 dark:text-neutral-400">
