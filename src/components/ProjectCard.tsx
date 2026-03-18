@@ -143,6 +143,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     <Link
       href={`/projects/${project.id}`}
       className="col-span-1 block h-full group relative no-underline active:scale-[0.98] active:bg-neutral-100 dark:active:bg-white/10 transition-all duration-300 ease-spring card-hover"
+      data-case-study-card
     >
       {content}
     </Link>
