@@ -1,7 +1,6 @@
 import { ThemeProvider, IntroProvider } from "@/src/components/providers";
 import ThemeSwitch from "@/src/components/ThemeSwitch";
 import LoadingScreen from "@/src/components/LoadingScreen";
-import VelocityStretchCursor from "@/src/components/VelocityStretchCursor";
 import { Analytics } from "@vercel/analytics/next";
 
 import type { Metadata } from "next";
@@ -64,7 +63,6 @@ export default function RootLayout({
           storageKey="gyan-theme"
         >
           <ThemeSwitch />
-          <VelocityStretchCursor />
           <IntroProvider>
             <LoadingScreen />
             {children}

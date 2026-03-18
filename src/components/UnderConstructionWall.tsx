@@ -24,7 +24,6 @@ export default function UnderConstructionWall() {
         <div className="bg-[var(--grid-line)] grid grid-cols-8 gap-[1px] aspect-[8/3]">
           {bricks.map((_, index) => (
             <div
-              // eslint-disable-next-line react/no-array-index-key
               key={index}
               className="uc-brick bg-[var(--foreground)]/4 dark:bg-[var(--foreground)]/15 border border-[var(--grid-line)]"
               style={

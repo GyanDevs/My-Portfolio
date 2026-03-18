@@ -64,7 +64,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               const isBuiltRow = row >= 2; // bottom half bricks only
 
               return (
-                // eslint-disable-next-line react/no-array-index-key
                 <div
                   key={index}
                   className={
@@ -143,7 +142,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     <Link
       href={`/projects/${project.id}`}
       className="col-span-1 block h-full group relative no-underline active:scale-[0.98] active:bg-neutral-100 dark:active:bg-white/10 transition-all duration-300 ease-spring card-hover"
-      data-case-study-card
     >
       {content}
     </Link>
