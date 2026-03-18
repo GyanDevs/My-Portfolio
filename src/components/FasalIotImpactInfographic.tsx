@@ -1,9 +1,11 @@
 "use client";
 import React from "react";
 import { Eye, LifeBuoy, HelpCircle, LucideIcon } from "lucide-react";
+import CountUpOnReveal from "@/src/components/CountUpOnReveal";
 interface ImpactMetric {
   icon: LucideIcon;
-  value: string;
+  to: number;
+  decimals: number;
   label: string;
   desc: string;
   color: string;
@@ -11,21 +13,24 @@ interface ImpactMetric {
 const metrics: ImpactMetric[] = [
   {
     icon: Eye,
-    value: "90%",
+    to: 90,
+    decimals: 0,
     label: "Easier to Read",
     desc: "Farmers said sensor readings were easier to understand, especially outdoors.",
     color: "",
   },
   {
     icon: LifeBuoy,
-    value: "-80%",
+    to: -80,
+    decimals: 0,
     label: "Fewer Support Tickets",
     desc: "Tickets dropped from 50 to 10 per week once farmers could read the dials themselves.",
     color: "",
   },
   {
     icon: HelpCircle,
-    value: "73%",
+    to: 73,
+    decimals: 0,
     label: "Contextual Help Used",
     desc: "Nearly 3 in 4 farmers explored the contextual help. They wanted to understand the data, not just see it.",
     color: "",
@@ -59,10 +64,14 @@ export default function FasalIotImpactInfographic() {
               {" "}
               <div className="flex items-baseline gap-2 mb-1">
                 {" "}
-                <span className="text-[18px] font-bold tracking-tight text-[var(--foreground)]">
-                  {" "}
-                  {metric.value}{" "}
-                </span>{" "}
+                <CountUpOnReveal
+                  to={metric.to}
+                  decimals={metric.decimals}
+                  suffix="%"
+                  delayMs={idx * 120}
+                  durationMs={900}
+                  className="inline-block text-[18px] font-bold tracking-tight text-[var(--foreground)]"
+                />
               </div>{" "}
               <h4 className="text-[18px] font-bold tracking-tight mb-3 text-[var(--foreground)]">
                 {" "}

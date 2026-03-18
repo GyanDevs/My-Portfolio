@@ -6,29 +6,35 @@ import {
   Smartphone,
   MessageSquare,
 } from "lucide-react"; /** * FasalSupportImpactInfographic * Visualizes the post-launch metrics and business impact. */
+
+import CountUpOnReveal from "@/src/components/CountUpOnReveal";
 export default function FasalSupportImpactInfographic() {
   const stats = [
     {
       icon: <MessageSquare className="w-5 h-5" />,
-      value: "107.6%",
+      to: 107.6,
+      decimals: 1,
       label: "Increase in tickets raised",
       desc: "Showing massively improved accessibility.",
     },
     {
       icon: <TrendingUp className="w-5 h-5" />,
-      value: "34.28%",
+      to: 34.28,
+      decimals: 2,
       label: "Audio feature adoption",
       desc: "Confirmed language barriers as a primary friction point.",
     },
     {
       icon: <Smartphone className="w-5 h-5" />,
-      value: "24.9%",
+      to: 24.9,
+      decimals: 1,
       label: "Mobile submission growth",
       desc: "Better optimization for handheld field reporting.",
     },
     {
       icon: <Users className="w-5 h-5" />,
-      value: "80%",
+      to: 80,
+      decimals: 0,
       label: "Ticket resolution efficiency",
       desc: "Diagnostic automation reduced manual agent intervention.",
     },
@@ -56,10 +62,14 @@ export default function FasalSupportImpactInfographic() {
             </div>{" "}
             <div>
               {" "}
-              <div className="text-[18px] font-bold tracking-tight text-[var(--foreground)] mb-1">
-                {" "}
-                {stat.value}{" "}
-              </div>{" "}
+              <CountUpOnReveal
+                to={stat.to}
+                decimals={stat.decimals}
+                suffix="%"
+                delayMs={idx * 120}
+                durationMs={900}
+                className="text-[18px] font-bold tracking-tight text-[var(--foreground)] mb-1"
+              />
               <div className="font-mono text-[13px] uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400 mb-4 font-bold">
                 {" "}
                 {stat.label}{" "}
@@ -83,3 +93,4 @@ export default function FasalSupportImpactInfographic() {
     </div>
   );
 }
+
