@@ -77,61 +77,84 @@ export default function CountUpOnReveal({
     if (startedRef.current) return;
     if (typeof IntersectionObserver === "undefined") return;
 
+    const revealRoot = el.closest(".reveal") as HTMLElement | null;
+
+    const runAnimation = () => {
+      // Guard against double-starts.
+      if (startedRef.current) return;
+      startedRef.current = true;
+
+      const phase1Ms = Math.round(durationMs * 0.7);
+      const phase2Ms = Math.max(1, durationMs - phase1Ms);
+      const totalMs = phase1Ms + phase2Ms;
+
+      const t0 = performance.now();
+      let lastText = "";
+
+      const tick = (now: number) => {
+        const elapsed = Math.max(0, now - t0);
+
+        let current: number;
+        if (elapsed < phase1Ms) {
+          const p = clamp01(elapsed / phase1Ms);
+          current = fromValue + (midValue - fromValue) * easeInOutQuint(p);
+        } else if (elapsed < phase1Ms + phase2Ms) {
+          const p = clamp01((elapsed - phase1Ms) / phase2Ms);
+          current = midValue + (to - midValue) * easeInOutCubic(p);
+        } else {
+          current = to;
+        }
+
+        const nextText = formatValue(current, decimals, suffix);
+        if (nextText !== lastText) {
+          el.textContent = nextText;
+          lastText = nextText;
+        }
+
+        if (elapsed < totalMs) {
+          requestAnimationFrame(tick);
+        } else {
+          const finalText = formatValue(to, decimals, suffix);
+          if (finalText !== lastText) el.textContent = finalText;
+        }
+      };
+
+      // Start on next paint for smoother first frame.
+      requestAnimationFrame(() => {
+        if (delayMs > 0) {
+          window.setTimeout(() => requestAnimationFrame(tick), delayMs);
+        } else {
+          requestAnimationFrame(tick);
+        }
+      });
+    };
+
+    // Preferred behavior: if we are inside a `.reveal`, start when it becomes `.is-revealed`.
+    // This avoids race conditions where the tween completes while opacity is still 0.
+    if (revealRoot) {
+      if (revealRoot.classList.contains("is-revealed")) {
+        runAnimation();
+        return;
+      }
+
+      const mo = new MutationObserver(() => {
+        if (!revealRoot) return;
+        if (!revealRoot.classList.contains("is-revealed")) return;
+        mo.disconnect();
+        runAnimation();
+      });
+
+      mo.observe(revealRoot, { attributes: true, attributeFilter: ["class"] });
+      return () => mo.disconnect();
+    }
+
+    // Fallback behavior: no `.reveal` ancestor, so start on element intersection.
     const obs = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
         if (!entry?.isIntersecting) return;
-
-        startedRef.current = true;
         obs.disconnect();
-
-        const startAnimation = () => {
-          const phase1Ms = Math.round(durationMs * 0.7);
-          const phase2Ms = Math.max(1, durationMs - phase1Ms);
-          const totalMs = phase1Ms + phase2Ms;
-
-          const t0 = performance.now();
-          let lastText = "";
-
-          const tick = (now: number) => {
-            const elapsed = Math.max(0, now - t0);
-
-            let current: number;
-            if (elapsed < phase1Ms) {
-              const p = clamp01(elapsed / phase1Ms);
-              // Phase 1: from -> mid, smooth at both ends.
-              current = fromValue + (midValue - fromValue) * easeInOutQuint(p);
-            } else if (elapsed < phase1Ms + phase2Ms) {
-              const p = clamp01((elapsed - phase1Ms) / phase2Ms);
-              // Phase 2: mid -> to, smooth at both ends (start velocity matches phase 1 end velocity).
-              current = midValue + (to - midValue) * easeInOutCubic(p);
-            } else {
-              current = to;
-            }
-
-            const nextText = formatValue(current, decimals, suffix);
-            if (nextText !== lastText) {
-              el.textContent = nextText;
-              lastText = nextText;
-            }
-
-            if (elapsed < totalMs) {
-              requestAnimationFrame(tick);
-            } else {
-              // Ensure the final value is exact.
-              const finalText = formatValue(to, decimals, suffix);
-              if (finalText !== lastText) el.textContent = finalText;
-            }
-          };
-
-          requestAnimationFrame(tick);
-        };
-
-        if (delayMs > 0) {
-          window.setTimeout(startAnimation, delayMs);
-        } else {
-          startAnimation();
-        }
+        runAnimation();
       },
       { threshold: 0.25 }
     );
