@@ -7,6 +7,7 @@ import { DesignLoveGallery } from "@/src/components/DesignLoveGallery";
 import { LoveTracksSection } from "@/src/components/LoveTracksSection";
 import { ProfilePhotoDecode } from "@/src/components/ProfilePhotoDecode";
 import { BooksGrid } from "@/src/components/BooksGrid";
+import ConnectLink from "@/src/components/ConnectLink";
 import { careerMilestones, careerPageIntro } from "@/src/data/careerStory";
 import { booksGridItems } from "@/src/data/booksGridItems";
 import { designLoveShots } from "@/src/data/designLoveShots";
@@ -109,6 +110,35 @@ export default function AboutMePage() {
           </div>
         </RevealOnScroll>
       </section>
+
+      {/* FOOTER (mirrors Home page social block) */}
+      <footer className="py-12 px-8 md:px-12 lg:px-24 relative flex flex-col items-start justify-center">
+        <div className="mb-8">
+          <h3 className="font-mono text-[14px] uppercase tracking-[0.2em] text-neutral-500 mb-4">
+            Social
+          </h3>
+          <ul className="space-y-3 font-mono font-bold uppercase tracking-wide text-[14px]">
+            {[
+              { label: "LinkedIn ↗", href: "https://www.linkedin.com/in/gyandesign/" },
+              { label: "Dribbble ↗", href: "https://dribbble.com/gyaan_design" },
+              { label: "Behance ↗", href: "https://www.behance.net/gyadesign" },
+            ].map(({ label, href }) => (
+              <li key={href}>
+                <ConnectLink href={href} label={label} />
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="w-full flex items-end justify-between">
+          <div className="font-mono text-xs text-neutral-500 uppercase tracking-widest mb-2">
+            © 2026 GYAN PRAKASH
+          </div>
+          <h2 className="text-[5vw] leading-[0.8] font-black text-[var(--foreground)] opacity-5 text-right select-none pointer-events-none uppercase">
+            MORE<br />
+            TO COME
+          </h2>
+        </div>
+      </footer>
     </main>
   );
 }
