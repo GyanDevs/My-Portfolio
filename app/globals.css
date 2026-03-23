@@ -61,6 +61,58 @@ body {
     border-radius: 0 !important;
 }
 
+/* Last-milestone pulse: 0% and 100% both opacity 0 so loop reset never flashes. */
+@keyframes career-timeline-ripple {
+    0% {
+        transform: scale(0.88);
+        opacity: 0;
+    }
+    6% {
+        opacity: 0.52;
+    }
+    100% {
+        transform: scale(2.55);
+        opacity: 0;
+    }
+}
+
+.career-timeline-node-ripple {
+    animation: career-timeline-ripple 1.65s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+    will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .career-timeline-node-ripple {
+        animation: none !important;
+    }
+}
+
+/* Love tracks: entire vinyl rotates; `animation-play-state` pauses without resetting angle. */
+@keyframes love-vinyl-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.love-vinyl-disc-spin {
+    transform-origin: 100px 100px;
+    animation: love-vinyl-spin 13s linear infinite;
+    animation-play-state: paused;
+}
+
+.love-vinyl-disc-spin--running {
+    animation-play-state: running;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .love-vinyl-disc-spin {
+        animation: none !important;
+    }
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 6px;
@@ -154,6 +206,17 @@ body {
 .marquee-container:hover .animate-marquee {
     animation-play-state: paused;
     cursor: default;
+}
+
+/* Gallery marquee: no edge mask, but still pause on hover. */
+.gallery-marquee-container:hover .animate-marquee {
+    animation-play-state: running;
+    cursor: default;
+}
+
+/* Slower speed for CV design gallery marquee only. */
+.gallery-marquee-container .animate-marquee {
+    animation-duration: 46s;
 }
 
 /* Under Construction brick wall animation

@@ -43,6 +43,92 @@ const cardVariants = {
   }),
 };
 
+function escapeRegExp(s: string) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+const TESTIMONIAL_HIGHLIGHT_PHRASES = [
+  // Core decision-making / influence
+  "what and how",
+  "why behind",
+  "ownership",
+  "ownership.",
+  "open to",
+  "maturity",
+  "collaborative",
+  "team player",
+  "positive attitude",
+  "sense of humor",
+  "fun to work with",
+  // Product + users
+  "user behaviour",
+  "user behavior",
+  "user experience",
+  "product experiences",
+  "business goals",
+  "constraints",
+  "clean, intuitive",
+  "user-friendly",
+  "effective product designer",
+  "incredibly effective",
+  // Evidence + rigor
+  "data-driven",
+  "confirmation bias",
+  "data-driven design decisions",
+  // Strategy / innovation
+  "innovative ideas",
+  "forward-thinking",
+  "forward-thinking mindset",
+  "game-changer",
+  "cutting-edge",
+  "impactful products",
+  // Debates / alignment
+  "difficult debates",
+  "challenge the status quo",
+] as const;
+
+const TESTIMONIAL_HIGHLIGHT_MAX = 3;
+
+// Pre-built regex so we don't allocate per render.
+// Note: contains `gi` so we can use `exec` and limit highlights.
+const TESTIMONIAL_HIGHLIGHT_REGEX = (() => {
+  const sorted = [...TESTIMONIAL_HIGHLIGHT_PHRASES].sort((a, b) => b.length - a.length);
+  const escaped = sorted.map(escapeRegExp);
+  return new RegExp(`(${escaped.join("|")})`, "gi");
+})();
+
+/**
+ * Lightweight “impact” highlighting for testimonials.
+ * Wraps a few high-signal phrases with the same bold style
+ * used for Impact sections elsewhere (`**...**` → <strong>...).
+ */
+function highlightTestimonialsText(text: string) {
+  let highlightsUsed = 0;
+  let lastIndex = 0;
+  const out: React.ReactNode[] = [];
+
+  // Reset lastIndex since regex is module-scoped.
+  TESTIMONIAL_HIGHLIGHT_REGEX.lastIndex = 0;
+
+  let match: RegExpExecArray | null = null;
+  while (highlightsUsed < TESTIMONIAL_HIGHLIGHT_MAX && (match = TESTIMONIAL_HIGHLIGHT_REGEX.exec(text))) {
+    const m = match[0];
+    const index = match.index ?? 0;
+
+    if (index > lastIndex) out.push(text.slice(lastIndex, index));
+    out.push(
+      <strong key={`hl-${index}-${highlightsUsed}`} className="font-sans font-bold text-[var(--foreground)]">
+        {m}
+      </strong>,
+    );
+    highlightsUsed += 1;
+    lastIndex = index + m.length;
+  }
+
+  if (lastIndex < text.length) out.push(text.slice(lastIndex));
+  return out;
+}
+
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(3);
@@ -165,7 +251,7 @@ export default function Testimonials() {
                       </span>
                     </div>
                     <p className="text-[16px] text-neutral-500 dark:text-neutral-400">
-                      {item.text}
+                      {highlightTestimonialsText(item.text)}
                     </p>
                   </div>
 

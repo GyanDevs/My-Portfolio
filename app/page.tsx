@@ -115,11 +115,17 @@ export default function Home() {
           {/* Block 3: Right column — bio + CTA */}
           <HeroEntry delay={0.16} isFirstLoad={isFirstLoad} shouldAnimate={shouldAnimate}>
             <div className="flex flex-col gap-8 max-w-2xl border-l border-[var(--grid-line)] pl-6 lg:ml-32">
-              <p className="text-[16px] md:text-xl lg:text-2xl leading-[1.3] font-sans text-neutral-500 font-light tracking-tight">
-                A design is just a guess until it&apos;s <span className="text-foreground italic font-serif">tested</span>. I design the <span className="text-foreground italic font-serif">research</span>, the <span className="text-foreground italic font-serif">logic</span>, and the <span className="text-foreground italic font-serif">interface</span>, and I test all three.
+              <p className="text-[16px] md:text-xl lg:text-2xl leading-[1.3] font-sans text-neutral-500 font-light tracking-tight [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical] overflow-hidden">
+                I grew up inside <span className="text-foreground italic font-serif">creative work</span>, <span className="text-foreground italic font-serif">design</span> was just the word for it.
               </p>
 
-              <CtaButton as="link" href="/cv" label="Open CV" icon="arrow-right" className="w-fit self-start" />
+              <CtaButton
+                as="link"
+                href="/about-me"
+                label="About me"
+                icon="arrow-right"
+                className="w-fit self-start"
+              />
             </div>
           </HeroEntry>
         </div>
