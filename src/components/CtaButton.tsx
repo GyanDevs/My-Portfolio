@@ -169,7 +169,8 @@ interface CtaAnchorProps extends CtaButtonProps {
     href: string;
     target?: string;
     rel?: string;
-    download?: boolean;
+    /** `true` or the file name the browser should use (same-origin URLs). */
+    download?: boolean | string;
 }
 
 // Button with click handler
