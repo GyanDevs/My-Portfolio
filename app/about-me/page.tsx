@@ -92,8 +92,8 @@ export default function AboutMePage() {
               </h2>
             </div>
             <BooksGrid items={booksGridItems} />
-            <div className="mt-12 sm:mt-16 px-4 sm:px-6 md:px-12 lg:px-16">
-              <div className="border-x-0 lg:border-x lg:border-[var(--grid-line)] bg-background">
+            <div className="mt-16 sm:mt-20 px-0">
+              <div className="bg-background">
                 <LoveTracksSection tracks={loveTracks} showHeading={false} />
               </div>
             </div>

@@ -833,7 +833,7 @@ export function LoveTracksSection({
           />
         </div>
       ) : (
-        <div className="w-full min-w-0 border border-[var(--grid-line)] lg:border-x-0 bg-background">
+        <div className="w-full min-w-0 border-y border-[var(--grid-line)] border-x-0 bg-background -mt-px">
           <div className="grid grid-cols-1 lg:grid-cols-[391px_minmax(0,1fr)] lg:items-stretch">
             <div className="min-w-0 w-full border-b border-[var(--grid-line)] bg-background lg:border-b-0">
               <RecordCard
