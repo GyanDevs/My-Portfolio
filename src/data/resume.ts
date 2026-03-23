@@ -1,9 +1,12 @@
 export const DATA_LAST_UPDATED = "2026-02-27";
 
+/** Suggested filename when saving `/resume.pdf` from the site */
+export const RESUME_PDF_DOWNLOAD_FILENAME = "Gyan's resume.pdf";
+
 export const profile = {
   hook: "6 years turning complexity into clarity.",
   tagline:
-    "Designed for agriculture IoT, B2B supply chain, and EdTech — where a bad design decision has a real operational cost. This is the full timeline.",
+    "Designed for agriculture IoT, B2B supply chain, and EdTech, where a bad design decision has a real operational cost. This is the full timeline.",
 };
 
 export const summary =
@@ -112,11 +115,11 @@ export const education = [
   {
     degree: "B.Tech (Automobile Engineering)",
     institution: "Lovely Professional University",
-    period: "2016–2020",
+    period: "2016-2020",
   },
   {
     degree: "IxDF Certification (Top 10%)",
     institution: "Human-Computer Interaction",
-    period: "2020–2021",
+    period: "2020-2021",
   },
 ];
