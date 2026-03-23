@@ -20,7 +20,8 @@ export const designLoveShots: DesignLoveShot[] = [
   {
     id: "3",
     alt: "Low-poly golden city diorama with tilt-shift depth of field",
-    src: "/assets/design-love/design-love-03.webp",
+    // Cache-bust the updated asset so Vercel/Next image optimization/CDN doesn't keep showing the old file.
+    src: "/assets/design-love/design-love-03.webp?v=F197AC2C",
   },
   {
     id: "4",
