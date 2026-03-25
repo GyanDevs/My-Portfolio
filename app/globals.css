@@ -199,6 +199,11 @@ body {
             black 7%,
             black 93%,
             transparent 100%);
+
+    /* Keep the 1px border width from `border-t border-b`,
+       but match the dotted grey guides visible in the preview. */
+    border-top-style: dotted;
+    border-bottom-style: dotted;
 }
 
 /* Pause on hover — items freeze mid-scroll so they can be read,
