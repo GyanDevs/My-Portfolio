@@ -787,7 +787,7 @@ export function CareerTimeline({
             : "bg-[var(--grid-line)]";
 
             return (
-              <li className="relative w-full min-w-0 py-4 sm:py-5 md:py-8 lg:py-10" key={milestone.id}>
+              <li className="relative w-full min-w-0 py-3 sm:py-4 md:py-6 lg:py-8" key={milestone.id}>
                 <MilestoneCard {...cardProps} variant="mobile" />
 
                 <div className="hidden w-full min-w-0 md:grid md:grid-cols-[1fr_40px_1fr] md:items-center md:gap-0">

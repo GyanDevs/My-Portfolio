@@ -562,20 +562,43 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
 
                           {project.id === "bazaarnxt-b2b" &&
                             section.title === "About BazaarNXT" && (
-                              <div className="grid grid-cols-[2fr_3fr] gap-4 mb-8 items-start">
-                                <div className="overflow-hidden relative h-[400px]">
-                                  <img
-                                    src="/assets/bazaarnxt-field-photo-1.png"
-                                    alt="BazaarNXT merchant showing the app"
-                                    className="w-full h-full object-cover object-top transition-all duration-500"
-                                  />
+                              <div className="mb-8">
+                                {/* Mobile: horizontal scrollable strip */}
+                                <div className="md:hidden h-[400px]">
+                                  <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory no-scrollbar h-full">
+                                    <div className="flex-none w-[78vw] h-full overflow-hidden relative snap-start">
+                                      <img
+                                        src="/assets/bazaarnxt-field-photo-1.png"
+                                        alt="BazaarNXT merchant showing the app"
+                                        className="w-full h-full object-cover object-top transition-all duration-500"
+                                      />
+                                    </div>
+                                    <div className="flex-none w-[78vw] h-full overflow-hidden relative snap-start">
+                                      <img
+                                        src="/assets/bazaarnxt-field-photo-2.png"
+                                        alt="BazaarNXT buyer using the app in store"
+                                        className="w-full h-full object-cover object-top transition-all duration-500"
+                                      />
+                                    </div>
+                                  </div>
                                 </div>
-                                <div className="overflow-hidden relative h-[400px]">
-                                  <img
-                                    src="/assets/bazaarnxt-field-photo-2.png"
-                                    alt="BazaarNXT buyer using the app in store"
-                                    className="w-full h-full object-cover object-top transition-all duration-500"
-                                  />
+
+                                {/* md+: original 2-column grid */}
+                                <div className="hidden md:grid grid-cols-[2fr_3fr] gap-4 items-start">
+                                  <div className="overflow-hidden relative h-[400px]">
+                                    <img
+                                      src="/assets/bazaarnxt-field-photo-1.png"
+                                      alt="BazaarNXT merchant showing the app"
+                                      className="w-full h-full object-cover object-top transition-all duration-500"
+                                    />
+                                  </div>
+                                  <div className="overflow-hidden relative h-[400px]">
+                                    <img
+                                      src="/assets/bazaarnxt-field-photo-2.png"
+                                      alt="BazaarNXT buyer using the app in store"
+                                      className="w-full h-full object-cover object-top transition-all duration-500"
+                                    />
+                                  </div>
                                 </div>
                               </div>
                             )}
@@ -732,7 +755,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                               <BazaarNxtProcessInfographic />
                             )}
                           {project.id === "flow360-internal-tools" &&
-                            section.title === "Solution — The 360 Flow" && (
+                            section.title === "Solution: The 360 Flow" && (
                               <div className="mt-8">
                                 <Flow360DeploymentInfographic />
                               </div>
