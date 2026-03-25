@@ -900,7 +900,7 @@ export function LoveTracksSection({
                           <span className="sr-only">Now playing</span>
                         ) : null}
                         <span className="relative z-10 flex min-w-0 flex-1 flex-col gap-1">
-                          <span className="font-['Helvetica'] text-sm font-black leading-snug tracking-tight">
+                          <span className="font-['Helvetica'] text-sm font-extrabold leading-snug tracking-tight">
                             {track.title}
                           </span>
                           <span className="line-clamp-2 font-sans text-xs font-light leading-relaxed text-neutral-600 dark:text-neutral-400">
