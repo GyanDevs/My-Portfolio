@@ -54,6 +54,7 @@ function HeroEntry({
 
 export default function Home() {
   const { introComplete } = useIntro();
+  const prefersReduced = useReducedMotion();
 
   // Capture introComplete at mount time — true means we're on a back-navigation.
   // Ref is used in the effect below; lazy useState initializers capture the value
@@ -63,6 +64,11 @@ export default function Home() {
 
   // Only meaningful on first load — fires after loading screen clip-path wipe completes
   const [shouldAnimate, setShouldAnimate] = React.useState(() => introComplete);
+
+  // Keep font-size consistent with the previewed state:
+  // - Back-nav (no motion.div wrapper): 22px
+  // - First load (motion.div wrapper): 20px
+  const bioFontBase = isFirstLoad && !prefersReduced ? "text-[20px]" : "text-[22px]";
 
   React.useEffect(() => {
     if (introComplete && !wasAlreadyComplete.current) {
@@ -115,7 +121,7 @@ export default function Home() {
           {/* Block 3: Right column — bio + CTA */}
           <HeroEntry delay={0.16} isFirstLoad={isFirstLoad} shouldAnimate={shouldAnimate}>
             <div className="flex flex-col gap-8 max-w-2xl border-l border-[var(--grid-line)] pl-6 lg:ml-32">
-              <p className="text-[22px] md:text-xl lg:text-2xl leading-[1.3] font-sans text-neutral-500 font-light tracking-tight [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical] overflow-hidden">
+              <p className={`${bioFontBase} md:text-xl lg:text-2xl leading-[1.3] font-sans text-neutral-500 font-light tracking-tight [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical] overflow-hidden`}>
                 I grew up inside <span className="text-foreground italic font-serif">creative work</span>, <span className="text-foreground italic font-serif">design</span> was just the word for it.
               </p>
 
