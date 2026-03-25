@@ -25,7 +25,7 @@ export function BooksGrid({ items }: { items: BookGridItem[] }) {
           {items.map((item) => (
             <figure
               key={item.id}
-              className="m-0 flex shrink-0 flex-row items-end gap-4 min-w-0 w-[220px] sm:w-auto sm:shrink"
+              className="group m-0 flex shrink-0 flex-row items-end gap-4 min-w-0 w-[220px] sm:w-auto sm:shrink"
               role="listitem"
             >
               {/* Row list: small thumbnail + text (like the songs list feel) */}
