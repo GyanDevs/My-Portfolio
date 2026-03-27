@@ -98,7 +98,7 @@ export function DesignLoveGallery({ items, title }: DesignLoveGalleryProps) {
         pillClassName={FOLLOW_CURSOR_PILL_ACCENT_CLASSNAME}
         label={
           <>
-            <span className="tracking-tight normal-case">
+            <span className="uppercase tracking-[0.16em]">
               for the love of design
             </span>
             <Heart
