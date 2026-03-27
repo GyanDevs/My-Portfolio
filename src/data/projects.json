@@ -1,7 +1,7 @@
 [
     {
         "id": "iot-b2b-saas",
-        "title": "Fasal User Research",
+        "title": "Fasal user research",
         "headline": "IoT & B2B SaaS",
         "metric": "Validation Confidence > 95%",
         "system_diagram": "Five days of field research to replace assumptions with what farmers actually said.",
@@ -317,7 +317,7 @@
     },
     {
         "id": "ethnographic-study",
-        "title": "IoT Telemetry Dashboards: Reducing Cognitive Load",
+        "title": "IoT telemetry dashboards - Reducing cognitive load",
         "headline": "IOT and data visualization",
         "metric": "Support Tickets -80%",
         "system_diagram": "Redesigned sensor dials to turn raw telemetry into clear, at-a-glance readings for 50k+ farmers.",
@@ -515,7 +515,7 @@
     },
     {
         "id": "fasal-billing-subscription",
-        "title": "Fasal Billing & Subscription System",
+        "title": "Fasal billing & subscription system",
         "headline": "Fintech & SaaS",
         "metric": "Support Tickets −80%",
         "engineering_artifact": "/assets/fasal-billing-thumb.png",
@@ -707,7 +707,7 @@
     },
     {
         "id": "bazaarnxt-b2b",
-        "title": "BazaarNXT: B2B Procurement Platform",
+        "title": "BazaarNXT: B2B procurement platform",
         "headline": "B2B Marketplace",
         "metric": "Offline to Online, End-to-End",
         "system_diagram": "Moved B2B packaging procurement from offline chaos to a structured digital marketplace, eliminating supplier discovery friction and order tracking blind spots.",
@@ -859,7 +859,7 @@
     },
     {
         "id": "flow360-internal-tools",
-        "title": "Flow 360 - Internal Operations Platform",
+        "title": "Flow 360 - Internal operations platform",
         "headline": "Internal Tools & Operations",
         "metric": "6 Teams Harmonised",
         "system_diagram": "Digitised end-to-end device deployment, activation, and customer success workflows — from shipment to CSAT.",
