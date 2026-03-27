@@ -11,6 +11,7 @@ import projects from "@/src/data/projects.json";
 import { useIntro } from "@/src/components/providers";
 import { motion, useReducedMotion } from "framer-motion";
 import RevealOnScroll from "@/src/components/RevealOnScroll";
+import CaseStudyCursorPill from "@/src/components/CaseStudyCursorPill";
 
 // HeroEntry — staggered reveal gated on first-load only.
 // Uses wasAlreadyComplete ref (same pattern as Typewriter) to distinguish:
@@ -198,18 +199,20 @@ export default function Home() {
       </div>
 
       {/* 3. CASE STUDY GRID */}
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-[var(--grid-line)] gap-[1px] border-b border-[var(--grid-line)]">
-        {/* gap-[1px] with bg-grid-line creates inner borders between cards */}
-        {projects.map((project, index) => (
-          <RevealOnScroll
-            key={project.id}
-            delay={index * 80}
-            className="bg-background h-full flex flex-col"
-          >
-            <ProjectCard project={project} />
-          </RevealOnScroll>
-        ))}
-      </section>
+      <CaseStudyCursorPill>
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-[var(--grid-line)] gap-[1px] border-b border-[var(--grid-line)]">
+          {/* gap-[1px] with bg-grid-line creates inner borders between cards */}
+          {projects.map((project, index) => (
+            <RevealOnScroll
+              key={project.id}
+              delay={index * 80}
+              className="bg-background h-full flex flex-col"
+            >
+              <ProjectCard project={project} />
+            </RevealOnScroll>
+          ))}
+        </section>
+      </CaseStudyCursorPill>
 
       {/* 4. TESTIMONIALS */}
       <RevealOnScroll>

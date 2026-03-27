@@ -115,7 +115,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                   key={i}
                   className={
                     project.isPlaceholder
-                      ? "font-bold"
+                      ? "font-bold text-neutral-500 dark:text-neutral-400"
                       : "font-bold text-[var(--foreground)]"
                   }
                 >
@@ -141,7 +141,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <Link
       href={`/projects/${project.id}`}
-      className="col-span-1 block h-full group relative no-underline active:scale-[0.98] active:bg-neutral-100 dark:active:bg-white/10 transition-all duration-300 ease-spring card-hover"
+      className="col-span-1 block h-full cursor-default group relative no-underline active:scale-[0.98] active:bg-neutral-100 dark:active:bg-white/10 transition-all duration-300 ease-spring card-hover"
     >
       {content}
     </Link>
