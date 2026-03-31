@@ -316,7 +316,7 @@ function MilestoneCard({
   );
 
   const interactiveClass =
-    "group cursor-pointer text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--foreground)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]";
+    "group cursor-pointer text-left transition-colors duration-[250ms] ease-out hover:bg-[var(--hover-glow)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--foreground)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]";
 
   const tap = reduceMotion ? undefined : { scale: 0.985, transition: TAP_SPRING };
 

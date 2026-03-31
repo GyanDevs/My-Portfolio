@@ -3,35 +3,44 @@
 @tailwind utilities;
 
 :root {
-    --background: #ffffff;
-    --foreground: #000000;
-    --grid-line: #e5e5e5;
-    --hover-glow: #f5f5f5;
+    --background: #fffdf5;
+    --foreground: #100f0c;
+    --grid-line: #ece9dc;
+    --hover-glow: #f5f2e8;
+    /* Saturated highlighter yellow */
+    --highlight-marker: #fbbf24;
+    --highlight-marker-foreground: #0a0a0a;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --background: #0a0a0a;
-        --foreground: #ffffff;
-        --grid-line: #262626;
-        --hover-glow: #141414;
+        --background: #100f0c;
+        --foreground: #f5f2e8;
+        --grid-line: #26231a;
+        --hover-glow: #1a1814;
+        --highlight-marker: #b45309;
+        --highlight-marker-foreground: #fffbeb;
     }
 }
 
 .dark {
-    --background: #0a0a0a;
-    --foreground: #ffffff;
-    --grid-line: #262626;
-    --hover-glow: #141414;
+    --background: #100f0c;
+    --foreground: #f5f2e8;
+    --grid-line: #26231a;
+    --hover-glow: #1a1814;
+    --highlight-marker: #b45309;
+    --highlight-marker-foreground: #fffbeb;
 }
 
 /* Explicit light theme: overrides prefers-color-scheme on html when user chose "Light".
    Without this, on mobile with system dark, :root keeps dark vars and the toggle cannot switch to light. */
 .light {
-    --background: #ffffff;
-    --foreground: #000000;
-    --grid-line: #e5e5e5;
-    --hover-glow: #f5f5f5;
+    --background: #fffdf5;
+    --foreground: #100f0c;
+    --grid-line: #ece9dc;
+    --hover-glow: #f5f2e8;
+    --highlight-marker: #fbbf24;
+    --highlight-marker-foreground: #0a0a0a;
 }
 
 body {
@@ -43,6 +52,13 @@ body {
 @layer utilities {
     .text-balance {
         text-wrap: balance;
+    }
+
+    .marker-highlight {
+        /* Kept for backwards compatibility, but the UI no longer uses it for yellow marker highlights. */
+        background-color: transparent;
+        color: inherit;
+        padding: 0;
     }
 }
 

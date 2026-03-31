@@ -175,7 +175,7 @@ export default function Testimonials() {
   const atEnd = currentIndex >= maxIndex;
 
   return (
-    <section className="bg-background border-b border-[var(--grid-line)] py-24">
+    <section className="bg-background py-24">
       <div className="max-w-[1600px] mx-auto px-8 md:px-12">
         {/* Header with Navigation */}
         <div className="flex justify-between items-end mb-16">

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import CtaButton from "@/src/components/CtaButton";
+import { Download } from "lucide-react";
 import BackButton from "@/src/components/BackButton";
 import RevealOnScroll from "@/src/components/RevealOnScroll";
 import { CareerTimeline } from "@/src/components/CareerTimeline";
@@ -38,7 +38,7 @@ export default function AboutMePage() {
                 />
               </div>
               <div className="min-w-0 flex-1 text-left">
-                <p className="font-mono text-[12px] md:text-sm uppercase tracking-[0.2em] text-neutral-500 mb-3 md:mb-4">
+                <p className="font-mono text-[12px] md:text-sm uppercase tracking-[0.2em] text-neutral-500 mb-7 md:mb-8">
                   {careerPageIntro.eyebrow}
                 </p>
                 <div className="space-y-2">
@@ -63,13 +63,14 @@ export default function AboutMePage() {
               </div>
             </div>
             <div className="flex w-full shrink-0 justify-start pt-1 md:w-auto md:justify-end md:self-start md:pt-0">
-              <CtaButton
-                as="anchor"
+              <a
                 href="/resume.pdf"
                 download={RESUME_PDF_DOWNLOAD_FILENAME}
-                label="Download CV"
-                icon="download"
-              />
+                className="connect-link inline-flex items-center gap-2 font-mono font-bold uppercase tracking-wide text-[14px] text-[var(--foreground)] decoration-2 underline-offset-4 transition-transform duration-200 ease-[cubic-bezier(0.32,0.72,0,1)] hover:translate-x-0.5 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--grid-line)]"
+              >
+                Download CV
+                <Download className="w-[14px] h-[14px] shrink-0" strokeWidth={2.5} />
+              </a>
             </div>
           </div>
         </section>

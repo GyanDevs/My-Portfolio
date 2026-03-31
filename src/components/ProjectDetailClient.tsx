@@ -112,6 +112,46 @@ type ProjectDetailClientProps = {
   project: Project;
 };
 
+/** Section labels in problem_statement: bold foreground, no marker (other **…** keeps marker). */
+const PROBLEM_STATEMENT_STRUCTURAL_LABELS = new Set([
+  "Problem Statement:",
+  "How Might We Statement:",
+  "The Challenge:",
+  "The Fix:",
+  "The Problem:",
+  "The Solution:",
+  '"Last Updated"',
+]);
+
+function isProblemStatementStructuralLabel(inner: string): boolean {
+  return PROBLEM_STATEMENT_STRUCTURAL_LABELS.has(inner.trim());
+}
+
+function renderProblemStatementRichText(text: string) {
+  return text.split(/(\*\*.*?\*\*)/).map((part, i) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      const inner = part.slice(2, -2);
+      if (isProblemStatementStructuralLabel(inner)) {
+        return (
+          <strong key={i} className="font-sans font-bold text-[var(--foreground)]">
+            {inner}
+          </strong>
+        );
+      }
+      return (
+        <strong
+          key={i}
+          className="font-sans font-bold text-[var(--foreground)]"
+        >
+          {inner}
+        </strong>
+      );
+    }
+    return <React.Fragment key={i}>{part}</React.Fragment>;
+  });
+}
+
+/** Right column: **…** is bold + foreground only (no yellow marker). */
 function renderInlineRichText(text: string) {
   return text.split(/(\*\*.*?\*\*|\^\^.*?\^\^)/).map((part, i) => {
     if (part.startsWith("**") && part.endsWith("**")) {
@@ -214,20 +254,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                     Problem &amp; Solution
                   </h3>
                   <div className="text-base md:text-[16px] text-neutral-500 dark:text-neutral-400 whitespace-pre-wrap">
-                    {project.problem_statement
-                      .split(/(\*\*.*?\*\*)/)
-                      .map((part, i) =>
-                        part.startsWith("**") && part.endsWith("**") ? (
-                          <strong
-                            key={i}
-                            className="font-sans font-bold text-[var(--foreground)]"
-                          >
-                            {part.slice(2, -2)}
-                          </strong>
-                        ) : (
-                          <React.Fragment key={i}>{part}</React.Fragment>
-                        ),
-                      )}
+                    {renderProblemStatementRichText(project.problem_statement)}
                   </div>
                 </div>
               )}

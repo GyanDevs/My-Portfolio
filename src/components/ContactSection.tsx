@@ -107,7 +107,7 @@ export default function ContactSection() {
   const palette = isDark ? MUTED_COLORS_DARK : MUTED_COLORS;
 
   return (
-    <section ref={sectionRef} className="border-b border-[var(--grid-line)] relative overflow-hidden bg-background flex items-center" style={{ height: "480px" }}>
+    <section ref={sectionRef} className="relative overflow-hidden bg-background flex items-center" style={{ height: "480px" }}>
       {/* Grid lines + coloured cells */}
       <svg className="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
         <defs>

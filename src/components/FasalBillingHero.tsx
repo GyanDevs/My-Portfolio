@@ -18,31 +18,23 @@ export default function FasalBillingHero() {
         {" "}
         <div className="space-y-4 max-w-2xl">
           {" "}
-          <h3 className="text-2xl md:text-3xl font-bold mb-6 tracking-tight text-white drop-shadow-sm">
-            {" "}
-            Designing Financial Trust for the{" "}
-            <span className="font-serif italic font-normal">
-              Indian Farmer.
-            </span>{" "}
-          </h3>{" "}
-          <p className="text-base md:text-[16px] font-sans text-white/90 leading-snug drop-shadow-md">
-            {" "}
+          <h3 className="text-2xl md:text-3xl font-normal mb-6 tracking-tight text-white/90 drop-shadow-sm">
+            Designing Financial Trust for the Indian Farmer.
+          </h3>
+          <p className="text-base md:text-[16px] font-sans font-normal text-white/90 leading-snug drop-shadow-md">
             In rural India, trust is binary it takes years to build and seconds
             to break. For 50,000+ farmers using Fasal, our IoT platform wasn&apos;t
             just a gadget; it was the brain of their farm. But there was a
-            silent trust-killer buried in our UX:{" "}
-            <strong className="font-sans font-bold text-white">
-              The Shared Wallet.
-            </strong>{" "}
-          </p>{" "}
-          <p className="text-base md:text-[16px] font-sans text-white/90 leading-snug drop-shadow-md">
+            silent trust-killer buried in our UX: The Shared Wallet.
+          </p>
+          <p className="text-base md:text-[16px] font-sans font-normal text-white/90 leading-snug drop-shadow-md">
             {" "}
             Imagine a bank account that automatically deducts money every day,
             but refuses to tell you what for. That was the reality for our
             users. Farmers were seeing their balances drain for devices sitting
             in warehouses or on fallow land. They felt robbed.{" "}
           </p>{" "}
-          <p className="text-base md:text-[16px] font-sans text-white/90 leading-snug drop-shadow-md">
+          <p className="text-base md:text-[16px] font-sans font-normal text-white/90 leading-snug drop-shadow-md">
             {" "}
             I was tasked not just to fix a billing UI, but to stop a crisis of
             confidence that was pushing our most loyal farmers to leave.{" "}
