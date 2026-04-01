@@ -141,7 +141,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <Link
       href={`/projects/${project.id}`}
-      className="col-span-1 block h-full cursor-default group relative no-underline active:scale-[0.98] active:bg-neutral-100 dark:active:bg-white/10 transition-all duration-300 ease-spring card-hover"
+      className="col-span-1 block h-full cursor-default group relative no-underline active:scale-[0.98] active:bg-[var(--grid-line)] transition-all duration-300 ease-spring card-hover"
     >
       {content}
     </Link>
