@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState, useCallback } from "react";
+import { useTheme } from "next-themes";
 import CtaButton from "@/src/components/CtaButton";
 
 const CELL_SIZE = 80;
@@ -30,17 +31,7 @@ export default function ContactSection() {
   const [fills, setFills] = useState<number[]>([]);
   const [visible, setVisible] = useState<boolean[]>([]);
   const animFrameRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const [isDark, setIsDark] = useState(false);
-
-  // Detect dark mode
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-color-scheme: dark)");
-    const update = () => setIsDark(document.documentElement.classList.contains("dark") || mq.matches);
-    update();
-    const observer = new MutationObserver(update);
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
-    return () => observer.disconnect();
-  }, []);
+  const { resolvedTheme } = useTheme();
 
   const measure = useCallback(() => {
     if (!sectionRef.current) return;
@@ -104,7 +95,7 @@ export default function ContactSection() {
     return () => window.removeEventListener("resize", handleResize);
   }, [measure]);
 
-  const palette = isDark ? MUTED_COLORS_DARK : MUTED_COLORS;
+  const palette = resolvedTheme === "dark" ? MUTED_COLORS_DARK : MUTED_COLORS;
 
   return (
     <section ref={sectionRef} className="relative overflow-hidden bg-background flex items-center" style={{ height: "480px" }}>

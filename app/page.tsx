@@ -244,7 +244,7 @@ export default function Home() {
             <div className="font-mono text-xs text-neutral-500 uppercase tracking-widest mb-2">
               © 2026 GYAN PRAKASH
             </div>
-            <h2 className="text-[5vw] leading-[0.8] font-black text-[var(--foreground)] opacity-5 text-right select-none pointer-events-none uppercase">
+            <h2 className="font-['Helvetica'] text-[5vw] leading-[0.8] font-black tracking-tighter text-[var(--foreground)] opacity-5 subpixel-antialiased text-right select-none pointer-events-none uppercase">
               NOT<br />THE END
             </h2>
           </div>
