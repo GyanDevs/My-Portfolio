@@ -1,0 +1,35 @@
+---
+description: "commit these changes" = commit, push to GitHub, Vercel goes live
+alwaysApply: true
+---
+
+# Commit these changes → go live
+
+When the user says **"commit these changes"** (or similar: "commit and deploy", "ship it", "push live"), run the full deploy pipeline in one turn.
+
+## Pipeline (always in this order)
+
+1. `git status`, `git diff`, `git log` — draft an accurate commit message.
+2. Stage and commit relevant files.
+3. Push immediately after a successful commit:
+   ```bash
+   git push origin HEAD
+   ```
+4. Verify with `git status` — branch must not be "ahead of origin".
+5. Confirm to the user: **changes are pushed and Vercel will deploy live** (typically ~1 min).
+
+## Trigger phrases
+
+- "commit these changes" ← primary
+- "commit and deploy" / "ship it" / "push live" / "go live"
+
+## Do NOT push when
+
+- User says "commit but don't push" or "local commit only"
+- Commit failed or pre-commit hook rejected it
+- Nothing to commit
+
+## If push fails
+
+- Show the error; never ask for tokens in chat.
+- User can re-auth once in terminal: `git push origin HEAD`
