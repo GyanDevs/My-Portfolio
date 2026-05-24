@@ -212,7 +212,7 @@ function MilestoneExpandable({
   );
 }
 
-/** Default: years · tag (line 1), designation (line 2). Optional per-milestone combined second line. */
+/** Default: years · company · tag (line 1), designation (line 2). Optional per-milestone combined second line. */
 function MilestoneMeta({
   milestone,
   className = "",
@@ -220,6 +220,24 @@ function MilestoneMeta({
   milestone: CareerMilestone;
   className?: string;
 }) {
+  const metaDot = (
+    <span
+      className="font-mono text-[14px] text-neutral-500 dark:text-neutral-500"
+      aria-hidden
+    >
+      ·
+    </span>
+  );
+
+  const companyLabel = milestone.company ? (
+    <>
+      {metaDot}
+      <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-neutral-500">
+        {milestone.company}
+      </span>
+    </>
+  ) : null;
+
   if (milestone.combineMetaSecondLine) {
     const metaSecondLine =
       milestone.designation || milestone.tag
@@ -245,11 +263,10 @@ function MilestoneMeta({
         <span className="font-mono text-[14px] tabular-nums text-neutral-500">
           {milestone.years}
         </span>
+        {companyLabel}
         {milestone.tag && (
           <>
-            <span className="font-mono text-[14px] text-[var(--grid-line)]" aria-hidden>
-              ·
-            </span>
+            {metaDot}
             <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-neutral-500">
               {milestone.tag}
             </span>

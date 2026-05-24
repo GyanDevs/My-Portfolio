@@ -106,14 +106,10 @@ export default function Home() {
             <HeroEntry delay={0.08} isFirstLoad={isFirstLoad} shouldAnimate={shouldAnimate}>
               <div className="flex flex-col md:flex-row gap-4 md:items-center">
                 <span className="bg-[var(--foreground)] text-[var(--background)] px-3 py-1 text-sm font-mono font-bold uppercase tracking-widest inline-block w-fit whitespace-nowrap">
-                  SENIOR PRODUCT DESIGNER
+                  LEAD PRODUCT DESIGNER
                 </span>
-                <div className="font-mono text-sm text-neutral-500 whitespace-nowrap flex items-center gap-2">
-                  <span>6+ YEARS EXP // BENGALURU // IxDF CERTIFIED</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-50">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                  </svg>
+                <div className="font-mono text-sm text-neutral-500 whitespace-nowrap">
+                  <span>@ HEWLETT PACKARD ENTERPRISE · BENGALURU</span>
                 </div>
               </div>
             </HeroEntry>

@@ -11,6 +11,8 @@ export type CareerMilestone = {
   designation?: string;
   /** Optional secondary label (IoT, HCI, …). */
   tag?: string;
+  /** Employer name shown in timeline meta (e.g. Fasal, Ucertify). */
+  company?: string;
   /**
    * When true: line 1 = years only; line 2 = designation · tag (sans, same as designation).
    * Default: line 1 = years · tag (mono); line 2 = designation.
@@ -24,7 +26,7 @@ export type CareerMilestone = {
 
 export const careerPageIntro = {
   eyebrow: "How I got here",
-  title: "From tinkering to interaction design",
+  title: "From tinkering to systems that have to work",
   /**
    * CV hero lead: default = muted sans; `highlight` = serif italic, foreground.
    */
@@ -39,8 +41,10 @@ export const careerPageIntro = {
     { text: "vocabulary and rigor", highlight: true },
     { text: " for what I was already reaching toward. " },
     { text: "The timeline below", highlight: true },
-    { text: " carries the " },
-    { text: "full arc", highlight: true },
+    { text: " carries that arc—from " },
+    { text: "creative roots", highlight: true },
+    { text: " to " },
+    { text: "enterprise scale", highlight: true },
     { text: "." },
   ] satisfies CareerLeadSegment[],
 };
@@ -54,7 +58,7 @@ export const careerMilestones: CareerMilestone[] = [
     title: "Making things before I named the habit",
     mark: "◇",
     body:
-      "I drew, built, and fixed things long before I had a name for the work. Creativity wasn’t a hobby box; it was how I made sense of the world. That instinct never pointed to a single job title, but it set the bar: I care how something feels to use, not only how it looks.",
+      "Long before I had a name for the work, I drew, built, and fixed things. Creativity wasn’t a hobby box; it was how I made sense of the world. That instinct never pointed to a single job title, but it set the bar: I care how something feels to use, not only how it looks.",
   },
   {
     id: "engineering-btech",
@@ -69,17 +73,18 @@ export const careerMilestones: CareerMilestone[] = [
     id: "ixdf-hci",
     years: "2020 - 2021",
     combineMetaSecondLine: true,
-    tag: "HCI",
+    tag: "IxDF · HCI",
     title: "HCI gave the chaos a path",
     mark: "○",
     body:
-      "IxDF’s HCI track wasn’t a certificate for the wall. It was the first time I could name what I was reaching for: clear ways to think about behavior, feedback, and error. Interaction design as a discipline, not a mood board.",
+      "IxDF’s HCI track wasn’t a certificate for the wall. It was the first time I could name what I was reaching for: clear ways to think about behavior, feedback, and error. Interaction design as a discipline, not a mood board—while I was at Ucertify, running demos and client calls alongside the coursework.",
   },
   {
     id: "ucertify-edtech",
     years: "2020 - 2021",
     designation: "Product Specialist",
     tag: "EDTECH",
+    company: "Ucertify",
     title: "Talking to users before I called it research",
     mark: "□",
     body:
@@ -90,19 +95,31 @@ export const careerMilestones: CareerMilestone[] = [
     years: "2021 - 2023",
     designation: "Product Designer",
     tag: "B2B · SUPPLY CHAIN",
+    company: "BazaarNXT",
     title: "B2B at real scale",
     mark: "△",
     body:
       "BazaarNXT stretched me across mobile and internal tools where mistakes cost real money and time. I learned to ship coherent systems, not just screens: one language across products, with retention and adoption as the honest scoreboard.",
   },
   {
-    id: "fasal-iot-today",
-    years: "2023 - PRESENT",
+    id: "fasal-iot",
+    years: "2023 - 2026",
     designation: "Senior Product Designer",
-    tag: "IOT, B2B SaaS",
-    title: "Where I am now: clarity in the field",
+    tag: "IOT · B2B SaaS",
+    company: "Fasal",
+    title: "Clarity in the field",
     mark: "◆",
     body:
-      "At Fasal, my current chapter, I design where telemetry meets real farms: sensors, dashboards, and workflows for people who don’t owe us their patience. Less support load on messy sensor flows, shared design systems across verticals, and ideas tested in production, not only in slides. In interviews I tell it as one arc: from making things without a title to systems that still have to work when the network doesn’t.",
+      "At Fasal I designed where telemetry meets real farms: sensors, dashboards, and workflows for people who don’t owe us their patience.\n\nThe work that mattered most: untangling messy sensor flows, building a shared design language across verticals, and testing ideas in production—not only in slides.",
+  },
+  {
+    id: "hpe-lead",
+    years: "2026 - PRESENT",
+    designation: "Lead Product Designer",
+    tag: "HEWLETT PACKARD ENTERPRISE",
+    title: "Where I am now: enterprise at scale",
+    mark: "◈",
+    body:
+      "At Hewlett Packard Enterprise I lead product design on complex enterprise systems—long-lived workflows, many stakeholders, interfaces that have to stay clear under scrutiny.\n\nIt’s the same bar I held in the field: clarity when the system is messy and the user didn’t choose to be patient—now at enterprise scale.",
   },
 ];

@@ -1,16 +1,16 @@
-export const DATA_LAST_UPDATED = "2026-02-27";
+export const DATA_LAST_UPDATED = "2026-05-24";
 
 /** Suggested filename when saving `/resume.pdf` from the site */
 export const RESUME_PDF_DOWNLOAD_FILENAME = "Gyan's resume.pdf";
 
 export const profile = {
-  hook: "6 years turning complexity into clarity.",
+  hook: "6+ years turning complexity into clarity.",
   tagline:
-    "Designed for agriculture IoT, B2B supply chain, and EdTech, where a bad design decision has a real operational cost. This is the full timeline.",
+    "Lead Product Designer at Hewlett Packard Enterprise. Designed for enterprise IT, agriculture IoT, and B2B supply chain—where a bad design decision has real operational cost.",
 };
 
 export const summary =
-  "Senior Product Designer with 6 years of experience building complex enterprise software, IoT platforms, and B2B Supply Chain products. I specialize in end to end UI/UX design for data heavy systems where clarity is critical. My background in Automobile Engineering allows me to translate heavy technical constraints into intuitive User Interfaces (UI) for field environments. Most recently: reduced support tickets by 80% through a strategic UX redesign of complex field sensor workflows.";
+  "Lead Product Designer with 6+ years of experience transforming complex, data-heavy IT systems into intuitive enterprise interfaces. I combine an engineering mindset with strategic UX architecture to deliver scalable, highly feasible UI solutions that drive business outcomes—including an 80% reduction in user support tickets.";
 
 export const connect = [
   { label: "LinkedIn ↗", href: "https://www.linkedin.com/in/gyandesign/" },
@@ -46,8 +46,32 @@ export const tools = [
 
 export const experience = [
   {
+    title: "Lead Product Designer",
+    period: { start: "2026", end: "Present", current: true },
+    company: "Hewlett Packard Enterprise",
+    sector: "Enterprise IT",
+    bullets: [
+      {
+        label: "UX Architecture & Integration",
+        text: "Leading the UX strategy to merge legacy Aruba and Juniper network ecosystems into a single, unified Network Services Platform (NSP) support portal.",
+      },
+      {
+        label: "System Design & Scalability",
+        text: "Architecting an acquisition proof and modular UI framework that allows IT admins to manage complex hybrid cloud networks without friction.",
+      },
+      {
+        label: "Design-to-Development Handoff",
+        text: "Standardizing the enterprise UI component library (Grommet) with responsive auto-layout and variables, significantly reducing design debt and accelerating engineering build times.",
+      },
+      {
+        label: "Evidence-Based Design",
+        text: "Implementing data-driven practices to validate high-density data visualizations and log structures against actual user pain points before frontend development begins.",
+      },
+    ],
+  },
+  {
     title: "Senior Product Designer",
-    period: { start: "2023", end: "Present", current: true },
+    period: { start: "2022", end: "2026", current: false },
     company: "Fasal.co",
     sector: "IoT, SaaS",
     bullets: [
@@ -71,7 +95,7 @@ export const experience = [
   },
   {
     title: "Product Designer",
-    period: { start: "2021", end: "2023", current: false },
+    period: { start: "2021", end: "2022", current: false },
     company: "BazaarNXT",
     sector: "B2B Supply Chain & Logistics Platform",
     bullets: [
@@ -101,11 +125,11 @@ export const experience = [
     bullets: [
       {
         label: "User Research",
-        text: "Conducted 50+ product demonstrations and client interviews, translating feedback into product recommendations that measurably improved user satisfaction.",
+        text: "Conducted 50+ product demonstrations and client interviews, translating feedback into UX product recommendations that measurably improved user satisfaction.",
       },
       {
         label: "Cross-functional Collaboration",
-        text: "Worked with international teams to refine product positioning, directly supporting revenue growth through upselling initiatives.",
+        text: "Worked with international engineering teams to refine product positioning, directly supporting revenue growth through upselling initiatives.",
       },
     ],
   },
