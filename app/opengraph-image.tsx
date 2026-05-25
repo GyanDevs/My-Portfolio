@@ -30,7 +30,7 @@ export default async function Image() {
             linear-gradient(to bottom, #ece9dc 1px, transparent 1px)
           `,
           backgroundSize: "40px 40px",
-          padding: "80px",
+          padding: "80px 80px 320px 80px",
         }}
       >
         <div
