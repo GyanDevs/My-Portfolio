@@ -27,21 +27,21 @@ export const metadata: Metadata = {
     description: "Lead product designer crafting research-led, system-heavy products.",
     url: "https://gyan.design",
     siteName: "gyan.design",
+    type: "website",
     images: [
       {
-        url: "https://gyan.design/og-image.png",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "I am Gyan — Lead Product Designer",
       },
     ],
-    type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Gyan // Lead Product Designer",
     description: "Lead product designer crafting research-led, system-heavy products.",
-    images: ["https://gyan.design/og-image.png"],
+    images: ["/opengraph-image"],
   },
 };
 
