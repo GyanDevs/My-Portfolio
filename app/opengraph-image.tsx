@@ -3,7 +3,7 @@ import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
 export const alt = "I am Gyan — Lead Product Designer";
-export const size = { width: 1200, height: 630 };
+export const size = { width: 1200, height: 1200 };
 export const contentType = "image/png";
 
 export default async function Image() {
@@ -30,19 +30,20 @@ export default async function Image() {
             linear-gradient(to bottom, #ece9dc 1px, transparent 1px)
           `,
           backgroundSize: "40px 40px",
-          padding: "0 72px 88px 72px",
+          padding: "80px",
         }}
       >
         <div
           style={{
             display: "flex",
             flexDirection: "column",
+            maxWidth: "100%",
           }}
         >
           <div
             style={{
               fontFamily: "LibreBodoni",
-              fontSize: 176,
+              fontSize: 160,
               fontStyle: "italic",
               fontWeight: 500,
               color: "#100f0c",
@@ -68,7 +69,7 @@ export default async function Image() {
                 color: "#fffdf5",
                 padding: "12px 16px",
                 fontFamily: "JetBrainsMono",
-                fontSize: 26,
+                fontSize: 24,
                 fontWeight: 700,
                 letterSpacing: "0.14em",
               }}
@@ -79,10 +80,11 @@ export default async function Image() {
             <div
               style={{
                 fontFamily: "JetBrainsMono",
-                fontSize: 24,
+                fontSize: 22,
                 fontWeight: 400,
                 letterSpacing: "0.06em",
                 color: "#100f0c",
+                lineHeight: 1.35,
               }}
             >
               HEWLETT PACKARD ENTERPRISE // BENGALURU
