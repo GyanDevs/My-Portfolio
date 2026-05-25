@@ -1,17 +1,17 @@
 ---
-description: "commit these changes" = commit, push to GitHub, Vercel goes live
+description: "deploy" / "commit these changes" = commit (if needed), push to GitHub, Vercel goes live
 alwaysApply: true
 ---
 
-# Commit these changes → go live
+# Deploy → go live
 
-When the user says **"commit these changes"** (or similar: "commit and deploy", "ship it", "push live"), run the full deploy pipeline in one turn.
+When the user says **"deploy"** (or similar: "commit these changes", "commit and deploy", "ship it", "push live", "go live"), run the full deploy pipeline in one turn.
 
 ## Pipeline (always in this order)
 
-1. `git status`, `git diff`, `git log` — draft an accurate commit message.
-2. Stage and commit relevant files.
-3. Push immediately after a successful commit:
+1. `git status`, `git diff`, `git log` — understand what will ship; draft an accurate commit message if committing.
+2. **Commit** if there are staged or unstaged changes worth shipping (never commit secrets).
+3. **Push** immediately after a successful commit, or push existing commits if the branch is ahead and working tree is clean:
    ```bash
    git push origin HEAD
    ```
@@ -20,16 +20,23 @@ When the user says **"commit these changes"** (or similar: "commit and deploy", 
 
 ## Trigger phrases
 
-- "commit these changes" ← primary
+- **"deploy"** ← primary
+- "commit these changes"
 - "commit and deploy" / "ship it" / "push live" / "go live"
 
 ## Do NOT push when
 
 - User says "commit but don't push" or "local commit only"
 - Commit failed or pre-commit hook rejected it
-- Nothing to commit
+- Nothing to commit **and** branch is not ahead of origin (tell user they're already synced)
 
 ## If push fails
 
 - Show the error; never ask for tokens in chat.
 - User can re-auth once in terminal: `git push origin HEAD`
+
+## Vercel (how deploy works)
+
+- Production deploys are triggered by **push to `main` on GitHub** when the repo is linked in the [Vercel dashboard](https://vercel.com/dashboard).
+- No local `vercel` CLI or `.vercel/` folder is required for that flow.
+- This project uses `@vercel/analytics`; ensure the Vercel project is connected to `GyanDevs/My-Portfolio`.

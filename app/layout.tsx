@@ -19,12 +19,12 @@ const serif = Libre_Bodoni({
 });
 
 export const metadata: Metadata = {
-  title: "Gyan // Senior Product Designer",
-  description: "Portfolio of Gyan, a senior product designer working on complex, research-led systems.",
+  title: "Gyan // Lead Product Designer",
+  description: "Portfolio of Gyan, a lead product designer working on complex, research-led systems.",
   metadataBase: new URL("https://gyan.design"),
   openGraph: {
-    title: "Gyan // Senior Product Designer",
-    description: "Senior product designer crafting research-led, system-heavy products.",
+    title: "Gyan // Lead Product Designer",
+    description: "Lead product designer crafting research-led, system-heavy products.",
     url: "https://gyan.design",
     siteName: "gyan.design",
     images: [
@@ -32,15 +32,15 @@ export const metadata: Metadata = {
         url: "https://gyan.design/og-image.png",
         width: 1200,
         height: 630,
-        alt: "I am Gyan — Senior Product Designer",
+        alt: "I am Gyan — Lead Product Designer",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gyan // Senior Product Designer",
-    description: "Senior product designer crafting research-led, system-heavy products.",
+    title: "Gyan // Lead Product Designer",
+    description: "Lead product designer crafting research-led, system-heavy products.",
     images: ["https://gyan.design/og-image.png"],
   },
 };
