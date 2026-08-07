@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import { Heart } from "lucide-react";
 import FollowCursorPill, {
   FOLLOW_CURSOR_PILL_ACCENT_CLASSNAME,
@@ -19,23 +20,56 @@ interface DesignLoveGalleryProps {
 function ShotCard({
   item,
   index,
-  playVideos,
+  playWhenVisible,
 }: {
   item: DesignLoveShot;
   index: number;
-  playVideos: boolean;
+  playWhenVisible: boolean;
 }) {
+  const cardRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const isVideo = isVideoSrc(item.src);
+
+  useEffect(() => {
+    const card = cardRef.current;
+    if (!card) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.12, rootMargin: "48px 0px" },
+    );
+
+    observer.observe(card);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !isVideo) return;
+
+    const shouldPlay = playWhenVisible && isVisible;
+    if (shouldPlay) {
+      void video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
+  }, [isVideo, isVisible, playWhenVisible]);
+
   return (
     <article
+      ref={cardRef}
       data-design-love-shot
       className="relative flex-none aspect-square w-[min(68vw,360px)] cursor-default overflow-hidden bg-background md:w-[min(36vw,460px)] lg:w-[min(28vw,420px)]"
     >
       {item.src ? (
-        isVideoSrc(item.src) ? (
+        isVideo ? (
           <video
+            ref={videoRef}
             src={item.src}
             className="h-full w-full cursor-default object-cover"
-            autoPlay={playVideos}
             muted
             loop
             playsInline
@@ -58,15 +92,32 @@ function ShotCard({
           aria-hidden
         />
       )}
-
     </article>
   );
 }
 
 export function DesignLoveGallery({ items, title }: DesignLoveGalleryProps) {
+  const marqueeRef = useRef<HTMLDivElement>(null);
+  const [marqueeActive, setMarqueeActive] = useState(false);
+
+  useEffect(() => {
+    const marquee = marqueeRef.current;
+    if (!marquee) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setMarqueeActive(entry.isIntersecting);
+      },
+      { threshold: 0, rootMargin: "120px 0px" },
+    );
+
+    observer.observe(marquee);
+    return () => observer.disconnect();
+  }, []);
+
   if (items.length === 0) return null;
 
-  const renderStrip = (prefix: string, hidden = false, playVideos = false) => (
+  const renderStrip = (prefix: string, hidden = false, playWhenVisible = false) => (
     <div
       className="flex shrink-0 items-stretch gap-0"
       aria-hidden={hidden ? "true" : undefined}
@@ -76,14 +127,14 @@ export function DesignLoveGallery({ items, title }: DesignLoveGalleryProps) {
           key={`${prefix}-${item.id}`}
           item={item}
           index={i}
-          playVideos={playVideos}
+          playWhenVisible={playWhenVisible && marqueeActive}
         />
       ))}
     </div>
   );
 
   return (
-    <div className="w-full min-w-0">
+    <div className="w-full min-w-0 [content-visibility:auto] [contain-intrinsic-size:auto_420px]">
       {title ? (
         <div className="mb-4 px-4 sm:mb-8 sm:px-6 md:px-12 lg:px-16">
           <h2 className="font-mono text-[14px] uppercase tracking-tight text-[var(--foreground)]">
@@ -110,8 +161,10 @@ export function DesignLoveGallery({ items, title }: DesignLoveGalleryProps) {
         }
       >
         <div
+          ref={marqueeRef}
           className={[
             "gallery-marquee-container cursor-default overflow-hidden border border-[var(--grid-line)] bg-background",
+            !marqueeActive ? "gallery-marquee-paused" : "",
             !title ? "mt-10 sm:mt-12" : "",
           ].join(" ")}
         >

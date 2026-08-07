@@ -257,6 +257,11 @@ body > * {
     cursor: default;
 }
 
+/* Pause gallery marquee + video decode when off-screen (scroll perf). */
+.gallery-marquee-container.gallery-marquee-paused .animate-marquee {
+    animation-play-state: paused;
+}
+
 /* Slower speed for CV design gallery marquee only. */
 .gallery-marquee-container .animate-marquee {
     animation-duration: 46s;

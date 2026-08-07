@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 export default function AboutMePage() {
   return (
     <main className="min-h-screen bg-background text-foreground selection:bg-neutral-200 selection:text-black border-x border-[var(--grid-line)] max-w-[1600px] mx-auto">
-      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-[var(--grid-line)] px-4 md:px-8 h-16 flex justify-between items-center">
+      <header className="sticky top-0 z-[100] isolate bg-background/80 backdrop-blur-md border-b border-[var(--grid-line)] px-4 md:px-8 h-16 flex justify-between items-center">
         <BackButton />
       </header>
 

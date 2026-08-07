@@ -17,7 +17,6 @@ import {
   animate,
   useMotionValue,
 } from "framer-motion";
-import { useLenis } from "lenis/react";
 import { CareerMilestone } from "@/src/data/careerStory";
 
 /** Matches CtaButton / ThemeSwitch: one press vocabulary sitewide. */
@@ -550,22 +549,30 @@ export function CareerTimeline({
       const nr = el.getBoundingClientRect();
       centers[i] = nr.top + nr.height / 2 - tr.top;
     }
-    setNodeCenterYs(centers);
-    const firstCenterY = centers[0];
-    const lastCenterY = centers[n - 1];
-    // Use sub-pixel precision to keep the ink line aligned with node centers.
-    // Rounding can make the line creep past the intended endpoints.
-    setSpineStartPx(Math.max(0, firstCenterY));
-    setSpineHeightPx(Math.max(0, lastCenterY - firstCenterY));
+    const firstCenterY = Math.max(0, centers[0] ?? 0);
+    const lastCenterY = centers[n - 1] ?? 0;
+    const nextHeight = Math.max(0, lastCenterY - firstCenterY);
+
+    setNodeCenterYs((prev) => {
+      if (
+        prev.length === centers.length &&
+        prev.every((value, index) => Math.abs(value - centers[index]!) < 0.5)
+      ) {
+        return prev;
+      }
+      return centers;
+    });
+    setSpineStartPx((prev) =>
+      Math.abs(prev - firstCenterY) < 0.5 ? prev : firstCenterY,
+    );
+    setSpineHeightPx((prev) =>
+      Math.abs(prev - nextHeight) < 0.5 ? prev : nextHeight,
+    );
   }, [milestones.length]);
 
   useLayoutEffect(() => {
     updateSpineLayout();
   }, [updateSpineLayout, milestones, expanded]);
-
-  useLenis(() => {
-    updateSpineLayout();
-  });
 
   useEffect(() => {
     setRawScrollP(scrollYProgress.get());
