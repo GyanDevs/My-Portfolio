@@ -126,7 +126,7 @@ export default function FasalFarmersInfographic() {
       {/* Scrollable Content Area */}{" "}
       <div
         ref={scrollRef}
-        className="w-full overflow-x-auto no-scrollbar scroll-smooth"
+        className="w-full overflow-x-auto no-scrollbar scroll-smooth" data-lenis-prevent-wheel
       >
         {" "}
         <div className="flex min-w-min">

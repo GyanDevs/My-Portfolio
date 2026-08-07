@@ -38,7 +38,7 @@ export default function FasalFeedbackInfographic() {
           </div>
         </div>
         {/* Scrollable Content */}
-        <div className="flex-1 overflow-y-auto overscroll-contain hide-scrollbar p-8 md:p-10 pb-20 space-y-4">
+        <div className="flex-1 overflow-y-auto overscroll-contain hide-scrollbar p-8 md:p-10 pb-20 space-y-4" data-lenis-prevent>
           <FeedbackCard label="CSE" text="Both teams emphasized the need for a more user-friendly help system that caters to farmers' preferences and limitations." />
           <FeedbackCard label="SALE" text="The importance of voice-based communication was consistently highlighted across both teams." />
           <FeedbackCard label="CSE" text="Language and literacy barriers were identified as significant obstacles in the current text-based help system." />
@@ -65,7 +65,7 @@ export default function FasalFeedbackInfographic() {
           </div>
         </div>
         {/* Scrollable Content */}
-        <div className="flex-1 overflow-y-auto overscroll-contain hide-scrollbar p-8 md:p-10 pb-20 space-y-4">
+        <div className="flex-1 overflow-y-auto overscroll-contain hide-scrollbar p-8 md:p-10 pb-20 space-y-4" data-lenis-prevent>
           <FarmerQuote
             hindi='"Mujhe pata hi nahi hai ki kahan se complaint karte hain, kabhi check nahi kiya."'
             english="I have no idea how to raise a complaint in the app. I've never checked."

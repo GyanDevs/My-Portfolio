@@ -1,4 +1,5 @@
 import { ThemeProvider, IntroProvider } from "@/src/components/providers";
+import { SmoothScrollProvider } from "@/src/components/SmoothScrollProvider";
 import ThemeSwitch from "@/src/components/ThemeSwitch";
 import LoadingScreen from "@/src/components/LoadingScreen";
 import { Analytics } from "@vercel/analytics/next";
@@ -56,18 +57,20 @@ export default function RootLayout({
       <body
         className={`${mono.variable} ${serif.variable} font-sans antialiased bg-background text-foreground`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          storageKey="gyan-theme"
-        >
-          <ThemeSwitch />
-          <IntroProvider>
-            <LoadingScreen />
-            {children}
-          </IntroProvider>
-        </ThemeProvider>
+        <SmoothScrollProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            storageKey="gyan-theme"
+          >
+            <ThemeSwitch />
+            <IntroProvider>
+              <LoadingScreen />
+              {children}
+            </IntroProvider>
+          </ThemeProvider>
+        </SmoothScrollProvider>
         <Analytics />
       </body>
     </html>

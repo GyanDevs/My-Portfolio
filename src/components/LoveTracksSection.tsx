@@ -10,11 +10,11 @@ import {
 import {
   motion,
   useReducedMotion,
-  useScroll,
   useSpring,
   useTransform,
   useVelocity,
 } from "framer-motion";
+import { useLenisScrollY } from "@/src/hooks/useLenisScrollY";
 import {
   DiscAlbum,
   Pause,
@@ -202,7 +202,7 @@ function RecordCard({
   hasNext?: boolean;
 }) {
   const reduceMotion = useReducedMotion();
-  const { scrollY } = useScroll();
+  const scrollY = useLenisScrollY();
   const scrollVelocity = useVelocity(scrollY);
   const stretchFromScroll = useTransform(scrollVelocity, (v) =>
     Math.min(Math.abs(v), 3200),

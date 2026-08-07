@@ -19,6 +19,7 @@ export function BooksGrid({ items }: { items: BookGridItem[] }) {
       <div className="px-4 sm:px-6 md:px-12 lg:px-16">
         <div
           className="flex flex-nowrap gap-4 overflow-x-auto pb-2 sm:grid sm:grid-cols-3 lg:grid-cols-5 sm:gap-5 sm:overflow-visible"
+          data-lenis-prevent-wheel
           role="list"
           aria-label="Books that shaped me"
         >

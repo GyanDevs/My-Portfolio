@@ -4,7 +4,7 @@ export default function FasalBillingResearchTable() {
   return (
     <div className="relative w-full overflow-hidden mt-8 lg:mt-12 border-y border-[var(--grid-line)]">
       {" "}
-      <div className="w-full overflow-x-auto">
+      <div className="w-full overflow-x-auto" data-lenis-prevent-wheel>
         {" "}
         <div className="min-w-[800px] grid grid-cols-3 bg-[var(--grid-line)] gap-[1px] border-x border-[var(--grid-line)]">
           {" "}

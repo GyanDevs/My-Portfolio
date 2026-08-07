@@ -305,7 +305,7 @@ export default function FollowCursorPill({
   const pillNode = (
     <div
       ref={pillRef}
-      className="pointer-events-none fixed left-0 top-0 z-[100] opacity-0 will-change-[opacity,left,top]"
+      className="pointer-events-none fixed left-0 top-0 z-[300] opacity-0 will-change-[opacity,left,top]"
       aria-hidden
     >
       <motion.div

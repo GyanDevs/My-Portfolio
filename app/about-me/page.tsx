@@ -28,7 +28,7 @@ export default function AboutMePage() {
       </header>
 
       <RevealOnScroll>
-        <section className="border-b border-[var(--grid-line)] px-4 py-8 pb-8 sm:px-6 sm:py-10 md:p-12 lg:p-16 md:pb-10">
+        <section className="px-4 pt-8 pb-2 sm:px-6 sm:pt-10 sm:pb-2 md:px-12 md:pt-12 md:pb-4 lg:px-16 lg:pt-16 lg:pb-4">
           <div className="flex w-full flex-col gap-5 sm:gap-6 md:flex-row md:items-start md:gap-12 lg:gap-16">
             <div className="group flex w-full flex-col gap-8 sm:gap-9 md:flex-row md:items-center md:min-w-0 md:flex-1 md:gap-12 lg:gap-16">
               <div className="flex w-full shrink-0 justify-start md:w-auto">
@@ -76,7 +76,7 @@ export default function AboutMePage() {
         </section>
       </RevealOnScroll>
 
-      <section className="px-4 py-6 sm:px-6 sm:py-8 md:p-10 lg:p-14">
+      <section className="px-4 pt-0 pb-6 sm:px-6 sm:pb-8 md:px-10 md:pb-10 lg:px-14 lg:pb-14">
         <RevealOnScroll>
           <div className="w-full min-w-0">
             <CareerTimeline milestones={careerMilestones} />

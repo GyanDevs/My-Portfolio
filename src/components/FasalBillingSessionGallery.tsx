@@ -28,7 +28,7 @@ export default function FasalBillingSessionGallery() {
     <div className="w-full mb-12">
       {/* Mobile: horizontal scrollable gallery */}
       <div className="md:hidden h-[300px]">
-        <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory no-scrollbar h-full">
+        <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory no-scrollbar h-full" data-lenis-prevent-wheel>
           {images.map((img, i) => (
             <motion.div
               key={i}

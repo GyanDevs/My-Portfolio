@@ -63,7 +63,7 @@ export default function FasalScriptInfographic() {
         </div>{" "}
       </div>{" "}
       {/* Scrollable Script Content - No Scrollbar */}{" "}
-      <div className="max-h-[500px] overflow-y-auto no-scrollbar p-6 md:p-10 space-y-8">
+      <div className="max-h-[500px] overflow-y-auto no-scrollbar p-6 md:p-10 space-y-8" data-lenis-prevent>
         {" "}
         {/* Q1 */}{" "}
         <div className="space-y-3">

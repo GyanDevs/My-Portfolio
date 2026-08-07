@@ -36,7 +36,7 @@ export default function FasalIotFeedbackInfographic() {
             </div>
           </div>
         </div>
-        <div className="flex-1 overflow-y-auto overscroll-contain hide-scrollbar p-8 md:p-10 pb-20 space-y-4">
+        <div className="flex-1 overflow-y-auto overscroll-contain hide-scrollbar p-8 md:p-10 pb-20 space-y-4" data-lenis-prevent>
           <FeedbackCard label="SALE" text="Sales team reported frequent complaints from farmers about difficulty reading sensor dials and understanding optimum ranges." />
           <FeedbackCard label="CSE" text="Customer success team noted an increase in support tickets related to misinterpreting dial readings and values." />
           <FeedbackCard label="CSE" text="Both teams observed that older farmers particularly struggled with the small size and visual density of the legacy dials." />
@@ -61,7 +61,7 @@ export default function FasalIotFeedbackInfographic() {
             </div>
           </div>
         </div>
-        <div className="flex-1 overflow-y-auto overscroll-contain hide-scrollbar p-8 md:p-10 pb-20 space-y-4">
+        <div className="flex-1 overflow-y-auto overscroll-contain hide-scrollbar p-8 md:p-10 pb-20 space-y-4" data-lenis-prevent>
           <FarmerQuote
             hindi='"Mujhe chhote dial par rang samajhne mein dikkat hoti hai."'
             english="I have difficulty understanding colors on the small dial."

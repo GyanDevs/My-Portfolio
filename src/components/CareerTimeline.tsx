@@ -17,6 +17,7 @@ import {
   animate,
   useMotionValue,
 } from "framer-motion";
+import { useLenis } from "lenis/react";
 import { CareerMilestone } from "@/src/data/careerStory";
 
 /** Matches CtaButton / ThemeSwitch: one press vocabulary sitewide. */
@@ -561,6 +562,10 @@ export function CareerTimeline({
   useLayoutEffect(() => {
     updateSpineLayout();
   }, [updateSpineLayout, milestones, expanded]);
+
+  useLenis(() => {
+    updateSpineLayout();
+  });
 
   useEffect(() => {
     setRawScrollP(scrollYProgress.get());

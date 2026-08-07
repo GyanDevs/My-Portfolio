@@ -37,6 +37,15 @@ import FasalRequirementsGrid from "@/src/components/FasalRequirementsGrid";
 import RevealOnScroll from "@/src/components/RevealOnScroll";
 import BackButton from "@/src/components/BackButton";
 import CtaButton from "@/src/components/CtaButton";
+import {
+  SmoothScrollArea,
+  useSplitScrollLayout,
+} from "@/src/components/SmoothScrollArea";
+import {
+  setSplitScrollActive,
+  shouldRootLenisRun,
+} from "@/src/lib/scrollLock";
+import { useLenis } from "lenis/react";
 
 import FasalBillingHero from "@/src/components/FasalBillingHero";
 import FasalBillingDataFindings from "@/src/components/FasalBillingDataFindings";
@@ -177,7 +186,43 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
     null,
   );
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const splitScroll = useSplitScrollLayout();
+  const rootLenis = useLenis();
+  const prevSplitScrollRef = useRef<boolean | null>(null);
+  const [rightInitialScroll, setRightInitialScroll] = useState(0);
+  const [leftInitialScroll, setLeftInitialScroll] = useState(0);
   const readingTime = useMemo(() => calculateReadingTime(project), [project]);
+
+  useEffect(() => {
+    setSplitScrollActive(splitScroll);
+    return () => setSplitScrollActive(false);
+  }, [splitScroll]);
+
+  useEffect(() => {
+    if (prevSplitScrollRef.current === null) {
+      prevSplitScrollRef.current = splitScroll;
+      return;
+    }
+    if (prevSplitScrollRef.current === splitScroll) return;
+
+    if (splitScroll) {
+      const y = window.scrollY;
+      setRightInitialScroll(y);
+      setLeftInitialScroll(Math.min(Math.round(y * 0.12), 160));
+    } else {
+      const y = scrollContainerRef.current?.scrollTop ?? 0;
+      requestAnimationFrame(() => {
+        window.scrollTo(0, y);
+        if (shouldRootLenisRun()) {
+          rootLenis?.scrollTo(y, { immediate: true });
+        }
+      });
+      setRightInitialScroll(0);
+      setLeftInitialScroll(0);
+    }
+
+    prevSplitScrollRef.current = splitScroll;
+  }, [splitScroll, rootLenis]);
 
   // Scroll Progress Logic moved to ProgressBar component below for performance
 
@@ -219,7 +264,11 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen lg:h-screen lg:overflow-hidden">
-        <div className="lg:col-span-4 border-b lg:border-b-0 lg:border-r border-[var(--grid-line)] px-6 pb-12 pt-6 md:px-12 md:pt-12 lg:pt-32 h-fit lg:h-full lg:overflow-y-auto no-scrollbar">
+        <SmoothScrollArea
+          active={splitScroll}
+          initialScrollTop={leftInitialScroll}
+          className="lg:col-span-4 border-b lg:border-b-0 lg:border-r border-[var(--grid-line)] px-6 pb-12 pt-6 md:px-12 md:pt-12 lg:pt-32 h-fit lg:h-full lg:overflow-y-auto no-scrollbar"
+        >
           <RevealOnScroll className="mb-16 lg:mb-20" delay={150}>
             <p className="text-base md:text-[16px] text-neutral-500 dark:text-neutral-400 mb-6">
               {project.headline}
@@ -422,10 +471,12 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
               </div>
             )}
           </RevealOnScroll>
-        </div>
+        </SmoothScrollArea>
 
-        <div
+        <SmoothScrollArea
           ref={scrollContainerRef}
+          active={splitScroll}
+          initialScrollTop={rightInitialScroll}
           className="lg:col-span-8 bg-[var(--grid-line)]/5 xl:bg-transparent lg:h-full lg:overflow-y-auto no-scrollbar"
         >
           <div className="px-6 pb-6 pt-6 md:px-12 md:pb-12 md:pt-12 lg:pt-32">
@@ -1158,7 +1209,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
               </>
             )}
           </div>
-        </div>
+        </SmoothScrollArea>
       </div>
 
       <ImageViewer

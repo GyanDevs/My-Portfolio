@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ZoomIn, ZoomOut, Move, Maximize2 } from "lucide-react";
+import { acquireScrollLock } from "@/src/lib/scrollLock";
 
 interface ImageViewerProps {
   src: string;
@@ -43,12 +44,14 @@ export default function ImageViewer({
     return () => window.removeEventListener("keydown", handleEsc);
   }, [onClose]);
 
-  // Lock body scroll while open; restore on close or unmount
+  // Lock body scroll and pause Lenis while open
   useEffect(() => {
     if (!isOpen) return;
+    const releaseScrollLock = acquireScrollLock();
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = "";
+      releaseScrollLock();
     };
   }, [isOpen]);
 
@@ -117,13 +120,13 @@ export default function ImageViewer({
           exit={{ opacity: 0 }}
           transition={{ duration: 0.15 }}
           // backdrop-blur-sm instead of backdrop-blur-xl — same visual, ~8x less GPU cost
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm"
+          className="fixed inset-0 z-[300] flex items-center justify-center bg-black/70 backdrop-blur-sm"
           onClick={(e) => {
             if (e.target === e.currentTarget) onClose();
           }}
         >
           {/* Controls */}
-          <div className="absolute top-6 right-6 flex items-center gap-3 z-[110]">
+          <div className="absolute top-6 right-6 flex items-center gap-3 z-[310]">
             <div className="flex items-center bg-white/10 border border-white/20 p-1">
               <button
                 onClick={handleZoomOut}

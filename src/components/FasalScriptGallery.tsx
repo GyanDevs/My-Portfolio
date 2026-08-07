@@ -22,7 +22,7 @@ export default function FasalScriptGallery() {
       className="w-full mb-12"
     >
       {/* Mobile: horizontal scroll strip */}
-      <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory no-scrollbar md:hidden pb-2">
+      <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory no-scrollbar md:hidden pb-2" data-lenis-prevent-wheel>
         {images.map((img, i) => (
           <motion.div
             key={i}

@@ -234,7 +234,7 @@ const ThemeSwitch = () => {
             `}</style>
 
             <div
-                className="fixed top-[12px] right-4 md:right-8 z-[100] flex items-center bg-background border border-[var(--grid-line)]"
+                className="fixed top-[12px] right-4 md:right-8 z-[300] flex items-center bg-background border border-[var(--grid-line)]"
                 role="group"
                 aria-label="Theme switcher"
             >

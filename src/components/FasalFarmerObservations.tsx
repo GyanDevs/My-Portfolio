@@ -437,7 +437,7 @@ export default function FasalFarmerObservations() {
         </div>
 
         {/* Scrollable Grid Area */}
-        <div className="p-4 md:p-8 py-6 overflow-y-auto hover-scrollbar flex-none md:flex-1">
+        <div className="p-4 md:p-8 py-6 overflow-y-auto hover-scrollbar flex-none md:flex-1" data-lenis-prevent>
           <div className="relative grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mx-auto justify-center max-w-fit">
             <AnimatePresence mode="popLayout">
               {currentFarmer.observations.map((obs, i) => (

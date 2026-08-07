@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 
 import { calculateReadingTime } from "@/src/lib/utils";
+import { TiltCardSurface } from "@/src/components/TiltCardSurface";
 
 interface Project {
   id: string;
@@ -43,7 +46,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
   const content = (
     <div className="flex flex-col h-full p-8 md:p-12 relative z-10">
-      {/* 1. Header: Meta Data line */}
       {project.headline && (
         <div className="flex justify-between items-baseline mb-6">
           <span className={headlineClassName}>
@@ -55,13 +57,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         </div>
       )}
 
-      {/* 2. Main Visual */}
       {project.isPlaceholder ? (
         <div className="relative w-full aspect-video mb-6 overflow-hidden bg-[var(--grid-line)] border border-[var(--grid-line)]">
           <div className="absolute inset-0 p-[1px] grid grid-cols-8 gap-[1px]">
             {Array.from({ length: 32 }).map((_, index) => {
               const row = Math.floor(index / 8);
-              const isBuiltRow = row >= 2; // bottom half bricks only
+              const isBuiltRow = row >= 2;
 
               return (
                 <div
@@ -89,18 +90,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           </div>
         </div>
       ) : (
-        <div className="relative w-full aspect-video mb-6 overflow-hidden bg-neutral-900 filter grayscale group-hover:grayscale-0 transition-all duration-500">
+        <div className="relative w-full aspect-video mb-6 overflow-hidden bg-neutral-900 filter grayscale group-hover:grayscale-0 transition-[filter] duration-500">
           <img
             src={project.engineering_artifact || "/assets/placeholder.png"}
             alt={project.title}
-            className="object-cover w-full h-full opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-transform duration-700 ease-out"
+            className="object-cover w-full h-full opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-[transform,opacity] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
           />
-          {/* Overlay Grid */}
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:20px_20px]" />
         </div>
       )}
 
-      {/* 3. Typography: Editorial - Min Height Wrapper for Alignment */}
       <div className="flex flex-col min-h-[14rem] mb-8">
         <h3 className={titleClassName}>
           {project.title}
@@ -141,9 +140,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <Link
       href={`/projects/${project.id}`}
-      className="col-span-1 block h-full cursor-default group relative no-underline active:scale-[0.98] active:bg-[var(--grid-line)] transition-all duration-300 ease-spring card-hover"
+      className="col-span-1 block h-full cursor-default group relative no-underline active:scale-[0.98] transition-transform duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] card-hover"
     >
-      {content}
+      <TiltCardSurface>{content}</TiltCardSurface>
     </Link>
   );
 };
