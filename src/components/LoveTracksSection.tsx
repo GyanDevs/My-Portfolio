@@ -23,6 +23,8 @@ import {
   SkipForward,
 } from "lucide-react";
 import type { LoveTrack } from "@/src/data/loveTracks";
+import type { BookGridItem } from "@/src/components/BooksGrid";
+import { BookshelfIllustration } from "@/src/components/BookshelfIllustration";
 
 const TAP_SPRING = {
   type: "spring" as const,
@@ -238,7 +240,7 @@ function RecordCard({
 
   return (
     <motion.article
-      className="mx-auto flex h-full w-full max-w-[377px] min-h-0 flex-col bg-background p-4 sm:p-5"
+      className="mx-auto flex h-full w-full max-w-[377px] min-h-0 flex-col p-4 sm:p-5"
       initial={reduceMotion ? false : { opacity: 0, y: 16 }}
       whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-8% 0px" }}
@@ -397,10 +399,10 @@ function RecordCard({
         animate={labelAnimate}
         transition={labelTransition}
       >
-        <h3 className="font-['Helvetica'] text-sm font-black leading-snug tracking-tight text-[var(--foreground)] sm:text-base">
+        <h3 className="font-['Helvetica'] text-[16px] font-black leading-snug tracking-tight text-[var(--foreground)]">
           {track.title}
         </h3>
-        <p className="mt-1.5 line-clamp-3 font-sans text-xs font-light leading-relaxed tracking-tight text-neutral-600 dark:text-neutral-400">
+        <p className="mt-1.5 line-clamp-3 font-sans text-[14px] font-medium leading-relaxed tracking-tight text-neutral-500 dark:text-neutral-400">
           {track.artist}
         </p>
       </motion.div>
@@ -409,7 +411,7 @@ function RecordCard({
       <div className="mt-auto flex w-full flex-col gap-3 pt-5 sm:pt-6">
         <div className={RANGE_ROW_GRID}>
           <span
-            className="justify-self-start font-mono text-[11px] tabular-nums text-[var(--foreground)] sm:text-xs"
+            className="justify-self-start font-mono text-[12px] tabular-nums text-[var(--foreground)]"
             aria-live="polite"
             aria-label="Current position"
           >
@@ -443,7 +445,7 @@ function RecordCard({
             />
           </motion.div>
           <span
-            className="justify-self-end text-right font-mono text-[11px] tabular-nums text-neutral-500 sm:text-xs"
+            className="justify-self-end text-right font-mono text-[12px] tabular-nums text-neutral-500"
             aria-label="Track length"
           >
             {formatTime(totalSeconds)}
@@ -530,7 +532,7 @@ function RecordCard({
         </div>
 
         <div className={`${RANGE_ROW_GRID} pt-1`}>
-          <span className="justify-self-start font-mono text-[12px] uppercase tracking-[0.18em] text-neutral-500">
+          <span className="justify-self-start font-mono text-[12px] uppercase tracking-[0.2em] text-neutral-500">
             Vol
           </span>
           <motion.div
@@ -556,7 +558,7 @@ function RecordCard({
               className={SEEK_RANGE_CLASSES}
             />
           </motion.div>
-          <span className="justify-self-end text-right font-mono text-[11px] tabular-nums text-neutral-500 sm:text-xs">
+          <span className="justify-self-end text-right font-mono text-[12px] tabular-nums text-neutral-500">
             {Math.round(volume * 100)}
           </span>
         </div>
@@ -574,6 +576,11 @@ interface LoveTracksSectionProps {
    * keeping the player UI.
    */
   showHeading?: boolean;
+  /**
+   * When provided (typically two shelf rows), places each shelf above
+   * player / playlist in aligned columns.
+   */
+  shelves?: BookGridItem[][];
 }
 
 export function LoveTracksSection({
@@ -581,6 +588,7 @@ export function LoveTracksSection({
   title = "Tracks I love",
   subtitle,
   showHeading = true,
+  shelves,
 }: LoveTracksSectionProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   /** Which track is loaded in the shared audio element (persists while paused so seek still works). */
@@ -794,8 +802,86 @@ export function LoveTracksSection({
           onNext: undefined as (() => void) | undefined,
         };
 
+  const playerNode = playerTrack ? (
+    <RecordCard
+      track={playerTrack}
+      index={0}
+      isPlaying={transportTrackId === playerTrack.id && isPlaying}
+      canPlay={Boolean(playerTrack.audioSrc)}
+      onToggle={() => toggleTrack(playerTrack)}
+      isActive={transportTrackId === playerTrack.id}
+      currentTime={currentTime}
+      duration={duration}
+      metaDuration={metaDurations[playerTrack.id] ?? 0}
+      onSeek={seekTo}
+      volume={volume}
+      onVolumeChange={setVolume}
+      {...recordNavProps}
+    />
+  ) : null;
+
+  const playlistNode = (
+    <aside className="flex h-full min-h-0 min-w-0 flex-col" aria-label="Track list">
+      <ul className="flex min-h-0 flex-1 flex-col divide-y divide-[var(--grid-line)]">
+        {tracks.map((track) => {
+          const selected = activeTrackId === track.id;
+          const playing = transportTrackId === track.id && isPlaying;
+          return (
+            <li key={track.id} className="flex min-h-0 flex-1 flex-col">
+              <button
+                type="button"
+                disabled={!track.audioSrc}
+                onClick={() => {
+                  setActiveTrackId(track.id);
+                  toggleTrack(track);
+                }}
+                className="group relative flex min-h-0 w-full flex-1 items-center gap-3 overflow-hidden px-4 py-4 text-left disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                <span
+                  aria-hidden
+                  className="absolute inset-0 bg-[var(--hover-glow)] opacity-0 transition-opacity duration-200 group-hover:opacity-100 disabled:opacity-0"
+                />
+                {playing ? (
+                  <PlayingBars
+                    className={
+                      selected
+                        ? "relative z-10 text-[var(--foreground)]"
+                        : "relative z-10 text-neutral-500 dark:text-neutral-400"
+                    }
+                  />
+                ) : (
+                  <DiscAlbum
+                    className={`relative z-10 h-4 w-4 shrink-0 ${
+                      selected
+                        ? "text-[var(--foreground)]/65"
+                        : "text-neutral-400 dark:text-neutral-500"
+                    }`}
+                    strokeWidth={1.75}
+                    aria-hidden
+                  />
+                )}
+                {playing ? <span className="sr-only">Now playing</span> : null}
+                <span className="relative z-10 flex min-w-0 flex-1 flex-col gap-1">
+                  <span className="font-['Helvetica'] text-[16px] font-extrabold leading-snug tracking-tight">
+                    {track.title}
+                  </span>
+                  <span className="line-clamp-2 font-sans text-[14px] font-medium leading-relaxed text-neutral-500 dark:text-neutral-400">
+                    {track.artist}
+                  </span>
+                </span>
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+    </aside>
+  );
+
+  const shelfRows = (shelves ?? []).filter((row) => row.length > 0);
+  const useAlignedShelves = shelfRows.length >= 1 && tracks.length > 1;
+
   return (
-    <div className="w-full min-w-0">
+    <div className="flex w-full min-w-0 flex-col">
       <audio ref={audioRef} className="hidden" preload="metadata" />
 
       {showHeading ? (
@@ -814,8 +900,31 @@ export function LoveTracksSection({
         </div>
       ) : null}
 
-      {tracks.length === 0 ? null : tracks.length === 1 ? (
-        <div className="mx-auto w-full max-w-xl border border-[var(--grid-line)] bg-background p-px">
+      {tracks.length === 0 ? null : useAlignedShelves ? (
+        <div className="flex w-full min-w-0 flex-col gap-10">
+          <div className="grid w-full min-w-0 grid-cols-1 gap-10 md:grid-cols-2 md:gap-x-8 lg:gap-x-10">
+            <div className="min-w-0">
+              <BookshelfIllustration shelves={[shelfRows[0]]} />
+            </div>
+            <div className="min-w-0">
+              {shelfRows[1] ? (
+                <BookshelfIllustration shelves={[shelfRows[1]]} />
+              ) : null}
+            </div>
+          </div>
+          <div className="flex w-full min-w-0 flex-col border border-[var(--grid-line)]">
+            <div className="grid min-h-0 w-full grid-cols-1 lg:grid-cols-[minmax(340px,0.38fr)_minmax(0,1fr)] lg:items-stretch">
+              <div className="flex min-h-0 min-w-0 w-full flex-col border-b border-[var(--grid-line)] lg:border-b-0 lg:border-r lg:border-[var(--grid-line)]">
+                {playerNode}
+              </div>
+              <div className="flex min-h-0 min-w-0 flex-col">
+                {playlistNode}
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : tracks.length === 1 ? (
+        <div className="mx-auto flex w-full max-w-xl flex-col border border-[var(--grid-line)]">
           <RecordCard
             track={tracks[0]}
             index={0}
@@ -833,86 +942,12 @@ export function LoveTracksSection({
           />
         </div>
       ) : (
-        <div className="w-full min-w-0 border-y border-[var(--grid-line)] border-x-0 bg-background -mt-px">
-          <div className="grid grid-cols-1 lg:grid-cols-[391px_minmax(0,1fr)] lg:items-stretch">
-            <div className="min-w-0 w-full border-b border-[var(--grid-line)] bg-background lg:border-b-0">
-              <RecordCard
-                track={playerTrack}
-                index={0}
-                isPlaying={transportTrackId === playerTrack.id && isPlaying}
-                canPlay={Boolean(playerTrack.audioSrc)}
-                onToggle={() => toggleTrack(playerTrack)}
-                isActive={transportTrackId === playerTrack.id}
-                currentTime={currentTime}
-                duration={duration}
-                metaDuration={metaDurations[playerTrack.id] ?? 0}
-                onSeek={seekTo}
-                volume={volume}
-                onVolumeChange={setVolume}
-                {...recordNavProps}
-              />
+        <div className="flex w-full min-w-0 flex-col border border-[var(--grid-line)]">
+          <div className="grid min-h-0 w-full grid-cols-1 lg:grid-cols-[minmax(340px,0.38fr)_minmax(0,1fr)] lg:items-stretch">
+            <div className="flex min-h-0 min-w-0 w-full flex-col border-b border-[var(--grid-line)] lg:border-b-0 lg:border-r lg:border-[var(--grid-line)]">
+              {playerNode}
             </div>
-
-            <aside
-              className="flex h-full min-h-0 min-w-0 flex-col lg:border-l lg:border-[var(--grid-line)]"
-              aria-label="Track list"
-            >
-              <ul className="flex min-h-0 flex-1 flex-col divide-y divide-[var(--grid-line)]">
-                {tracks.map((track) => {
-                  const selected = activeTrackId === track.id;
-                  const playing = transportTrackId === track.id && isPlaying;
-                  return (
-                    <li key={track.id} className="flex min-h-0 flex-1 flex-col">
-                      <button
-                        type="button"
-                        disabled={!track.audioSrc}
-                        onClick={() => {
-                          setActiveTrackId(track.id);
-                          toggleTrack(track);
-                        }}
-                        className="group relative flex min-h-0 w-full flex-1 items-center gap-3 px-4 py-4 text-left overflow-hidden disabled:cursor-not-allowed disabled:opacity-40"
-                      >
-                        {/* Grey full-fill hover (matches other slide-fill hover patterns). */}
-                        <span
-                          aria-hidden
-                          className="absolute inset-0 bg-[var(--hover-glow)] transition-opacity duration-200 opacity-0 group-hover:opacity-100 disabled:opacity-0"
-                        />
-                        {playing ? (
-                          <PlayingBars
-                            className={
-                              selected
-                                ? "relative z-10 text-[var(--foreground)]"
-                                : "relative z-10 text-neutral-500 dark:text-neutral-400"
-                            }
-                          />
-                        ) : (
-                          <DiscAlbum
-                            className={`relative z-10 h-4 w-4 shrink-0 ${
-                              selected
-                                ? "text-[var(--foreground)]/65"
-                                : "text-neutral-400 dark:text-neutral-500"
-                            }`}
-                            strokeWidth={1.75}
-                            aria-hidden
-                          />
-                        )}
-                        {playing ? (
-                          <span className="sr-only">Now playing</span>
-                        ) : null}
-                        <span className="relative z-10 flex min-w-0 flex-1 flex-col gap-1">
-                          <span className="font-['Helvetica'] text-sm font-extrabold leading-snug tracking-tight">
-                            {track.title}
-                          </span>
-                          <span className="line-clamp-2 font-sans text-xs font-light leading-relaxed text-neutral-600 dark:text-neutral-400">
-                            {track.artist}
-                          </span>
-                        </span>
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
-            </aside>
+            <div className="flex min-h-0 min-w-0 flex-col">{playlistNode}</div>
           </div>
         </div>
       )}

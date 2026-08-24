@@ -7,9 +7,30 @@
     --foreground: #100f0c;
     --grid-line: #ece9dc;
     --hover-glow: #f5f2e8;
-    /* Saturated highlighter yellow */
     --highlight-marker: #fbbf24;
     --highlight-marker-foreground: #0a0a0a;
+    /* Soft mid pastels — headline (orange/green/violet) + body (sky/rose/yellow) */
+    --highlight-marker-orange: #fdba74; /* orange-300 */
+    --highlight-marker-green: #86efac; /* green-300 */
+    --highlight-marker-violet: #c4b5fd; /* violet-300 */
+    --highlight-marker-sky: #7dd3fc; /* sky-300 */
+    --highlight-marker-rose: #fda4af; /* rose-300 */
+    --highlight-marker-yellow: #fde047; /* yellow-300 */
+    /* Subtle warm stone shelf — same hue family as page cream, stepped tone-on-tone */
+    --bookshelf-frame: #a0916a;
+    --bookshelf-frame-hi: #b3a47e;
+    --bookshelf-wall: #f6f1e2;
+    --bookshelf-wall-hi: #faf6ea;
+    --bookshelf-wall-lo: #efe8d4;
+    --bookshelf-recess-rim: #e2d8bc;
+    --bookshelf-cast: #ddd0aa;
+    --bookshelf-ledge: #ded4b4;
+    --bookshelf-ledge-hi: #ede5cd;
+    --bookshelf-ledge-under: #b6a97d;
+    --bookshelf-ledge-lip: #eee6ce;
+    --bookshelf-pages: #fffdf8;
+    --bookshelf-pages-lo: #f5efdc;
+    --bookshelf-page-line: rgba(120, 96, 24, 0.1);
     --grain-opacity: 0.35;
     --grain-blend: multiply;
 }
@@ -22,6 +43,26 @@
         --hover-glow: #1a1814;
         --highlight-marker: #b45309;
         --highlight-marker-foreground: #fffbeb;
+        --highlight-marker-orange: #fb923c;
+        --highlight-marker-green: #4ade80;
+        --highlight-marker-violet: #a78bfa;
+        --highlight-marker-sky: #38bdf8;
+        --highlight-marker-rose: #fb7185;
+        --highlight-marker-yellow: #facc15;
+        --bookshelf-frame: #3a3524;
+        --bookshelf-frame-hi: #453f2b;
+        --bookshelf-wall: #1c1810;
+        --bookshelf-wall-hi: #221e14;
+        --bookshelf-wall-lo: #161309;
+        --bookshelf-recess-rim: #110f08;
+        --bookshelf-cast: #171309;
+        --bookshelf-ledge: #2e2a1c;
+        --bookshelf-ledge-hi: #383324;
+        --bookshelf-ledge-under: #1a170f;
+        --bookshelf-ledge-lip: #423d2a;
+        --bookshelf-pages: #cfc8b0;
+        --bookshelf-pages-lo: #b5ae96;
+        --bookshelf-page-line: rgba(255, 236, 180, 0.08);
         --grain-opacity: 0.22;
         --grain-blend: overlay;
     }
@@ -34,6 +75,26 @@
     --hover-glow: #1a1814;
     --highlight-marker: #b45309;
     --highlight-marker-foreground: #fffbeb;
+    --highlight-marker-orange: #fb923c;
+    --highlight-marker-green: #4ade80;
+    --highlight-marker-violet: #a78bfa;
+    --highlight-marker-sky: #38bdf8;
+    --highlight-marker-rose: #fb7185;
+    --highlight-marker-yellow: #facc15;
+    --bookshelf-frame: #3a3524;
+    --bookshelf-frame-hi: #453f2b;
+    --bookshelf-wall: #1c1810;
+    --bookshelf-wall-hi: #221e14;
+    --bookshelf-wall-lo: #161309;
+    --bookshelf-recess-rim: #110f08;
+    --bookshelf-cast: #171309;
+    --bookshelf-ledge: #2e2a1c;
+    --bookshelf-ledge-hi: #383324;
+    --bookshelf-ledge-under: #1a170f;
+    --bookshelf-ledge-lip: #423d2a;
+    --bookshelf-pages: #cfc8b0;
+    --bookshelf-pages-lo: #b5ae96;
+    --bookshelf-page-line: rgba(255, 236, 180, 0.08);
     --grain-opacity: 0.22;
     --grain-blend: overlay;
 }
@@ -47,6 +108,26 @@
     --hover-glow: #f5f2e8;
     --highlight-marker: #fbbf24;
     --highlight-marker-foreground: #0a0a0a;
+    --highlight-marker-orange: #fdba74;
+    --highlight-marker-green: #86efac;
+    --highlight-marker-violet: #c4b5fd;
+    --highlight-marker-sky: #7dd3fc;
+    --highlight-marker-rose: #fda4af;
+    --highlight-marker-yellow: #fde047;
+    --bookshelf-frame: #a0916a;
+    --bookshelf-frame-hi: #b3a47e;
+    --bookshelf-wall: #f6f1e2;
+    --bookshelf-wall-hi: #faf6ea;
+    --bookshelf-wall-lo: #efe8d4;
+    --bookshelf-recess-rim: #e2d8bc;
+    --bookshelf-cast: #ddd0aa;
+    --bookshelf-ledge: #ded4b4;
+    --bookshelf-ledge-hi: #ede5cd;
+    --bookshelf-ledge-under: #b6a97d;
+    --bookshelf-ledge-lip: #eee6ce;
+    --bookshelf-pages: #fffdf8;
+    --bookshelf-pages-lo: #f5efdc;
+    --bookshelf-page-line: rgba(120, 96, 24, 0.1);
     --grain-opacity: 0.35;
     --grain-blend: multiply;
 }
@@ -82,10 +163,61 @@ body > * {
     }
 
     .marker-highlight {
-        /* Kept for backwards compatibility, but the UI no longer uses it for yellow marker highlights. */
+        /* Kept for backwards compatibility — prefer .about-marker for new UI. */
         background-color: transparent;
         color: inherit;
         padding: 0;
+    }
+
+    /**
+     * Tanaya-style fat highlighter wash under key phrases.
+     * Imperfect angle reads as marker, not a clean CSS underline.
+     */
+    .about-marker {
+        color: inherit;
+        font: inherit;
+        padding-inline: 0.28em;
+        margin-inline: -0.1em;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        background-image: linear-gradient(
+            104deg,
+            transparent 0%,
+            transparent 2%,
+            color-mix(in srgb, var(--highlight-marker) 70%, transparent) 5%,
+            var(--highlight-marker) 10%,
+            var(--highlight-marker) 90%,
+            color-mix(in srgb, var(--highlight-marker) 70%, transparent) 95%,
+            transparent 98%,
+            transparent 100%
+        );
+        background-repeat: no-repeat;
+        background-size: 100% 0.78em;
+        background-position: 0 78%;
+    }
+
+    .about-marker--orange {
+        --highlight-marker: var(--highlight-marker-orange);
+    }
+
+    .about-marker--green {
+        --highlight-marker: var(--highlight-marker-green);
+    }
+
+    .about-marker--violet {
+        --highlight-marker: var(--highlight-marker-violet);
+    }
+
+    .about-marker--sky {
+        --highlight-marker: var(--highlight-marker-sky);
+    }
+
+    .about-marker--rose {
+        --highlight-marker: var(--highlight-marker-rose);
+    }
+
+    .about-marker--yellow {
+        --highlight-marker: var(--highlight-marker-yellow);
     }
 }
 
@@ -96,6 +228,49 @@ body > * {
             linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
         background-size: 40px 40px;
         background-color: var(--background);
+    }
+
+    /* Finer graph-paper plane for about intro (Tanaya-style) */
+    .bg-about-grid {
+        position: relative;
+        isolation: isolate;
+        background-color: var(--background);
+    }
+
+    /* Grid lives on ::before so we can mask it out without fading the copy */
+    .bg-about-grid::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background-image:
+            linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+            linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+        background-size: 32px 32px;
+        -webkit-mask-image: linear-gradient(
+            to bottom,
+            #000 0%,
+            #000 55%,
+            transparent 100%
+        );
+        mask-image: linear-gradient(
+            to bottom,
+            #000 0%,
+            #000 55%,
+            transparent 100%
+        );
+    }
+
+    .bg-about-grid > .about-grid-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .about-grid-cta {
+        position: absolute;
+        z-index: 20;
+        pointer-events: auto;
     }
 }
 
@@ -393,6 +568,10 @@ html {
 @media (prefers-reduced-motion: reduce) {
     .project-tilt-surface::before {
         display: none !important;
+    }
+
+    .visiting-card {
+        transform: none !important;
     }
 }
 

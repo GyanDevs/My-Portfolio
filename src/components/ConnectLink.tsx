@@ -6,6 +6,8 @@ export interface ConnectLinkProps {
   href: string;
   label: string;
   external?: boolean;
+  /** When set, triggers a file download (e.g. CV PDF). */
+  download?: string | boolean;
 }
 
 /**
@@ -17,6 +19,7 @@ export default function ConnectLink({
   href,
   label,
   external = true,
+  download,
 }: ConnectLinkProps) {
   const base =
     "connect-link inline-block font-mono font-bold uppercase tracking-wide text-[14px] text-[var(--foreground)] " +
@@ -29,8 +32,13 @@ export default function ConnectLink({
     ? { target: "_blank", rel: "noopener noreferrer" as const }
     : {};
 
+  const downloadProps =
+    download !== undefined
+      ? { download: typeof download === "string" ? download : true }
+      : {};
+
   return (
-    <a href={href} className={base} {...attrs}>
+    <a href={href} className={base} {...downloadProps} {...attrs}>
       {label}
     </a>
   );

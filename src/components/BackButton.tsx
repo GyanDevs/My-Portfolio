@@ -1,35 +1,29 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
-
-const TAP_SPRING = { type: "spring", stiffness: 700, damping: 28, mass: 0.6 } as const;
 
 interface BackButtonProps {
   href?: string;
 }
 
+/**
+ * Same vocabulary as ConnectLink (footer): mono, bold, uppercase, animated underline.
+ * Arrow points back, in front of the label; hover nudges left.
+ */
 export default function BackButton({ href = "/" }: BackButtonProps) {
   return (
-    <motion.div
-      whileTap={{ scale: 0.94, transition: TAP_SPRING }}
-      className="w-fit"
+    <Link
+      href={href}
+      className={
+        "connect-link inline-flex items-center gap-1.5 font-mono font-bold uppercase tracking-wide text-[14px] text-[var(--foreground)] " +
+        "decoration-2 underline-offset-4 " +
+        "transition-transform duration-200 ease-[cubic-bezier(0.32,0.72,0,1)] " +
+        "hover:-translate-x-0.5 active:scale-[0.98] " +
+        "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--grid-line)]"
+      }
     >
-      <Link
-        href={href}
-        className="group relative flex items-center gap-2 font-mono text-sm uppercase tracking-widest text-[var(--foreground)] hover:text-[var(--background)] border border-[var(--grid-line)] overflow-hidden px-3 py-2"
-      >
-        {/* Slide-fill: enters from left — consistent with site-wide slide-fill vocabulary */}
-        <span
-          aria-hidden="true"
-          className="absolute inset-0 bg-[var(--foreground)] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-[300ms] ease-spring-bouncy"
-        />
-        {/* Arrow drifts left on hover — directional feedback */}
-        <span className="relative z-10 transition-transform duration-[300ms] ease-spring-bouncy group-hover:translate-x-[-4px]">
-          ←
-        </span>
-        <span className="relative z-10">BACK</span>
-      </Link>
-    </motion.div>
+      <span aria-hidden="true">←</span>
+      Back
+    </Link>
   );
 }

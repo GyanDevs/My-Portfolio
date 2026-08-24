@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
-import { Download } from "lucide-react";
 import BackButton from "@/src/components/BackButton";
 import RevealOnScroll from "@/src/components/RevealOnScroll";
+import { AboutMeVisitingCard } from "@/src/components/AboutMeVisitingCard";
 import { CareerTimeline } from "@/src/components/CareerTimeline";
 import { DesignLoveGallery } from "@/src/components/DesignLoveGallery";
 import { LoveTracksSection } from "@/src/components/LoveTracksSection";
-import { ProfilePhotoDecode } from "@/src/components/ProfilePhotoDecode";
-import { BooksGrid } from "@/src/components/BooksGrid";
 import ConnectLink from "@/src/components/ConnectLink";
-import { careerMilestones, careerPageIntro } from "@/src/data/careerStory";
-import { booksGridItems } from "@/src/data/booksGridItems";
+import { careerMilestones } from "@/src/data/careerStory";
+import { booksShelfRows } from "@/src/data/booksGridItems";
 import { designLoveShots } from "@/src/data/designLoveShots";
 import { loveTracks } from "@/src/data/loveTracks";
 import { RESUME_PDF_DOWNLOAD_FILENAME } from "@/src/data/resume";
@@ -23,57 +21,22 @@ export const metadata: Metadata = {
 export default function AboutMePage() {
   return (
     <main className="min-h-screen bg-background text-foreground selection:bg-neutral-200 selection:text-black border-x border-[var(--grid-line)] max-w-[1600px] mx-auto">
-      <header className="sticky top-0 z-[100] isolate bg-background/80 backdrop-blur-md border-b border-[var(--grid-line)] px-4 md:px-8 h-16 flex justify-between items-center">
+      <header className="sticky top-0 z-[100] isolate bg-background/80 backdrop-blur-md border-b border-[var(--grid-line)] px-4 md:px-8 h-16 flex items-center">
         <BackButton />
       </header>
 
-      <RevealOnScroll>
-        <section className="px-4 pt-8 pb-2 sm:px-6 sm:pt-10 sm:pb-2 md:px-12 md:pt-12 md:pb-4 lg:px-16 lg:pt-16 lg:pb-4">
-          <div className="flex w-full flex-col gap-5 sm:gap-6 md:flex-row md:items-start md:gap-12 lg:gap-16">
-            <div className="group flex w-full flex-col gap-8 sm:gap-9 md:flex-row md:items-center md:min-w-0 md:flex-1 md:gap-12 lg:gap-16">
-              <div className="flex w-full shrink-0 justify-start md:w-auto">
-                <ProfilePhotoDecode
-                  imageSrc="/assets/cv-profile-headshot.jpg"
-                  imageAlt="Portrait"
-                />
-              </div>
-              <div className="min-w-0 flex-1 text-left">
-                <p className="font-mono text-[12px] md:text-sm uppercase tracking-[0.2em] text-neutral-500 mb-7 md:mb-8">
-                  {careerPageIntro.eyebrow}
-                </p>
-                <div className="space-y-2">
-                  <h1 className="font-['Helvetica'] font-black text-[19px] leading-snug text-[var(--foreground)] tracking-tight sm:text-[20px]">
-                    {careerPageIntro.title}
-                  </h1>
-                  <p className="max-w-[72ch] text-[17px] leading-relaxed font-sans font-light tracking-tight text-neutral-500 dark:text-neutral-400 sm:text-[18px]">
-                    {careerPageIntro.leadSegments.map((seg, i) =>
-                      seg.highlight ? (
-                        <span
-                          key={i}
-                          className="font-serif italic font-normal text-[var(--foreground)]"
-                        >
-                          {seg.text}
-                        </span>
-                      ) : (
-                        <span key={i}>{seg.text}</span>
-                      ),
-                    )}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="flex w-full shrink-0 justify-start pt-1 md:w-auto md:justify-end md:self-start md:pt-0">
-              <a
-                href="/resume.pdf"
-                download={RESUME_PDF_DOWNLOAD_FILENAME}
-                className="connect-link inline-flex items-center gap-2 font-mono font-bold uppercase tracking-wide text-[14px] text-[var(--foreground)] decoration-2 underline-offset-4 transition-transform duration-200 ease-[cubic-bezier(0.32,0.72,0,1)] hover:translate-x-0.5 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--grid-line)]"
-              >
-                Download CV
-                <Download className="w-[14px] h-[14px] shrink-0" strokeWidth={2.5} />
-              </a>
-            </div>
-          </div>
-        </section>
+      <RevealOnScroll className="bg-about-grid px-4 pb-20 sm:px-6 sm:pb-24 md:px-8 md:pb-28 lg:px-12 lg:pb-32">
+        <div className="about-grid-cta absolute right-16 top-8 md:right-20 md:top-8">
+          <ConnectLink
+            href="/resume.pdf"
+            label="Download CV"
+            external={false}
+            download={RESUME_PDF_DOWNLOAD_FILENAME}
+          />
+        </div>
+        <div className="about-grid-content relative pt-14 md:pt-16">
+          <AboutMeVisitingCard />
+        </div>
       </RevealOnScroll>
 
       <section className="px-4 pt-0 pb-6 sm:px-6 sm:pb-8 md:px-10 md:pb-10 lg:px-14 lg:pb-14">
@@ -84,20 +47,14 @@ export default function AboutMePage() {
         </RevealOnScroll>
       </section>
 
-      <section className="border-t border-[var(--grid-line)] py-6 sm:py-8 md:py-12 lg:py-16">
+      <section className="py-6 sm:py-8 md:py-12 lg:py-16">
         <RevealOnScroll>
-          <div className="w-full min-w-0">
-            <div className="mb-4 px-4 sm:mb-8 sm:px-6 md:px-12 lg:px-16">
-              <h2 className="font-mono text-[14px] uppercase tracking-tight text-[var(--foreground)]">
-                Books that shaped me & music I like
-              </h2>
-            </div>
-            <BooksGrid items={booksGridItems} />
-            <div className="mt-16 sm:mt-20 px-0">
-              <div className="bg-background">
-                <LoveTracksSection tracks={loveTracks} showHeading={false} />
-              </div>
-            </div>
+          <div className="w-full min-w-0 px-4 sm:px-6 md:px-12 lg:px-16">
+            <LoveTracksSection
+              tracks={loveTracks}
+              shelves={booksShelfRows}
+              showHeading={false}
+            />
           </div>
         </RevealOnScroll>
       </section>

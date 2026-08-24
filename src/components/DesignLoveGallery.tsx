@@ -163,7 +163,7 @@ export function DesignLoveGallery({ items, title }: DesignLoveGalleryProps) {
         <div
           ref={marqueeRef}
           className={[
-            "gallery-marquee-container cursor-default overflow-hidden border border-[var(--grid-line)] bg-background",
+            "gallery-marquee-container cursor-default overflow-hidden bg-background",
             !marqueeActive ? "gallery-marquee-paused" : "",
             !title ? "mt-10 sm:mt-12" : "",
           ].join(" ")}

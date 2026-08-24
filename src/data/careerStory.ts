@@ -24,29 +24,91 @@ export type CareerMilestone = {
   mark?: string;
 };
 
+export type DesignPhilosophyPillar = {
+  title: string;
+  body: string;
+};
+
+/**
+ * About-page storytelling: belief → tension → growth → synthesis,
+ * then proof (timeline), life, creed, conversational close.
+ */
 export const careerPageIntro = {
-  eyebrow: "How I got here",
-  title: "From tinkering to systems that have to work",
+  eyebrow: "About me",
+  title: "I am Gyan, curious by nature, rigorous by choice.",
   /**
-   * CV hero lead: default = muted sans; `highlight` = serif italic, foreground.
+   * Multi-beat story. Default = muted sans; `highlight` = marker wash.
+   * Voice: conversational — like telling a friend, not pitching a creed.
    */
-  leadSegments: [
-    { text: "I didn’t stumble into " },
-    { text: "product design", highlight: true },
-    { text: " through a single course. I grew up inside " },
-    { text: "creative work", highlight: true },
-    { text: "; " },
-    { text: "human-computer interaction", highlight: true },
-    { text: " came later and gave me " },
-    { text: "vocabulary and rigor", highlight: true },
-    { text: " for what I was already reaching toward. " },
-    { text: "The timeline below", highlight: true },
-    { text: " carries that arc—from " },
-    { text: "creative roots", highlight: true },
-    { text: " to " },
-    { text: "enterprise scale", highlight: true },
-    { text: "." },
-  ] satisfies CareerLeadSegment[],
+  storyParagraphs: [
+    [
+      {
+        text: "I spend a lot of my time in systems that are already messy: farms, ops tools, enterprise products, places where a bad call isn’t just an ugly slide. What I’m usually after is making that mess a little clearer for the people who live with it, shaping ",
+      },
+      { text: "clarity from complexity", highlight: true },
+      { text: " without pretending the mess wasn’t there." },
+    ],
+    [
+      {
+        text: "I’ve been called detail-obsessed more than once, and it’s not wrong. Underneath the checklists is just ",
+      },
+      { text: "care", highlight: true },
+      {
+        text: ". I want the work to feel honest when someone is tired, rushed, or unsure.",
+      },
+    ],
+    [
+      {
+        text: "I used to hold onto things forever, waiting for perfect. I still spot every edge case. I’ve just learned I grow faster by ",
+      },
+      { text: "doing", highlight: true },
+      {
+        text: ": shipping, listening, adjusting, more than polishing alone in a corner.",
+      },
+    ],
+    [
+      {
+        text: "These days I try to stay close to the craft and still know when to let go so the team can move. The timeline below is that path, from ",
+      },
+      { text: "creative roots", highlight: true },
+      { text: " to " },
+      { text: "enterprise scale", highlight: true },
+      { text: "." },
+    ],
+  ] satisfies CareerLeadSegment[][],
+};
+
+export const designPhilosophy = {
+  eyebrow: "Design philosophy",
+  pillars: [
+    {
+      title: "Listen in the field",
+      body: "The closer I get to real use (farms, dashboards, ops floors), the fewer assumptions survive. Research isn’t a phase; it’s how I find the truth worth designing for.",
+    },
+    {
+      title: "Wrestle chaos into simplicity",
+      body: "Good design should feel simple. Not because it was easy, but because someone stayed with the mess until only what matters was left.",
+    },
+    {
+      title: "Design for impact that sticks",
+      body: "I don’t design for novelty. I design for the quiet kind of change: fewer support tickets, clearer decisions, a day that goes a little smoother for someone who didn’t ask for more complexity.",
+    },
+  ] satisfies DesignPhilosophyPillar[],
+};
+
+export const lifeBeyondDesign = {
+  eyebrow: "There’s life beyond the screen",
+  title:
+    "When I’m not designing, I’m usually with a book, a playlist, or something I made just because I wanted to.",
+};
+
+export const aboutPageClose = {
+  afterTimeline:
+    "Still here? Good. That usually means the arc landed. Here’s a little of who I am when the Figma tab is closed.",
+  closingEyebrow: "Next step",
+  closingTitle: "You’ve scrolled this far. Let’s do something useful with that.",
+  closingBody:
+    "If you’re building something complex and want a designer who can stay with it, say hello, grab the CV, or find me on LinkedIn.",
 };
 
 export const careerMilestones: CareerMilestone[] = [
@@ -77,7 +139,7 @@ export const careerMilestones: CareerMilestone[] = [
     title: "HCI gave the chaos a path",
     mark: "○",
     body:
-      "IxDF’s HCI track wasn’t a certificate for the wall. It was the first time I could name what I was reaching for: clear ways to think about behavior, feedback, and error. Interaction design as a discipline, not a mood board—while I was at Ucertify, running demos and client calls alongside the coursework.",
+      "IxDF’s HCI track wasn’t a certificate for the wall. It was the first time I could name what I was reaching for: clear ways to think about behavior, feedback, and error. Interaction design as a discipline, not a mood board, while I was at Ucertify, running demos and client calls alongside the coursework.",
   },
   {
     id: "ucertify-edtech",
@@ -110,7 +172,7 @@ export const careerMilestones: CareerMilestone[] = [
     title: "Clarity in the field",
     mark: "◆",
     body:
-      "At Fasal I designed where telemetry meets real farms: sensors, dashboards, and workflows for people who don’t owe us their patience.\n\nThe work that mattered most: untangling messy sensor flows, building a shared design language across verticals, and testing ideas in production—not only in slides.",
+      "At Fasal I designed where telemetry meets real farms: sensors, dashboards, and workflows for people who don’t owe us their patience.\n\nThe work that mattered most: untangling messy sensor flows, building a shared design language across verticals, and testing ideas in production, not only in slides.",
   },
   {
     id: "hpe-lead",
@@ -120,6 +182,6 @@ export const careerMilestones: CareerMilestone[] = [
     title: "Where I am now: enterprise at scale",
     mark: "◈",
     body:
-      "At Hewlett Packard Enterprise I lead product design on complex enterprise systems—long-lived workflows, many stakeholders, interfaces that have to stay clear under scrutiny.\n\nIt’s the same bar I held in the field: clarity when the system is messy and the user didn’t choose to be patient—now at enterprise scale.",
+      "At Hewlett Packard Enterprise I lead product design on complex enterprise systems: long-lived workflows, many stakeholders, interfaces that have to stay clear under scrutiny.\n\nIt’s the same bar I held in the field: clarity when the system is messy and the user didn’t choose to be patient, now at enterprise scale.",
   },
 ];

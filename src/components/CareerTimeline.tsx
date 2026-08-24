@@ -811,9 +811,6 @@ export function CareerTimeline({
             onToggle: () => toggle(milestone.id),
             isScrollReached: reached,
           };
-          const connectorClass = reached
-            ? "bg-[var(--foreground)]"
-            : "bg-[var(--grid-line)]";
 
             return (
               <li className="relative w-full min-w-0 py-3 sm:py-4 md:py-6 lg:py-8" key={milestone.id}>
@@ -822,15 +819,10 @@ export function CareerTimeline({
                 <div className="hidden w-full min-w-0 md:grid md:grid-cols-[1fr_40px_1fr] md:items-center md:gap-0">
                   {isLeft ? (
                     <>
-                      <div className="grid min-h-[5rem] w-full min-w-0 grid-cols-[auto_1fr] items-center gap-0 md:min-h-[5.5rem] lg:min-h-[6rem]">
+                      <div className="flex min-h-[5rem] w-full min-w-0 items-center justify-end md:min-h-[5.5rem] lg:min-h-[6rem]">
                         <div className="min-w-0 shrink-0">
                           <MilestoneCard {...cardProps} variant="desktop" hideMeta />
                         </div>
-                        {/* 1fr bar: flush to card; -mr-5 overlaps 40px spine col to node center */}
-                        <div
-                          className={`relative z-[1] h-px min-h-px min-w-[3rem] w-full self-center -mr-5 ${connectorClass}`}
-                          aria-hidden
-                        />
                       </div>
                       <div className="relative flex min-h-[5rem] items-center justify-center md:min-h-[5.5rem] lg:min-h-[6rem]">
                         <TimelineNode
@@ -857,11 +849,7 @@ export function CareerTimeline({
                           isLast={isLast}
                         />
                       </div>
-                      <div className="grid min-h-[5rem] w-full min-w-0 grid-cols-[1fr_auto] items-center gap-0 md:min-h-[5.5rem] lg:min-h-[6rem]">
-                        <div
-                          className={`-ml-5 relative z-[1] h-px min-h-px min-w-[3rem] w-full self-center ${connectorClass}`}
-                          aria-hidden
-                        />
+                      <div className="flex min-h-[5rem] w-full min-w-0 items-center justify-start md:min-h-[5.5rem] lg:min-h-[6rem]">
                         <div className="min-w-0 shrink-0">
                           <MilestoneCard {...cardProps} variant="desktop" hideMeta />
                         </div>

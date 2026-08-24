@@ -1,41 +1,267 @@
 import type { BookGridItem } from "@/src/components/BooksGrid";
 
 /**
- * Book cover grid items.
- *
- * Replace `coverSrc` with exact image paths under `public/` once you add
- * the book cover assets (e.g. `/assets/books/dont-make-me-think.webp`).
+ * Quiet Favre washes — soft single-hue face + slightly deeper same-hue shadow.
+ * ink = mid title colour (readable on the wash, never shouting white-on-Pop).
  */
-export const booksGridItems: BookGridItem[] = [
-  {
-    id: "dont-make-me-think",
-    title: "Don't Make Me Think",
-    author: "Steve Krug",
-    coverSrc: "/assets/books/dont-make-me-think.webp",
-  },
-  {
-    id: "design-of-everyday-things",
-    title: "The Design of Everyday Things",
-    author: "Don Norman",
-    coverSrc: "/assets/books/design-of-everyday-things.webp",
-  },
-  {
-    id: "microcopy",
-    title: "Microcopy",
-    author: "Kinneret Yifrah",
-    coverSrc: "/assets/books/microcopy.webp",
-  },
-  {
-    id: "articulating-design-decisions",
-    title: "Articulating Design Decisions",
-    author: "Tom Greever",
-    coverSrc: "/assets/books/articulating-design-decisions.webp",
-  },
-  {
-    id: "sprint",
-    title: "Sprint",
-    author: "Jake Knapp",
-    coverSrc: "/assets/books/sprint.webp",
-  },
+export const booksShelfRows: BookGridItem[][] = [
+  [
+    {
+      id: "dont-make-me-think",
+      title: "Don't Make Me Think",
+      author: "Steve Krug",
+      coverSrc: "/assets/books/dont-make-me-think.webp",
+      spine: {
+        fill: "#F6E4E4",
+        fillDark: "#3A2222",
+        shadow: "#E8C9C9",
+        shadowDark: "#2A1616",
+        ink: "#A33A3A",
+        inkDark: "#E8A0A0",
+      },
+    },
+    {
+      id: "design-of-everyday-things",
+      title: "The Design of Everyday Things",
+      author: "Don Norman",
+      coverSrc: "/assets/books/design-of-everyday-things.webp",
+      spine: {
+        fill: "#F3EBD4",
+        fillDark: "#3A3220",
+        shadow: "#E4D6B0",
+        shadowDark: "#2A2414",
+        ink: "#9A7B2E",
+        inkDark: "#D4C07A",
+      },
+    },
+    {
+      id: "microcopy",
+      title: "Microcopy",
+      author: "Kinneret Yifrah",
+      coverSrc: "/assets/books/microcopy.webp",
+      spine: {
+        fill: "#E4EEF5",
+        fillDark: "#1E2A35",
+        shadow: "#C8D9E6",
+        shadowDark: "#141E26",
+        ink: "#3A6F8F",
+        inkDark: "#9CBFD4",
+      },
+    },
+    {
+      id: "articulating-design-decisions",
+      title: "Articulating Design Decisions",
+      author: "Tom Greever",
+      coverSrc: "/assets/books/articulating-design-decisions.webp",
+      spine: {
+        fill: "#E4F0E8",
+        fillDark: "#1E2E24",
+        shadow: "#C5DBC9",
+        shadowDark: "#142018",
+        ink: "#3F7A52",
+        inkDark: "#9BC4A8",
+      },
+    },
+    {
+      id: "sprint",
+      title: "Sprint",
+      author: "Jake Knapp",
+      coverSrc: "/assets/books/sprint.webp",
+      spine: {
+        fill: "#E4EBF6",
+        fillDark: "#1E2535",
+        shadow: "#C6D2E6",
+        shadowDark: "#141A26",
+        ink: "#3A5F9A",
+        inkDark: "#9BB0D4",
+      },
+    },
+    {
+      id: "refactoring-ui",
+      title: "Refactoring UI",
+      author: "Adam Wathan & Steve Schoger",
+      spine: {
+        fill: "#E9E7F4",
+        fillDark: "#262235",
+        shadow: "#D0CCE4",
+        shadowDark: "#1A1626",
+        ink: "#5A5190",
+        inkDark: "#B0A8D4",
+      },
+    },
+    {
+      id: "inspired",
+      title: "Inspired",
+      author: "Marty Cagan",
+      spine: {
+        fill: "#EDE8F4",
+        fillDark: "#282235",
+        shadow: "#D6CCE4",
+        shadowDark: "#1C1626",
+        ink: "#6B5190",
+        inkDark: "#C0A8D4",
+      },
+    },
+    {
+      id: "thinking-with-type",
+      title: "Thinking with Type",
+      author: "Ellen Lupton",
+      spine: {
+        fill: "#F0E8E2",
+        fillDark: "#322820",
+        shadow: "#E0D0C4",
+        shadowDark: "#221A14",
+        ink: "#8A5A40",
+        inkDark: "#D4B09A",
+      },
+    },
+    {
+      id: "elements-of-ux",
+      title: "The Elements of User Experience",
+      author: "Jesse James Garrett",
+      spine: {
+        fill: "#E8F0F2",
+        fillDark: "#1E2A2E",
+        shadow: "#CCDDE2",
+        shadowDark: "#141C20",
+        ink: "#3A7080",
+        inkDark: "#9ABCD0",
+      },
+    },
+    {
+      id: "just-enough-research",
+      title: "Just Enough Research",
+      author: "Erika Hall",
+      spine: {
+        fill: "#F2EAE4",
+        fillDark: "#322820",
+        shadow: "#E4D2C6",
+        shadowDark: "#221A14",
+        ink: "#9A6040",
+        inkDark: "#D4B09A",
+      },
+    },
+  ],
+  [
+    {
+      id: "lean-ux",
+      title: "Lean UX",
+      author: "Jeff Gothelf",
+      spine: {
+        fill: "#F4E9DF",
+        fillDark: "#35281E",
+        shadow: "#E6D0BC",
+        shadowDark: "#261A12",
+        ink: "#A05E38",
+        inkDark: "#D4B09A",
+      },
+    },
+    {
+      id: "about-face",
+      title: "About Face",
+      author: "Alan Cooper",
+      spine: {
+        fill: "#E2F0EE",
+        fillDark: "#1E2E2C",
+        shadow: "#C4DFDB",
+        shadowDark: "#14201E",
+        ink: "#3A7A72",
+        inkDark: "#9AC4BE",
+      },
+    },
+    {
+      id: "hooked",
+      title: "Hooked",
+      author: "Nir Eyal",
+      spine: {
+        fill: "#E6F1EA",
+        fillDark: "#1E2E24",
+        shadow: "#CADECE",
+        shadowDark: "#142018",
+        ink: "#3F7A5C",
+        inkDark: "#9BC4AE",
+      },
+    },
+    {
+      id: "design-systems",
+      title: "Design Systems",
+      author: "Alla Kholmatova",
+      spine: {
+        fill: "#F4E6ED",
+        fillDark: "#352028",
+        shadow: "#E6C9D6",
+        shadowDark: "#26141C",
+        ink: "#9A4A6E",
+        inkDark: "#D4A0B8",
+      },
+    },
+    {
+      id: "user-friendly",
+      title: "User Friendly",
+      author: "Cliff Kuang",
+      spine: {
+        fill: "#E6EBF5",
+        fillDark: "#1E2435",
+        shadow: "#CAD4E6",
+        shadowDark: "#141A26",
+        ink: "#3A5690",
+        inkDark: "#9AADD4",
+      },
+    },
+    {
+      id: "interviewing-users",
+      title: "Interviewing Users",
+      author: "Steve Portigal",
+      spine: {
+        fill: "#EDE8F3",
+        fillDark: "#282235",
+        shadow: "#D6CCE2",
+        shadowDark: "#1C1626",
+        ink: "#6B5190",
+        inkDark: "#C0A8D4",
+      },
+    },
+    {
+      id: "escaping-the-build-trap",
+      title: "Escaping the Build Trap",
+      author: "Melissa Perri",
+      spine: {
+        fill: "#F3E6E6",
+        fillDark: "#352222",
+        shadow: "#E4C8C8",
+        shadowDark: "#261616",
+        ink: "#A04848",
+        inkDark: "#D4A0A0",
+      },
+    },
+    {
+      id: "making-of-a-manager",
+      title: "The Making of a Manager",
+      author: "Julie Zhuo",
+      spine: {
+        fill: "#EAF0E8",
+        fillDark: "#222E20",
+        shadow: "#D0DCC8",
+        shadowDark: "#161E14",
+        ink: "#4A7040",
+        inkDark: "#A8C49A",
+      },
+    },
+    {
+      id: "continuous-discovery-habits",
+      title: "Continuous Discovery Habits",
+      author: "Teresa Torres",
+      spine: {
+        fill: "#E8ECF4",
+        fillDark: "#222835",
+        shadow: "#CCD4E4",
+        shadowDark: "#161A26",
+        ink: "#4A5A90",
+        inkDark: "#A8B4D4",
+      },
+    },
+  ],
 ];
 
+/** Flattened list for any cover-grid consumers. */
+export const booksGridItems: BookGridItem[] = booksShelfRows.flat();

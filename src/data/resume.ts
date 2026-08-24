@@ -1,7 +1,7 @@
 export const DATA_LAST_UPDATED = "2026-05-24";
 
 /** Suggested filename when saving `/resume.pdf` from the site */
-export const RESUME_PDF_DOWNLOAD_FILENAME = "Gyan's resume.pdf";
+export const RESUME_PDF_DOWNLOAD_FILENAME = "Gyan_Prakash_Resume.pdf";
 
 export const profile = {
   hook: "6+ years turning complexity into clarity.",
