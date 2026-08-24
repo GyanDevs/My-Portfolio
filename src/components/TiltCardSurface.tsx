@@ -19,13 +19,16 @@ const TILT_SPRING = {
   mass: 0.55,
 };
 
-const ROTATE_Y_MAX = 6;
-const ROTATE_X_MAX = 4;
+const DEFAULT_ROTATE_Y_MAX = 6;
+const DEFAULT_ROTATE_X_MAX = 4;
 const PERSPECTIVE_PX = 900;
 
 type TiltCardSurfaceProps = {
   children: ReactNode;
   className?: string;
+  /** Subtle tilt for editorial cards (default 6 / 4 for project cards). */
+  rotateYMax?: number;
+  rotateXMax?: number;
 };
 
 /**
@@ -34,6 +37,8 @@ type TiltCardSurfaceProps = {
 export function TiltCardSurface({
   children,
   className = "",
+  rotateYMax = DEFAULT_ROTATE_Y_MAX,
+  rotateXMax = DEFAULT_ROTATE_X_MAX,
 }: TiltCardSurfaceProps) {
   const rootRef = useRef<HTMLDivElement>(null);
   const surfaceRef = useRef<HTMLDivElement>(null);
@@ -72,8 +77,8 @@ export function TiltCardSurface({
 
         surface.style.setProperty("--mx", String(mx));
         surface.style.setProperty("--my", String(my));
-        rotateY.set((mx - 0.5) * ROTATE_Y_MAX);
-        rotateX.set((my - 0.5) * -ROTATE_X_MAX);
+        rotateY.set((mx - 0.5) * rotateYMax);
+        rotateX.set((my - 0.5) * -rotateXMax);
       });
     };
 
@@ -102,7 +107,7 @@ export function TiltCardSurface({
       root.removeEventListener("mouseleave", handleLeave);
       if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
     };
-  }, [prefersReduced, rotateX, rotateY]);
+  }, [prefersReduced, rotateX, rotateY, rotateXMax, rotateYMax]);
 
   if (prefersReduced) {
     return (
